@@ -217,23 +217,154 @@ public:
     void SalesStatsButton(ProductSalesStats *productSalesStats);
 };
 
+/*
+Class: SearchProduct
+Description: 상품 정보 검색 컨트롤 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
 class SearchProduct
 {
 private:
-    
+
 public:
     SearchProduct();
-    void ShowProductInfo(string input_productName);
-
+    void ShowProductInfo(string productName);
 };
 
+/*
+Class: SearchProductUI
+Description: 상품 정보 검색 바운더리 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
 class SearchProductUI
 {
 private:
-    
+
 public:
-    void ShowSearchWindow(SearchProduct *searchProduct);
-    void InputProductName(SearchProduct *searchProduct);
+    void ShowSearchWindow();
+    void InputProductName(SearchProduct* searchProduct);
+};
+
+/*
+Class: PurchaseProduct
+Description: 상품 구매 컨트롤 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
+class PurchaseProduct
+{
+private:
+
+public:
+    PurchaseProduct();
+    void ProceedPurchase();
+};
+
+/*
+Class: PurchaseProductUI
+Description: 상품 구매 바운더리 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
+class PurchaseProductUI
+{
+private:
+
+public:
+    void PushPurchaseButton(PurchaseProduct* purchaseProduct);
+};
+
+/*
+Class: PurchaseHistory
+Description: 구매 내역 조회 컨트롤 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
+class PurchaseHistory
+{
+private:
+
+public:
+    PurchaseHistory();
+    void ProceedPurchaseHistory();
+};
+
+/*
+Class: PurchaseHistoryUI
+Description: 구매 내역 조회 바운더리 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
+class PurchaseHistoryUI
+{
+private:
+
+public:
+    void ShowPurchaseHistory();
+    void PushPurchaseHistoryButton(PurchaseHistory* purchaseHistory);
+};
+
+/*
+Class: RatingManagement
+Description: 만족도 입력 컨트롤 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
+class RatingManagement
+{
+private:
+
+public:
+    RatingManagement();
+    void SendPurchasedProduct();
+    void SendRatingButton();
+    void SendRating(string productName, int ratingValue);
+};
+
+/*
+Class: RatingUI
+Description: 만족도 입력 바운더리 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
+class RatingUI
+{
+private:
+
+public:
+    void SelectPurchasedProduct(RatingManagement* ratingManagement);
+    void ActivateRatingButton();
+    void PushRatingButton(RatingManagement* ratingManagement);
+    void ShowRatingInputWindow();
+    void CreateNewRating(RatingManagement* ratingManagement);
+};
+
+/*
+Class: Rating
+Description: 평점을 저장하는 entity 클래스
+Created: 2022/5/29 5:00 pm
+Author: 김진호
+mail: rlawlsgh1227@gmail.com
+*/
+class Rating
+{
+private:
+    int ratingValue;    // 평점
+    string productName; // 상품 이름
+    string writer;      // 평가한 사람
+
+public:
+    void newRating(int ratingValue, string productName, string writer);
 };
 
 class Product
@@ -242,8 +373,13 @@ protected:
     string productName, madeCompanyName, sellerID;
     int price, productCount, remainCount, sellingCount;
 
+    vector <Rating*> ratingListPointer;  // 평점리스트 포인터
+
 public:
     Product(string input_productName, string input_madeCompanyName, int input_price, int input_productCount);
+    string getSellerID() {  // 판매자ID 반환
+        return sellerID; 
+    }   
     string getProductName() {
         return productName;
     }
@@ -253,12 +389,20 @@ public:
     int getPrice() {
         return price;
     }
+    int getRemainCount() { return remainCount; }    // 남은 수량 반환
+
     int getProductCount() {
         return productCount;
     }
+    int getSellingCount() { return sellingCount; }  // 판매 수량 반환
+    vector <Rating*> ListRating();
+
     void getSellingProductDetails();
-    void CheckSelectedProduct(string input_productName);
     int getSum();
+    bool CheckSelectedProduct(string productName);
+    void soldOutProduct(Product* soldOutProduct);
+    bool orderProduct();
+    void requestEnrollRating(int rating);
 };
 
 /*
@@ -272,6 +416,7 @@ class Member
 {
 private:
     string id, pw, memberName, idCardNumber;
+    vector <Product*> purchasedProductListPointer;  // 구매한 상품리스트
     vector <Product*> sellingProductListPointer;    // 판매중인 상품객체의 주소를 포인터하는 리스트임
     vector <Product*> soldoutProductListPointer;    // 판매완료된 상품객체의 주소를 가리키는 리스트
     vector <Product*> allsalesProductListPointer;   // 판매완료, 판매중 모든 상품 객체의 주소를 가리키는 리스트
@@ -287,8 +432,10 @@ public:
 	Member(string input_id, string input_pw, string input_memberName, string input_idCardNumber); //생성자
 	~Member(); //파괴자
 
+    void AddPurchaseProduct(Product* product);
     void AddNewProduct(string input_productName, string input_madeCompanyName, int input_price, int input_productCount);
     void AddRegistedNewProuduct(Product *newProduct);
+    vector <Product*> ListPurchasedProduct();
     vector <Product*> ListSellingProducts(); //판매중인 상품리스트를 가리키는 포인터
     vector <Product*> ListSoldoutProducts();
      //판매완료된 상품 리스트를 가리키는 포인터
@@ -298,6 +445,8 @@ public:
 vector < tuple<string, string, Member*> > MemberLoginInfo; //벡터의 첫값은 id , 두번째 값은 pw , 세번째 값은 Member개체의 주소를가리키는 포인터 정보를 담음
 Member* curLoginMember; // 현재 로그인중인 회원의 정보를 전역으로 설정
 bool loginState = false; // 현재 로그인중이면 true 로그아웃중이면 false 정보를 전역으로 설정
+
+Product* curSearchedProduct;  // 현재 검색한 상품을 전역으로 설정
 
 Product::Product(string input_productName, string input_madeCompanyName, int input_price, int input_productCount)   // 과제2 모델링의 이름이 CreateProduct에 해당 CreateProduct 이름을 바꿔 그냥 생성자로 했음
 {
@@ -317,14 +466,6 @@ Product::Product(string input_productName, string input_madeCompanyName, int inp
 void Product::getSellingProductDetails()
 {
     outputFile<<this->productName<<" "<<this->madeCompanyName<<" "<<this->price<<" "<<this->productCount<<endl;
-}
-
-void Product::CheckSelectedProduct(string input_productName)
-{
-    if (this->productName == input_productName)
-    {
-        outputFile<<"> "<<this->sellerID<<" "<<this->productName<<" "<<this->madeCompanyName<<" "<<this->price<<" "<<this->remainCount<<endl; //별점아직 미구현되어서 생략
-    }
 }
 
 
@@ -897,47 +1038,480 @@ void ProductSalesStats::ShowSalesStats()
 
 }
 
+/*
+Function : SearchProduct::SearchProduct()
+Description: 이 함수는 SearchProduct 클래스의 객체를 생성하는 생성자 함수입니다.
+Parameters : void
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
 SearchProduct::SearchProduct()
 {
-    SearchProductUI *searchProductUI = new SearchProductUI;
-    searchProductUI->ShowSearchWindow(this);
+    SearchProductUI* searchProductUI = new SearchProductUI;
+    searchProductUI->ShowSearchWindow();
     searchProductUI->InputProductName(this);
 }
 
-void SearchProduct::ShowProductInfo(string input_productName)
+/*
+Function : SearchProductUI::ShowSearchWindow()
+Description: 검색 창을 보여주는 함수, 과제에서는 텍스트이기 때문에 아무 기능도 실행하지 않는다.
+Parameters : void
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+void SearchProductUI::ShowSearchWindow()
+{
+
+}
+
+/*
+Function : SearchProductUI::InputProductName()
+Description: 상품 이름을 입력받는 함수
+Parameters : SearchProduct* searchProduct
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+void SearchProductUI::InputProductName(SearchProduct* searchProduct)
+{
+    string productName;             // 상품명
+
+    inputFile >> productName;
+
+    // if로 상품 있는지 없는지 검사코드 추가
+    searchProduct->ShowProductInfo(productName);
+}
+
+/*
+Function : SearchProduct::ShowProductInfo()
+Description: 상품의 이름을 입력받아서 상품을 정보를 출력하는 함수
+Parameters : string productName
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+void SearchProduct::ShowProductInfo(string productName)
 {
     vector <Product*> listSellingProducts;
-    // listSellingProducts는 ListSellingProducts() 함수로부터 현재 로그인한 회원이 판매중인 상품의 주소들을 포인터하는 리스트를 반환받기 위한 벡터임
 
-    for (int i=0; i<MemberLoginInfo.size(); i++)
+    for (int i = 0; i < MemberLoginInfo.size(); i++)
     {
         listSellingProducts.clear();    // 매 반복마다 listSellingProducts 리스트 초기화
 
-        Member *member = get<2>(MemberLoginInfo[i]);    // 반복문을 통해 모든 각 회원마다  
+        Member* member = get<2>(MemberLoginInfo[i]);    // 반복문을 통해 모든 각 회원마다  
 
         listSellingProducts = member->ListSellingProducts();    // 판매중인 상품의 주소 포인터를 받아옴
 
-        for (int j=0; j<listSellingProducts.size(); j++)
+        for (int j = 0; j < listSellingProducts.size(); j++)
         {
-            listSellingProducts[j]->CheckSelectedProduct(input_productName);    // 각 상품마다 입력된 상품 이름과 비교하여 같은 이름을 가진 녀석의 상품 정보를 출력하는 함수를 호출함
+            if (listSellingProducts[j]->CheckSelectedProduct(productName) == true)
+            {
+                outputFile << "> ";
+                outputFile << listSellingProducts[j]->getSellerID() << " ";
+                outputFile << listSellingProducts[j]->getProductName() << " ";
+                outputFile << listSellingProducts[j]->getMadeCompanyName() << " ";
+                outputFile << listSellingProducts[j]->getPrice() << " ";
+                outputFile << listSellingProducts[j]->getRemainCount() << " ";
+                //outputFile << listSellingProducts[j]->getAverageRating() << 
+                outputFile << endl << endl;
+
+                curSearchedProduct = listSellingProducts[j];  // 현재 검색한 상품명을 전역변수에 저장
+            }
         }
     }
-    outputFile<<endl;
 }
 
-void SearchProductUI::ShowSearchWindow(SearchProduct *searchProduct)
+/*
+Function : Product::CheckSelectedProduct()
+Description: 검색한 상품의 이름이 등록되어있는 상품의 이름과 같은지 비교하는 함수
+Parameters : string productName
+Return Value : boolean (같으면 true, 다르면 false)
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+bool Product::CheckSelectedProduct(string productName)
 {
-    /*
-    상품이름으로 검색할수있는 창으로 이동하는 함수 (이번과제에서는 텍스트만 표현 하므로 코드 없음)
-    */
+    if (this->productName == productName)
+        return true;
+    else
+        return false;
 }
-void SearchProductUI::InputProductName(SearchProduct *searchProduct)
+
+/*
+Function : PurchaseProduct::PurchaseProduct()
+Description: 상품 구매 컨트롤 클래스
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+PurchaseProduct::PurchaseProduct()
 {
-    string input_productName;
+    PurchaseProductUI* purchaseProductUI = new PurchaseProductUI;
+    purchaseProductUI->PushPurchaseButton(this);
+}
 
-    inputFile>>input_productName;   // 파일로부터 상품의 이름을 입력받는다.
-    searchProduct->ShowProductInfo(input_productName);
+/*
+Function : PurchaseProductUI::PushPurchaseButton()
+Description: 회원이 구매 버튼을 누름
+Parameters : PurchaseProduct* purchaseProduct
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+void PurchaseProductUI::PushPurchaseButton(PurchaseProduct* purchaseProduct)
+{
+    purchaseProduct->ProceedPurchase();
+}
 
+/*
+Function : PurchaseProduct::ProceedPurchase()
+Description: 컨트롤 클래스에 버튼 누른 것 전달
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+void PurchaseProduct::ProceedPurchase()
+{
+    if (curSearchedProduct->orderProduct() == true) // 해당 상품을 주문한다.
+    {
+        curLoginMember->AddPurchaseProduct(curSearchedProduct); // 구매한 상품리스트에 추가
+
+        outputFile << "> ";
+        outputFile << curSearchedProduct->getSellerID() << " ";
+        outputFile << curSearchedProduct->getProductName() << endl << endl;
+
+    }
+    else
+    {
+        outputFile << "해당 상품은 재고가 없습니다.";
+    }
+}
+
+/*
+Function : Member::AddPurchaseProduct()
+Description: 회원이 구매한 상품 리스트에 추가한다.
+Parameters : Product* product
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+void Member::AddPurchaseProduct(Product* product)
+{
+    this->purchasedProductListPointer.push_back(product);
+}
+
+/*
+Function : Product::orderProduct()
+Description: 선택한 상품에 대해 주문을 넣는 함수
+Parameters : 없음
+Return Value : boolean (재고가 있으면 true, 없으면 false)
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+bool Product::orderProduct()
+{
+    if (remainCount > 0)
+    {
+        remainCount--;  // 상품을 구매했기 때문에 재고 하나를 뺀다.
+
+        if (remainCount == 0)
+        {
+            this->soldOutProduct(this);
+        }
+        return true;
+    }
+    else
+        return false;
+}
+
+void Product::soldOutProduct(Product* soldOutProduct)
+{
+    string sellerID = soldOutProduct->getSellerID();
+
+    for (int i = 0; i < MemberLoginInfo.size(); i++)
+    {
+        if (sellerID == get<0>(MemberLoginInfo[i]))
+        {
+            Member* sellerPointer = get<2>(MemberLoginInfo[i]);
+
+            vector<Product*> ListSellingProduct = sellerPointer->ListSellingProducts();
+
+            for (int j = 0; j < ListSellingProduct.size(); j++)
+            {
+                if (ListSellingProduct[j]->getProductName() == soldOutProduct->getProductName())
+                {
+                    ListSellingProduct.erase(ListSellingProduct.begin() + j);
+
+                    sellerPointer->ListSoldoutProducts().push_back(soldOutProduct);
+                }
+            }
+        }
+    }
+}
+
+/*
+Function : PurchaseHistory::PurchaseHistory()
+Description: 상품 구매 내역 컨트롤 클래스를 생성하는 생성자
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+PurchaseHistory::PurchaseHistory()
+{
+    PurchaseHistoryUI* purchaseHIstoryUI = new PurchaseHistoryUI;
+    purchaseHIstoryUI->PushPurchaseHistoryButton(this);
+}
+
+/*
+Function : PurchaseHistoryUI::PushPurchaseHistoryButton()
+Description: 회원이 구매 내역 조회 버튼을 누르는 것을 구현한 함수
+Parameters : PurchaseHistory* purchaseHistory
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+void PurchaseHistoryUI::PushPurchaseHistoryButton(PurchaseHistory* purchaseHistory)
+{
+    purchaseHistory->ProceedPurchaseHistory();
+}
+
+/*
+Function : PurchaseHistory::ProceedPurchaseHistory()
+Description: 컨트롤 클래스에 버튼 누른 것을 전달
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+void PurchaseHistory::ProceedPurchaseHistory()
+{
+    vector <Product*> purchasedProduct = curLoginMember->ListPurchasedProduct();
+
+    for (int i = 0; i < purchasedProduct.size(); i++)
+    {
+        outputFile << "> ";
+        outputFile << purchasedProduct[i]->getSellerID() << " ";
+        outputFile << purchasedProduct[i]->getProductName() << " ";
+        outputFile << purchasedProduct[i]->getMadeCompanyName() << " ";
+        outputFile << purchasedProduct[i]->getPrice() << " ";
+        outputFile << purchasedProduct[i]->getRemainCount() << " ";
+        //outputFile << purchasedProduct[i]->getAverageRating();
+        outputFile << endl << endl;
+    }
+}
+
+/*
+Function : Member::ListPurchasedProduct()
+Description: 회원이 구매한 상품 리스트를 반환하는 함수
+Parameters : 없음
+Return Value : vector <Product*> purchasedProductListPointer
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+vector <Product*> Member::ListPurchasedProduct()
+{
+    return this->purchasedProductListPointer;
+}
+
+/*
+Function : RatingManagement::RatingManagement()
+Description: 구매 만족도 입력 컨트롤 클래스를 생성하는 생성자
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 7:00 pm
+Author: 김진호
+*/
+RatingManagement::RatingManagement()
+{
+    RatingUI* ratingUI = new RatingUI;
+
+    ratingUI->SelectPurchasedProduct(this);
+    ratingUI->ActivateRatingButton();
+    ratingUI->PushRatingButton(this);
+    ratingUI->ShowRatingInputWindow();
+    ratingUI->CreateNewRating(this);
+}
+
+/*
+Function : RatingUI::SelectPurchasedProduct()
+Description: 구매한 상품 중에서 하나를 선택하는 것을 구현한 함수
+Parameters : RatingManagement* ratingManagement
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void RatingUI::SelectPurchasedProduct(RatingManagement* ratingManagement)
+{
+    ratingManagement->SendPurchasedProduct();
+}
+
+/*
+Function : RatingManagement::SendPurchasedProduct()
+Description: 상품을 선택하는 것을 전달하는 함수 (텍스트이기 때문에 기능이 없다)
+Parameters : Product* selectedProduct
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void RatingManagement::SendPurchasedProduct()
+{
+
+}
+
+/*
+Function : RatingUI::ActivateRatingButton()
+Description: 선택한 상품의 구매 만족도 입력 버튼을 활성화하는 함수 (이 과제에서는 텍스트여서 아무 기능이 없다.)
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void RatingUI::ActivateRatingButton()
+{
+
+}
+
+/*
+Function : RatingUI::PushRatingButton()
+Description: 구매 만족도 입력을 누르는 것을 구현한 함수
+Parameters : RatingManagement* ratingManagement
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void RatingUI::PushRatingButton(RatingManagement* ratingManagement)
+{
+    ratingManagement->SendRatingButton();
+}
+
+/*
+Function : RatingManagement::SendRatingButton()
+Description: 버튼을 눌렀다를 전달하지만 텍스트임으로 아무것도 실행하지 않는다.
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void RatingManagement::SendRatingButton()
+{
+
+}
+
+/*
+Function : RatingUI::ShowRatingInputWindow()
+Description: 평점 입력창을 띄우지만 텍스트라 이번 과제에서는 기능이 없다.
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void RatingUI::ShowRatingInputWindow()
+{
+
+}
+
+/*
+Function : RatingUI::CreateNewRating()
+Description: 구매 만족도 입력 창에서 구매 만족도를 추가하는 함수
+Parameters : RatingManagement* ratingManagement
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void RatingUI::CreateNewRating(RatingManagement* ratingManagement)
+{
+    string productName;
+    int ratingValue;
+
+    inputFile >> productName >> ratingValue;
+
+    ratingManagement->SendRating(productName, ratingValue);
+}
+
+/*
+Function : RatingManagement::SendRating()
+Description: 입력한 구매 만족도를 전달하는 함수
+Parameters : int ratingValue
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void RatingManagement::SendRating(string productName, int ratingValue)
+{
+    vector<Product*> purchasedList = curLoginMember->ListPurchasedProduct();
+
+    for (int i = 0; i < purchasedList.size(); i++)
+    {
+        if (productName == purchasedList[i]->getProductName())
+            purchasedList[i]->requestEnrollRating(ratingValue);
+    }
+}
+
+/*
+Function : Product::requestEnrollRating()
+Description: 상품 클래스에 평점 등록을 요청하는 함수
+Parameters : int ratingValue
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void Product::requestEnrollRating(int ratingValue)
+{
+    Rating* rating = new Rating;
+
+    rating->newRating(ratingValue, this->getProductName(), curLoginMember->getMemberName());
+}
+
+/*
+Function : Rating::newRating()
+Description: 해당 상품의 구매 만족도를 등록하는 함수
+Parameters : int ratingValue, string productName, string writer
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+void Rating::newRating(int ratingValue, string productName, string writer)
+{
+    this->ratingValue = ratingValue;
+    this->productName = productName;
+    this->writer = writer;
+
+    string sellerID;
+
+    vector <Product*> purchasedList = curLoginMember->ListPurchasedProduct();
+
+    for (int i = 0; i < purchasedList.size(); i++)
+    {
+        if (productName == purchasedList[i]->getProductName())
+        {
+            purchasedList[i]->ListRating().push_back(this);
+            sellerID = purchasedList[i]->getSellerID();
+            break;
+        }
+    }
+
+    outputFile << "> ";
+    outputFile << sellerID << " ";
+    outputFile << productName << " ";
+    outputFile << ratingValue << endl << endl;
+}
+
+/*
+Function : Product::ListRating()
+Description: 해당 상품의 구매 만족도 리스트를 반환하는 함수
+Parameters : 없음
+Return Value : vector <Rating*> ratingListPointer
+Created: 2022/5/29 9:00 pm
+Author: 김진호
+*/
+vector <Rating*> Product::ListRating()
+{
+    return this->ratingListPointer;
 }
 
 /*
@@ -1028,26 +1602,20 @@ void doTask(){
                 else if (menu1 == 4 && menu2 == 2)
                 {
                     outputFile<<"4.2. 상품 구매"<<endl;
-                    /*
-                        구현부
-                    */
-                    outputFile<<endl<<endl;
+
+                    PurchaseProduct* purchaseProduct = new PurchaseProduct;
                 }
                 else if (menu1 == 4 && menu2 == 3)
                 {
                     outputFile<<"4.3. 상품 구매 내역 조회"<<endl;
-                    /*
-                        구현부
-                    */
-                    outputFile<<endl<<endl;
+
+                    PurchaseHistory* purchaseHistory = new PurchaseHistory;
                 }
                 else if (menu1 == 4 && menu2 == 4)
                 {
                     outputFile<<"4.4. 상품 구매만족도 평가"<<endl;
-                    /*
-                        구현부
-                    */
-                    outputFile<<endl<<endl;
+
+                    RatingManagement* ratingManagement = new RatingManagement;
                 }
                 else if (menu1 == 5 && menu2 == 1)
                 {
@@ -1066,6 +1634,14 @@ void doTask(){
     }
 }
 
+/*
+Function : main()
+Description: 의류 판매 사이트 구현, inputFile로 정보를 입력받아 outputFile로 정보 출력
+Parameters : 없음
+Return Value : 없음
+Created: 2022/5/29 9:00 pm
+Author: 최준수
+*/
 int main() {
     doTask();
     inputFile.close();
