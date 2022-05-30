@@ -436,6 +436,7 @@ public:
     void AddPurchaseProduct(Product* product);
     void AddNewProduct(string input_productName, string input_madeCompanyName, int input_price, int input_productCount);
     void AddRegistedNewProuduct(Product *newProduct);
+    void AddSoldOutProduct(Product* soldoutproduct);
     vector <Product*> ListPurchasedProduct();
     vector <Product*> ListSellingProducts(); //판매중인 상품리스트를 가리키는 포인터
     vector <Product*> ListSoldoutProducts();
@@ -530,6 +531,11 @@ void Member::AddNewProduct(string input_productName, string input_madeCompanyNam
 void Member::AddRegistedNewProuduct(Product *newProduct)
 {
     sellingProductListPointer.push_back(newProduct);
+}
+
+void Member::AddSoldOutProduct(Product* soldoutproduct)
+{
+    (this->soldoutProductListPointer).push_back(soldoutproduct);
 }
 
 vector <Product*> Member::ListSellingProducts()
@@ -1010,8 +1016,9 @@ void ViewSoldoutProduct::ShowSoldoutProduct()
 
     for(int i=0; i<listSoldoutProducts.size(); i++) // 각 상품의 주소의 포인터들을 받아왔으니 반복문을 통해 상세정보를 출력한다. 과제 2 판매의류 조회 1.1.2에 해당
     {
-        outputFile << listSoldoutProducts[i]->getProductName() <<" "<<listSoldoutProducts[i]->getMadeCompanyName() <<" "<<listSoldoutProducts[i]->getPrice()<<" "<<listSoldoutProducts[i]->getProductCount()<<endl;
+        outputFile << "> " <<listSoldoutProducts[i]->getProductName() <<" "<<listSoldoutProducts[i]->getMadeCompanyName() <<" "<<listSoldoutProducts[i]->getPrice()<<" "<<listSoldoutProducts[i]->getProductCount()<<endl;
     }
+    outputFile<<endl;
 }
 
 
@@ -1250,7 +1257,7 @@ void Product::soldOutProduct(Product* soldOutProduct)
                 {
                     ListSellingProduct.erase(ListSellingProduct.begin() + j);
 
-                    sellerPointer->ListSoldoutProducts().push_back(soldOutProduct);
+                    sellerPointer->AddSoldOutProduct(soldOutProduct);
                 }
             }
         }
