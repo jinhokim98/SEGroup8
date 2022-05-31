@@ -1,4 +1,5 @@
-#include <iostream>
+﻿#include <iostream>
+#include <algorithm>
 #include <string>
 #include <vector>
 #include <tuple>
@@ -9,8 +10,8 @@
 
 using namespace std;
 
-ifstream inputFile (INPUT_FILE_NAME);   // input.txt 를 읽기모드로 열음
-ofstream outputFile (OUTPUT_FILE_NAME); // output.txt 를 쓰기모드로 얻음
+ifstream inputFile(INPUT_FILE_NAME);   // input.txt 를 읽기모드로 열음
+ofstream outputFile(OUTPUT_FILE_NAME); // output.txt 를 쓰기모드로 얻음
 
 /*
 Class: SignUp
@@ -22,7 +23,7 @@ mail: cys4439@naver.com
 class SignUp
 {
 private:
-    
+
 public:
     SignUp();
     void ProceedSignUp();
@@ -39,11 +40,11 @@ mail: cys4439@naver.com
 class SignUpUI
 {
 private:
-    
+
 public:
-    void PushSignUpButton(SignUp *signUp);
+    void PushSignUpButton(SignUp* signUp);
     void ShowEssentialInfoInputInterface();
-    void InputEssentialInfo(SignUp *signUp);
+    void InputEssentialInfo(SignUp* signUp);
     void ShowCompleteSignUpMessage(string memberName, string memberIDCardNumber, string memberID, string memberPW);
 };
 
@@ -57,7 +58,7 @@ mail: cys4439@naver.com
 class DeleteMyAccount
 {
 private:
-    
+
 public:
     DeleteMyAccount();
     void DeleteAccount();
@@ -74,9 +75,9 @@ mail: cys4439@naver.com
 class DeleteMyAccountUI
 {
 private:
-    
+
 public:
-    void DeleteAccountButton(DeleteMyAccount *deleteMyAccount);
+    void DeleteAccountButton(DeleteMyAccount* deleteMyAccount);
     void ShowCompleteDeleteAccount(string id);
 };
 
@@ -90,7 +91,7 @@ mail: cys4439@naver.com
 class Login
 {
 private:
-    
+
 public:
     Login();
     bool IDPWinputed(string input_id, string input_pw);
@@ -106,7 +107,7 @@ mail: cys4439@naver.com
 class LoginUI
 {
 private:
-    
+
 public:
     bool inputIDPW(Login* login);
     void ShowCompleteLoginMessage(string curLoginMemberID, string curLoginMemberPW);
@@ -122,7 +123,7 @@ mail: cys4439@naver.com
 class Logout
 {
 private:
-    
+
 public:
     Logout();
     void DoLogout();
@@ -138,16 +139,16 @@ mail: cys4439@naver.com
 class LogoutUI
 {
 private:
-    
+
 public:
-    void PushLogoutButton(Logout *logout);
+    void PushLogoutButton(Logout* logout);
     void ShowCompleteLogoutMessage();
 };
 
 class AddProduct
 {
 private:
-    
+
 public:
     AddProduct();
     void ShowAddUI();
@@ -157,17 +158,17 @@ public:
 class AddProductUI
 {
 private:
-    
+
 public:
-    void AddProductButton(AddProduct *addProduct);
+    void AddProductButton(AddProduct* addProduct);
     void StartInterface();
-    void InputProductData(AddProduct *addProduct);
+    void InputProductData(AddProduct* addProduct);
 };
 
 class ViewProduct
 {
 private:
-    
+
 public:
     ViewProduct();
     void ShowSellingProduct();
@@ -177,9 +178,9 @@ public:
 class ViewProductUI
 {
 private:
-    
+
 public:
-    void ViewSalesProductButton(ViewProduct *viewProduct);
+    void ViewSalesProductButton(ViewProduct* viewProduct);
 
 };
 
@@ -192,12 +193,12 @@ public:
     void ShowSoldoutProduct();
 };
 
-class ViewSoldoutProductUI 
+class ViewSoldoutProductUI
 {
 private:
 
 public:
-    void ViewSoldoutProductButton(ViewSoldoutProduct *viewSoldoutProduct);
+    void ViewSoldoutProductButton(ViewSoldoutProduct* viewSoldoutProduct);
 };
 
 class ProductSalesStats
@@ -214,7 +215,7 @@ class ProductSalesStatsUI
 private:
 
 public:
-    void SalesStatsButton(ProductSalesStats *productSalesStats);
+    void SalesStatsButton(ProductSalesStats* productSalesStats);
 };
 
 /*
@@ -365,6 +366,7 @@ private:
 
 public:
     void newRating(int ratingValue, string productName, string writer);
+    int getRating() { return ratingValue; }
 };
 
 class Product
@@ -377,28 +379,19 @@ protected:
 
 public:
     Product(string input_productName, string input_madeCompanyName, int input_price, int input_productCount);
-    string getSellerID() {  // 판매자ID 반환
-        return sellerID; 
-    }   
-    string getProductName() {
-        return productName;
-    }
-    string getMadeCompanyName() {
-        return madeCompanyName;
-    }
-    int getPrice() {
-        return price;
-    }
+    string getSellerID() { return sellerID; }   // 판매자ID 반환 
+    string getProductName() { return productName; }
+    string getMadeCompanyName() { return madeCompanyName; }
+    int getPrice() { return price; }
     int getRemainCount() { return remainCount; }    // 남은 수량 반환
-
-    int getProductCount() {
-        return productCount;
-    }
+    int getProductCount() { return productCount; }
     int getSellingCount() { return sellingCount; }  // 판매 수량 반환
     vector <Rating*> ListRating();
 
     void getSellingProductDetails();
+    void AddRating(Rating* newRating);
     int getSum();
+    double getAverageRating();
     bool CheckSelectedProduct(string productName);
     void soldOutProduct(Product* soldOutProduct);
     bool orderProduct();
@@ -422,23 +415,24 @@ private:
     vector <Product*> allsalesProductListPointer;   // 판매완료, 판매중 모든 상품 객체의 주소를 가리키는 리스트
 
 public:
-	string getID(){return id;}  // 개체의 id를 get하는 함수
-	string getPW(){return pw;}  // 개체의 pw를 get하는 함수
-	string getMemberName(){return memberName;}  // 개체의 이름을 get하는 함수
-	string getIDCardNumber(){return idCardNumber;}  // 개체의 주민번호를 get하는 함수
-	Member* address_of_object(){return this;}   // 각 개체의 주소를 get하는 함수
-    int checkIDPW(string input_id,string input_pw); // 입력받은 id, pw가 매칭되는지 확인하는 함수
+    string getID() { return id; }  // 개체의 id를 get하는 함수
+    string getPW() { return pw; }  // 개체의 pw를 get하는 함수
+    string getMemberName() { return memberName; }  // 개체의 이름을 get하는 함수
+    string getIDCardNumber() { return idCardNumber; }  // 개체의 주민번호를 get하는 함수
+    Member* address_of_object() { return this; }   // 각 개체의 주소를 get하는 함수
+    int checkIDPW(string input_id, string input_pw); // 입력받은 id, pw가 매칭되는지 확인하는 함수
 
-	Member(string input_id, string input_pw, string input_memberName, string input_idCardNumber); //생성자
-	~Member(); //파괴자
+    Member(string input_id, string input_pw, string input_memberName, string input_idCardNumber); //생성자
+    ~Member(); //파괴자
 
     void AddPurchaseProduct(Product* product);
     void AddNewProduct(string input_productName, string input_madeCompanyName, int input_price, int input_productCount);
-    void AddRegistedNewProuduct(Product *newProduct);
+    void AddRegistedNewProuduct(Product* newProduct);
+    void AddSoldOutProduct(Product* soldoutproduct);
+    void AddAllSalesProduct(Product* newProduct);
     vector <Product*> ListPurchasedProduct();
     vector <Product*> ListSellingProducts(); //판매중인 상품리스트를 가리키는 포인터
-    vector <Product*> ListSoldoutProducts();
-     //판매완료된 상품 리스트를 가리키는 포인터
+    vector <Product*> ListSoldoutProducts(); //판매완료된 상품 리스트를 가리키는 포인터
     vector <Product*> ListAllsalesProducts(); //판매중인 상품과 판매완료된 상품 모두를 가리키는 포인터
 };
 
@@ -459,15 +453,57 @@ Product::Product(string input_productName, string input_madeCompanyName, int inp
     sellingCount = 0;   // 생성되었을때는 판 수량 = 0
 
     curLoginMember->AddRegistedNewProuduct(this);   // 현재 로그인 한 회원이 판매중인 상품을 리스트에 추가한다
+    curLoginMember->AddAllSalesProduct(this);
 
-    outputFile<<this->productName<<" "<<this->madeCompanyName<<" "<<this->price<<" "<<this->productCount<<endl<<endl; // 생성한 상품 객체의 이름, 제조회사명, 가격 ,수량을 출력한다.
+    outputFile << this->productName << " " << this->madeCompanyName << " " << this->price << " " << this->productCount << endl << endl; // 생성한 상품 객체의 이름, 제조회사명, 가격 ,수량을 출력한다.
 }
 
 void Product::getSellingProductDetails()
 {
-    outputFile<<this->productName<<" "<<this->madeCompanyName<<" "<<this->price<<" "<<this->productCount<<endl;
+    outputFile << this->productName << " " << this->madeCompanyName << " " << this->price << " " << this->productCount << endl;
 }
 
+int Product::getSum()
+{
+    int sum = 0;
+    int price = this->getPrice();
+    int selling_count = this->getSellingCount();
+
+    sum = price * selling_count;
+    return sum;
+}
+
+double Product::getAverageRating()
+{
+    double average_rating = 0;
+    int sum = 0;
+    int count = 0;
+
+    vector <Rating*> listRating;
+
+    listRating = this->ListRating();
+
+    for (int i = 0; i < listRating.size(); i++)
+    {
+        count++;
+        sum += listRating[i]->getRating();
+    }
+
+    if (count == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        average_rating = (double)sum / count;
+        return average_rating;
+    }
+}
+
+void Product::AddRating(Rating* newRating)
+{
+    (this->ratingListPointer).push_back(newRating);
+}
 
 /*
 Function : Member::Member(string input_id, string input_pw, string input_memberName, string input_idCardNumber)
@@ -483,12 +519,12 @@ Author: 최준수
 */
 Member::Member(string input_id, string input_pw, string input_memberName, string input_idCardNumber)
 {
-	id = input_id;
-	pw = input_pw;
-	memberName = input_memberName;
-	idCardNumber = input_idCardNumber;
+    id = input_id;
+    pw = input_pw;
+    memberName = input_memberName;
+    idCardNumber = input_idCardNumber;
 
-    MemberLoginInfo.push_back({this->getID(), this->getPW(), this->address_of_object()}); // 입력된 회원의 정보를 MemberLoginInfo에 푸쉬한다.
+    MemberLoginInfo.push_back({ this->getID(), this->getPW(), this->address_of_object() }); // 입력된 회원의 정보를 MemberLoginInfo에 푸쉬한다.
 }
 
 /*
@@ -501,17 +537,17 @@ Author: 최준수
 */
 Member::~Member()
 {
-    for (int i=0; i<MemberLoginInfo.size(); i++)
+    for (int i = 0; i < MemberLoginInfo.size(); i++)
     {
         string id = get<0>(MemberLoginInfo[i]);
         string pw = get<1>(MemberLoginInfo[i]);
-        Member *pointer_Of_Address = get<2>(MemberLoginInfo[i]);
+        Member* pointer_Of_Address = get<2>(MemberLoginInfo[i]);
         // MemberLoginInfo 벡터에 들어있는 각 개체별 id, pw, 객체의 주소 포인터
 
 
         string id_Of_CurObject = this->getID(); // 현재 멤버의 객체의 id
         string pw_Of_CurObject = this->getPW(); // 현재 멤버의 객체의 pw
-        Member *pointer_Of_CurObject = this->address_of_object(); // 현재 멤버의 객체의 주소 포인터
+        Member* pointer_Of_CurObject = this->address_of_object(); // 현재 멤버의 객체의 주소 포인터
 
         if (id_Of_CurObject == id && pw_Of_CurObject == pw && pointer_Of_CurObject == pointer_Of_Address) // 현재 멤버가 가지고있는 정보를 MemberLoginInfo로부터 지운다.
         {
@@ -523,12 +559,22 @@ Member::~Member()
 
 void Member::AddNewProduct(string input_productName, string input_madeCompanyName, int input_price, int input_productCount)
 {
-    Product *newProduct = new Product(input_productName, input_madeCompanyName, input_price, input_productCount); // 받은 정보로 상품 객체를 생성한다
+    Product* newProduct = new Product(input_productName, input_madeCompanyName, input_price, input_productCount); // 받은 정보로 상품 객체를 생성한다
 }
 
-void Member::AddRegistedNewProuduct(Product *newProduct)
+void Member::AddRegistedNewProuduct(Product* newProduct)
 {
     sellingProductListPointer.push_back(newProduct);
+}
+
+void Member::AddSoldOutProduct(Product* soldoutproduct)
+{
+    (this->soldoutProductListPointer).push_back(soldoutproduct);
+}
+
+void Member::AddAllSalesProduct(Product* newProduct)
+{
+    allsalesProductListPointer.push_back(newProduct);
 }
 
 vector <Product*> Member::ListSellingProducts()
@@ -541,6 +587,10 @@ vector <Product*> Member::ListSoldoutProducts()
     return this->soldoutProductListPointer; // 리턴 타입은 vector <Product*> 타입이다
 }
 
+vector <Product*> Member::ListAllsalesProducts()
+{
+    return this->allsalesProductListPointer; // 리턴 타입은 vector <Product*> 타입이다
+}
 
 /*
 Function : bool LoginUI::inputIDPW(Login* login)
@@ -553,9 +603,9 @@ Author: 최준수
 bool LoginUI::inputIDPW(Login* login)
 {
     string input_id, input_pw;
-    inputFile>>input_id>>input_pw;    // UI에 id, pw 입력
+    inputFile >> input_id >> input_pw;    // UI에 id, pw 입력
 
-    return login->IDPWinputed(input_id,input_pw);   //컨트롤 클래스에게 입력한 id, pw 전달
+    return login->IDPWinputed(input_id, input_pw);   //컨트롤 클래스에게 입력한 id, pw 전달
 }
 
 /*
@@ -571,7 +621,7 @@ Author: 최준수
 void LoginUI::ShowCompleteLoginMessage(string curLoginMemberID, string curLoginMemberPW)
 {
     //로그인이 완료되었다는 창을 띄우는 코드 (이번과제에서는 로그인한 회원의 아이디 비밀번호를 텍스트로 출력)
-    outputFile<<"> "<<curLoginMemberID<<" "<<curLoginMemberPW<<endl<<endl;
+    outputFile << "> " << curLoginMemberID << " " << curLoginMemberPW << endl << endl;
 }
 
 /*
@@ -583,17 +633,17 @@ Created: 2022/5/26 3:00 am
 Author: 최준수
 */
 Login::Login()
-{   
-    LoginUI *loginUI = new LoginUI;
+{
+    LoginUI* loginUI = new LoginUI;
 
     if (loginUI->inputIDPW(this))   // id pw를 입력한다. 로그인이 가능하면 (입력한 id와 입력한 pw가 매칭이 맞는경우) 로그인 한다.
     {
-        loginState=true;
+        loginState = true;
         loginUI->ShowCompleteLoginMessage(curLoginMember->getID(), curLoginMember->getPW());
     }
     else    // 로그인이 불가능하면 (입력한 id와 입력한 pw가 매칭이 아닌경우) 로그인 하지 못하게 한다.
     {
-        outputFile<<"회원 정보가 없거나 id와 pw가 매칭이 되지않습니다. 로그인 실패"<<endl<<endl;  // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+        outputFile << "회원 정보가 없거나 id와 pw가 매칭이 되지않습니다. 로그인 실패" << endl << endl;  // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
     }
 }
 
@@ -609,9 +659,9 @@ Author: 최준수
 */
 bool Login::IDPWinputed(string input_id, string input_pw)
 {
-    if (curLoginMember->checkIDPW(input_id,input_pw)!=-1) // id와 pw가 매칭되면
+    if (curLoginMember->checkIDPW(input_id, input_pw) != -1) // id와 pw가 매칭되면
     {
-        curLoginMember=get<2>(MemberLoginInfo[curLoginMember->checkIDPW(input_id, input_pw)]); // 매칭된 id,pw의 회원으로 현재 로그인중인 회원의 정보를 설정함
+        curLoginMember = get<2>(MemberLoginInfo[curLoginMember->checkIDPW(input_id, input_pw)]); // 매칭된 id,pw의 회원으로 현재 로그인중인 회원의 정보를 설정함
         return true;    // 로그인 가능하므로 true 반환
     }
     return false;   // 로그인 불가능하면 false 반환
@@ -627,12 +677,12 @@ Return Value : int
 Created: 2022/5/25 5:00 am
 Author: 최준수
 */
-int Member::checkIDPW(string input_id,string input_pw)
+int Member::checkIDPW(string input_id, string input_pw)
 {
-    for (int i=0; i<MemberLoginInfo.size(); i++)
+    for (int i = 0; i < MemberLoginInfo.size(); i++)
     {
-        string id=get<0>(MemberLoginInfo[i]);
-        string pw=get<1>(MemberLoginInfo[i]);
+        string id = get<0>(MemberLoginInfo[i]);
+        string pw = get<1>(MemberLoginInfo[i]);
         if (id == input_id && pw == input_pw) // 입력한 id와 pw가 매칭 되면
         {
             return i; // 인덱스 반환
@@ -649,7 +699,7 @@ Return Value : void
 Created: 2022/5/26 3:00 am
 Author: 최준수
 */
-void LogoutUI::PushLogoutButton(Logout *logout)
+void LogoutUI::PushLogoutButton(Logout* logout)
 {
     if (loginState)  // 로그인 상태에서만 로그아웃 할 수 있다.
     {
@@ -657,7 +707,7 @@ void LogoutUI::PushLogoutButton(Logout *logout)
     }
     else
     {
-        outputFile<<"로그인 상태에서 로그아웃 해주세요"<<endl<<endl;  // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+        outputFile << "로그인 상태에서 로그아웃 해주세요" << endl << endl;  // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
         return;
     }
 }
@@ -673,7 +723,7 @@ Author: 최준수
 void LogoutUI::ShowCompleteLogoutMessage()
 {
     //로그아웃이 완료되었다는 창을 띄우는 코드 (이번과제에서는 로그아웃한 회원의 아이디를 텍스트로 출력)
-    outputFile<<"> "<<curLoginMember->getID()<<endl<<endl;
+    outputFile << "> " << curLoginMember->getID() << endl << endl;
 }
 
 /*
@@ -686,7 +736,7 @@ Author: 최준수
 */
 Logout::Logout()
 {
-    LogoutUI *logoutUI = new LogoutUI(); logoutUI->PushLogoutButton(this);
+    LogoutUI* logoutUI = new LogoutUI(); logoutUI->PushLogoutButton(this);
 }
 
 /*
@@ -699,10 +749,10 @@ Author: 최준수
 */
 void Logout::DoLogout()
 {
-    LogoutUI *logoutUI = new LogoutUI;
+    LogoutUI* logoutUI = new LogoutUI;
     logoutUI->ShowCompleteLogoutMessage();
-    curLoginMember=NULL;
-    loginState=false;
+    curLoginMember = NULL;
+    loginState = false;
 }
 
 /*
@@ -713,7 +763,7 @@ Return Value : void
 Created: 2022/5/26 6:00 am
 Author: 최준수
 */
-void SignUpUI::PushSignUpButton(SignUp *signUp)
+void SignUpUI::PushSignUpButton(SignUp* signUp)
 {
     signUp->ProceedSignUp();
 }
@@ -726,10 +776,10 @@ Return Value : void
 Created: 2022/5/26 6:00 am
 Author: 최준수
 */
-void SignUpUI::InputEssentialInfo(SignUp *signUp)
+void SignUpUI::InputEssentialInfo(SignUp* signUp)
 {
     string input_id, input_pw, input_memberName, input_idCardNumber;
-    inputFile>>input_memberName>>input_idCardNumber>>input_id>>input_pw;  // 회원의 기본정보입력
+    inputFile >> input_memberName >> input_idCardNumber >> input_id >> input_pw;  // 회원의 기본정보입력
 
     signUp->getEssentailInfo(input_memberName, input_idCardNumber, input_id, input_pw); // 회원의 기본 정보를 컨트롤 클래스로 넘김
 }
@@ -764,7 +814,7 @@ Author: 최준수
 void SignUpUI::ShowCompleteSignUpMessage(string memberName, string memberIDCardNumber, string memberID, string memberPW)
 {
     // 회원가입 완료했다는 메세지 과제 형식에 맞게 출력
-    outputFile<<"> "<<memberName<<" "<<memberIDCardNumber<<" "<<memberID<<" "<<memberPW<<endl<<endl;
+    outputFile << "> " << memberName << " " << memberIDCardNumber << " " << memberID << " " << memberPW << endl << endl;
 }
 
 /*
@@ -777,7 +827,7 @@ Author: 최준수
 */
 SignUp::SignUp()
 {
-    SignUpUI *signUpUI = new SignUpUI;
+    SignUpUI* signUpUI = new SignUpUI;
     signUpUI->PushSignUpButton(this);
     signUpUI->InputEssentialInfo(this);
 }
@@ -792,7 +842,7 @@ Author: 최준수
 */
 void SignUp::ProceedSignUp()
 {
-    SignUpUI *signUpUI = new SignUpUI;
+    SignUpUI* signUpUI = new SignUpUI;
     signUpUI->ShowEssentialInfoInputInterface();
 }
 
@@ -812,16 +862,16 @@ void SignUp::getEssentailInfo(string input_memberName, string input_idCardNumber
 {
     bool signupPossible = true; //회원가입 가능하면 true 아니면 false
 
-    for (int i=0; i<MemberLoginInfo.size(); i++)
+    for (int i = 0; i < MemberLoginInfo.size(); i++)
     {
-        string id=get<0>(MemberLoginInfo[i]);
+        string id = get<0>(MemberLoginInfo[i]);
 
-        if (id==input_id)    // 벡터에 입력한 id가 존재하면 id 중복이 안되므로
+        if (id == input_id)    // 벡터에 입력한 id가 존재하면 id 중복이 안되므로
         {
             signupPossible = false; // 가입이 불가능하다.
         }
     }
-    
+
     if (signupPossible)  // 회원가입이 가능하면 (=겹치는 아이디없으면) 회원가입한다.
     {
         Member* m = new Member(input_id, input_pw, input_memberName, input_idCardNumber);
@@ -831,7 +881,7 @@ void SignUp::getEssentailInfo(string input_memberName, string input_idCardNumber
     }
     else // 회원가입이 불가능하면 (=겹치는 아이디있으면) 회원가입 못하게한다.
     {
-        outputFile<<"아이디가 겹쳐서 회원가입이 불가능 합니다"<<endl<<endl;   // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+        outputFile << "아이디가 겹쳐서 회원가입이 불가능 합니다" << endl << endl;   // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
     }
 }
 
@@ -843,7 +893,7 @@ Return Value : void
 Created: 2022/5/26 6:00 am
 Author: 최준수
 */
-void DeleteMyAccountUI::DeleteAccountButton(DeleteMyAccount *deleteMyAccount)
+void DeleteMyAccountUI::DeleteAccountButton(DeleteMyAccount* deleteMyAccount)
 {
     deleteMyAccount->DeleteAccount();
 }
@@ -859,7 +909,7 @@ Author: 최준수
 void DeleteMyAccountUI::ShowCompleteDeleteAccount(string curMemberID)
 {
     //회원탈퇴가 완료되었다는 창을 띄우는 코드 (이번과제에서는 회원탈퇴한 회원의 아이디를 텍스트로 출력)
-    outputFile<<"> "<<curMemberID<<endl<<endl;
+    outputFile << "> " << curMemberID << endl << endl;
 }
 
 /*
@@ -872,7 +922,7 @@ Author: 최준수
 */
 DeleteMyAccount::DeleteMyAccount()
 {
-    DeleteMyAccountUI *deleteMyAccountUI = new DeleteMyAccountUI;
+    DeleteMyAccountUI* deleteMyAccountUI = new DeleteMyAccountUI;
     deleteMyAccountUI->DeleteAccountButton(this);
 }
 
@@ -888,36 +938,36 @@ void DeleteMyAccount::DeleteAccount()
 {
     if (loginState)  // 현재 로그인 중일때만 회원 탈퇴가 가능하다.
     {
-        DeleteMyAccountUI *deleteMyAccountUI = new DeleteMyAccountUI;
+        DeleteMyAccountUI* deleteMyAccountUI = new DeleteMyAccountUI;
         string curMemberID = curLoginMember->getID();   // 탈퇴하는 회원의 아이디 정보
         curLoginMember->~Member(); // 객체 삭제한다.
         deleteMyAccountUI->ShowCompleteDeleteAccount(curMemberID); //UI에 회원 탈퇴가 되었다는 창을 띄운다
-        curLoginMember=NULL; // 현재 로그인중인 회원 없음.
-        loginState=false; // 로그아웃상태로 만든다.
+        curLoginMember = NULL; // 현재 로그인중인 회원 없음.
+        loginState = false; // 로그아웃상태로 만든다.
     }
     else    // 로그아웃 상태에서 회원탈퇴 하는것은 안된다.
     {
-        outputFile<<"로그인을 진행한 후에 회원탈퇴를 해주세요"<<endl<<endl;   // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+        outputFile << "로그인을 진행한 후에 회원탈퇴를 해주세요" << endl << endl;   // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
     }
 }
 
 AddProduct::AddProduct()
 {
-    if(loginState)  // 로그인 중 상태 일 때만 판매 의류를 등록 할 수있다.
+    if (loginState)  // 로그인 중 상태 일 때만 판매 의류를 등록 할 수있다.
     {
-        AddProductUI *addProductUI = new AddProductUI;
+        AddProductUI* addProductUI = new AddProductUI;
         addProductUI->AddProductButton(this);
         addProductUI->InputProductData(this);
     }
     else
     {
-        outputFile<<"로그인 상태에서 의류 등록을 할 수 있습니다. 로그인 해주세요"<<endl<<endl;
+        outputFile << "로그인 상태에서 의류 등록을 할 수 있습니다. 로그인 해주세요" << endl << endl;
     }
 }
 
 void AddProduct::ShowAddUI()
 {
-    AddProductUI *addProductUI = new AddProductUI;
+    AddProductUI* addProductUI = new AddProductUI;
     addProductUI->StartInterface();
 }
 
@@ -926,7 +976,7 @@ void AddProduct::SendProductData(string input_productName, string input_madeComp
     curLoginMember->AddNewProduct(input_productName, input_madeCompanyName, input_price, input_productCount);   // 현재 로그인 한 회원이 새 상품을 등록하는 함수를 호출한다
 }
 
-void AddProductUI::AddProductButton(AddProduct *addProduct)
+void AddProductUI::AddProductButton(AddProduct* addProduct)
 {
     addProduct->ShowAddUI();
 }
@@ -938,27 +988,27 @@ void AddProductUI::StartInterface()
     */
 }
 
-void AddProductUI::InputProductData(AddProduct *addProduct)
+void AddProductUI::InputProductData(AddProduct* addProduct)
 {
     string input_productName, input_madeCompanyName;
     int input_price, input_productCount;
 
-    inputFile>>input_productName>>input_madeCompanyName>>input_price>>input_productCount;   // 상품명, 제조회사명, 가격, 수량을 파일로 부터 입력받는다.
+    inputFile >> input_productName >> input_madeCompanyName >> input_price >> input_productCount;   // 상품명, 제조회사명, 가격, 수량을 파일로 부터 입력받는다.
 
     addProduct->SendProductData(input_productName, input_madeCompanyName, input_price, input_productCount); // 입력받은 정보를 컨트롤 클래스로 전해준다.
 }
 
 ViewProduct::ViewProduct()
 {
-    if(loginState)  // 로그인 상태에서만 판매중인 의류를 조회 가능하다.
+    if (loginState)  // 로그인 상태에서만 판매중인 의류를 조회 가능하다.
     {
-        ViewProductUI *viewProductUI = new ViewProductUI;
+        ViewProductUI* viewProductUI = new ViewProductUI;
 
         viewProductUI->ViewSalesProductButton(this);
     }
     else    // 비로그인 상태에서는 당연히 판매중인 의류를 조회 불가능하다.
     {
-        outputFile<<"로그인하지 않으면 판매중인 의류를 조회 할 수 없습니다. 로그인해주세요."<<endl<<endl;// 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+        outputFile << "로그인하지 않으면 판매중인 의류를 조회 할 수 없습니다. 로그인해주세요." << endl << endl;// 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
     }
 }
 
@@ -969,73 +1019,93 @@ void ViewProduct::ShowSellingProduct()
 
     listSellingProducts = curLoginMember->ListSellingProducts(); // 과제2 판매의류 조회 1.1.1에 해당
 
-    for(int i=0; i<listSellingProducts.size(); i++) // 각 상품의 주소의 포인터들을 받아왔으니 반복문을 통해 상세정보를 출력한다. 과제 2 판매의류 조회 1.1.2에 해당
+    for (int i = 0; i < listSellingProducts.size(); i++) // 각 상품의 주소의 포인터들을 받아왔으니 반복문을 통해 상세정보를 출력한다. 과제 2 판매의류 조회 1.1.2에 해당
     {
-        outputFile << listSellingProducts[i]->getProductName() <<" "<<listSellingProducts[i]->getMadeCompanyName() <<" "<<listSellingProducts[i]->getPrice()<<" "<<listSellingProducts[i]->getProductCount()<<endl;
+        outputFile << listSellingProducts[i]->getProductName() << " " << listSellingProducts[i]->getMadeCompanyName() << " " << listSellingProducts[i]->getPrice() << " " << listSellingProducts[i]->getProductCount() << endl;
     }
 
-    outputFile<<endl;
+    outputFile << endl;
 }
 
-void ViewProductUI::ViewSalesProductButton(ViewProduct *viewProduct)
+void ViewProductUI::ViewSalesProductButton(ViewProduct* viewProduct)
 {
     viewProduct->ShowSellingProduct();
 }
 
 ViewSoldoutProduct::ViewSoldoutProduct()
 {
-    if(loginState)  // 로그인 상태에서만 판매완료된 의류를 조회 가능하다.
+    if (loginState)  // 로그인 상태에서만 판매완료된 의류를 조회 가능하다.
     {
-        ViewSoldoutProductUI *viewSoldoutProductUI = new ViewSoldoutProductUI;
+        ViewSoldoutProductUI* viewSoldoutProductUI = new ViewSoldoutProductUI;
 
         viewSoldoutProductUI->ViewSoldoutProductButton(this);
     }
     else    // 비로그인 상태에서는 판매 완료된 의류를 조회 불가능하다. 예외처리
     {
-        outputFile<<"로그인하지 않으면 판매완료된 의류를 조회 할 수 없습니다. 로그인해주세요."<<endl<<endl;// 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+        outputFile << "로그인하지 않으면 판매완료된 의류를 조회 할 수 없습니다. 로그인해주세요." << endl << endl;// 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
     }
 }
 
-void ViewSoldoutProductUI::ViewSoldoutProductButton(ViewSoldoutProduct *viewSoldoutProduct) 
+void ViewSoldoutProductUI::ViewSoldoutProductButton(ViewSoldoutProduct* viewSoldoutProduct)
 {
     viewSoldoutProduct->ShowSoldoutProduct();
 }
 
-void ViewSoldoutProduct::ShowSoldoutProduct() 
+void ViewSoldoutProduct::ShowSoldoutProduct()
 {
     vector <Product*> listSoldoutProducts;
 
     listSoldoutProducts = curLoginMember->ListSoldoutProducts();
 
-    for(int i=0; i<listSoldoutProducts.size(); i++) // 각 상품의 주소의 포인터들을 받아왔으니 반복문을 통해 상세정보를 출력한다. 과제 2 판매의류 조회 1.1.2에 해당
+    for (int i = 0; i < listSoldoutProducts.size(); i++) // 각 상품의 주소의 포인터들을 받아왔으니 반복문을 통해 상세정보를 출력한다. 과제 2 판매의류 조회 1.1.2에 해당
     {
-        outputFile << listSoldoutProducts[i]->getProductName() <<" "<<listSoldoutProducts[i]->getMadeCompanyName() <<" "<<listSoldoutProducts[i]->getPrice()<<" "<<listSoldoutProducts[i]->getProductCount()<<endl;
+        outputFile << "> " << listSoldoutProducts[i]->getProductName() << " " << listSoldoutProducts[i]->getMadeCompanyName() << " " << listSoldoutProducts[i]->getPrice() << " " << listSoldoutProducts[i]->getProductCount() << endl;
     }
+    outputFile << endl;
 }
 
 
 ProductSalesStats::ProductSalesStats()
 {
-    if(loginState) //로그인 상태 확인
+    if (loginState) //로그인 상태 확인
     {
-        ProductSalesStatsUI *productSalesStats = new ProductSalesStatsUI;
+        ProductSalesStatsUI* productSalesStats = new ProductSalesStatsUI;
 
         productSalesStats->SalesStatsButton(this);
     }
     else //로그인 하지 않았다면 판매통계는 사용할 수 없다.
     {
-        outputFile<<"로그인하지 않으면 상품판매통계를 조회 할 수 없습니다. 로그인해주세요."<<endl<<endl;// 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+        outputFile << "로그인하지 않으면 상품판매통계를 조회 할 수 없습니다. 로그인해주세요." << endl << endl;// 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
     }
 }
 
-void ProductSalesStatsUI::SalesStatsButton(ProductSalesStats *productSalesStats)
+void ProductSalesStatsUI::SalesStatsButton(ProductSalesStats* productSalesStats)
 {
     productSalesStats->ShowSalesStats();
 }
 
 void ProductSalesStats::ShowSalesStats()
 {
+    if (loginState)
+    {
 
+        vector <Product*> listAllSalesProduct;
+        listAllSalesProduct = curLoginMember->ListAllsalesProducts(); //현재 로그인된 회원의 모든 상품 리스트를 가져온다.
+
+        for (int i = 0; i < listAllSalesProduct.size(); i++)
+        {
+            outputFile << listAllSalesProduct[i]->getProductName() << " ";
+            outputFile << listAllSalesProduct[i]->getSum() << " ";
+            outputFile << listAllSalesProduct[i]->getAverageRating() << " ";
+            outputFile << endl;
+        }
+        outputFile << endl;
+
+    }
+    else
+    {
+        outputFile << "로그인을 진행한 후에 상품판매통계를 진행해주세요" << endl << endl;   // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+    }
 }
 
 /*
@@ -1114,13 +1184,16 @@ void SearchProduct::ShowProductInfo(string productName)
                 outputFile << listSellingProducts[j]->getMadeCompanyName() << " ";
                 outputFile << listSellingProducts[j]->getPrice() << " ";
                 outputFile << listSellingProducts[j]->getRemainCount() << " ";
-                //outputFile << listSellingProducts[j]->getAverageRating() << 
+                outputFile << listSellingProducts[j]->getAverageRating();
                 outputFile << endl << endl;
 
                 curSearchedProduct = listSellingProducts[j];  // 현재 검색한 상품명을 전역변수에 저장
+                return;
             }
         }
     }
+    curSearchedProduct = NULL;
+    return;
 }
 
 /*
@@ -1133,7 +1206,7 @@ Author: 김진호
 */
 bool Product::CheckSelectedProduct(string productName)
 {
-    if (this->productName == productName)
+    if (this->productName == productName && this->getRemainCount() > 0)
         return true;
     else
         return false;
@@ -1187,7 +1260,7 @@ void PurchaseProduct::ProceedPurchase()
     }
     else
     {
-        outputFile << "해당 상품은 재고가 없습니다.";
+        outputFile << "해당 상품은 재고가 없습니다." << endl << endl;
     }
 }
 
@@ -1218,6 +1291,8 @@ bool Product::orderProduct()
     {
         remainCount--;  // 상품을 구매했기 때문에 재고 하나를 뺀다.
 
+        sellingCount++; //상품을 구매했기 때문에 구매수를 하나 올린다.
+
         if (remainCount == 0)
         {
             this->soldOutProduct(this);
@@ -1246,7 +1321,7 @@ void Product::soldOutProduct(Product* soldOutProduct)
                 {
                     ListSellingProduct.erase(ListSellingProduct.begin() + j);
 
-                    sellerPointer->ListSoldoutProducts().push_back(soldOutProduct);
+                    sellerPointer->AddSoldOutProduct(soldOutProduct);
                 }
             }
         }
@@ -1292,17 +1367,33 @@ void PurchaseHistory::ProceedPurchaseHistory()
 {
     vector <Product*> purchasedProduct = curLoginMember->ListPurchasedProduct();
 
+    vector < tuple<string, string, string, int, int, double> > v;
+
     for (int i = 0; i < purchasedProduct.size(); i++)
     {
-        outputFile << "> ";
-        outputFile << purchasedProduct[i]->getSellerID() << " ";
-        outputFile << purchasedProduct[i]->getProductName() << " ";
-        outputFile << purchasedProduct[i]->getMadeCompanyName() << " ";
-        outputFile << purchasedProduct[i]->getPrice() << " ";
-        outputFile << purchasedProduct[i]->getRemainCount() << " ";
-        //outputFile << purchasedProduct[i]->getAverageRating();
-        outputFile << endl << endl;
+        string sellerID = purchasedProduct[i]->getSellerID();
+        string productName = purchasedProduct[i]->getProductName();
+        string madeCompanyName = purchasedProduct[i]->getMadeCompanyName();
+        int productPrice = purchasedProduct[i]->getPrice();
+        int productRemainCount = purchasedProduct[i]->getRemainCount();
+        double averageRating = purchasedProduct[i]->getAverageRating();
+        v.push_back({ sellerID, productName, madeCompanyName, productPrice, productRemainCount, averageRating });
     }
+
+    sort(v.begin(), v.end());
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        outputFile << "> ";
+        outputFile << get<0>(v[i]) << " ";
+        outputFile << get<1>(v[i]) << " ";
+        outputFile << get<2>(v[i]) << " ";
+        outputFile << get<3>(v[i]) << " ";
+        outputFile << get<4>(v[i]) << " ";
+        outputFile << get<5>(v[i]);
+        outputFile << endl;
+    }
+    outputFile << endl;
 }
 
 /*
@@ -1489,7 +1580,7 @@ void Rating::newRating(int ratingValue, string productName, string writer)
     {
         if (productName == purchasedList[i]->getProductName())
         {
-            purchasedList[i]->ListRating().push_back(this);
+            purchasedList[i]->AddRating(this);
             sellerID = purchasedList[i]->getSellerID();
             break;
         }
@@ -1522,7 +1613,7 @@ Return Value : void
 Created: 2022/5/25 : 3:00 pm
 Author: 최준수
 */
-void doTask(){
+void doTask() {
     if (inputFile.is_open())    //파일이 열려있는지 확인
     {
         while (!inputFile.eof())    //파일의 끝까지 읽는것을 반복
@@ -1531,104 +1622,104 @@ void doTask(){
 
             while (1)
             {
-                int menu1,menu2;
-                inputFile>>menu1>>menu2;    // 파일로부터 메뉴2개 를 입력받음
+                int menu1, menu2;
+                inputFile >> menu1 >> menu2;    // 파일로부터 메뉴2개 를 입력받음
 
                 if (menu1 == 1 && menu2 == 1)
                 {
-                    outputFile<<"1.1. 회원가입"<<endl;
+                    outputFile << "1.1. 회원가입" << endl;
 
                     if (loginState)  // 현재 로그인중이라면 회원가입을 할 수 없다.
                     {
-                        outputFile<<"로그아웃 후 회원가입을 진행해주세요"<<endl<<endl;    // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+                        outputFile << "로그아웃 후 회원가입을 진행해주세요" << endl << endl;    // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
                     }
                     else    // 로그아웃 상태에서만 회원가입을 할 수 있다.
                     {
-                        SignUp *signUp = new SignUp;
+                        SignUp* signUp = new SignUp;
                     }
                 }
                 else if (menu1 == 1 && menu2 == 2)
                 {
-                    outputFile<<"1.2. 회원탈퇴"<<endl;
+                    outputFile << "1.2. 회원탈퇴" << endl;
 
-                    DeleteMyAccount *deleteMyAccount = new DeleteMyAccount;
+                    DeleteMyAccount* deleteMyAccount = new DeleteMyAccount;
                 }
                 else if (menu1 == 2 && menu2 == 1)
                 {
-                    outputFile<<"2.1. 로그인"<<endl;
+                    outputFile << "2.1. 로그인" << endl;
 
                     if (loginState)  // 로그인 상태에서는 로그인을 할 수 없다.
                     {
-                        outputFile<<"로그인 할 수없습니다 로그아웃 후 사용해주세요"<<endl<<endl;  // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+                        outputFile << "로그인 할 수없습니다 로그아웃 후 사용해주세요" << endl << endl;  // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
                     }
                     else // 로그아웃 상태에서만 로그인 할 수 있다.
                     {
-                        Login *login = new Login;
+                        Login* login = new Login;
                     }
                 }
                 else if (menu1 == 2 && menu2 == 2)
                 {
-                    outputFile<<"2.2. 로그아웃"<<endl;
+                    outputFile << "2.2. 로그아웃" << endl;
 
-                    Logout *logout = new Logout;
+                    Logout* logout = new Logout;
 
                 }
                 else if (menu1 == 3 && menu2 == 1)
                 {
-                    outputFile<<"3.1. 판매 의류 등록"<<endl;
-                    
-                    AddProduct *addProduct = new AddProduct;
+                    outputFile << "3.1. 판매 의류 등록" << endl;
+
+                    AddProduct* addProduct = new AddProduct;
 
                 }
                 else if (menu1 == 3 && menu2 == 2)
                 {
-                    outputFile<<"3.2. 등록 상품 조회"<<endl;
+                    outputFile << "3.2. 등록 상품 조회" << endl;
 
-                    ViewProduct *viewProduct = new ViewProduct;
+                    ViewProduct* viewProduct = new ViewProduct;
 
                 }
                 else if (menu1 == 3 && menu2 == 3)
                 {
-                    outputFile<<"3.3. 판매 완료 상품 조회"<<endl;
-                    
-                    ViewSoldoutProduct *viewSoldoutProduct = new ViewSoldoutProduct;
+                    outputFile << "3.3. 판매 완료 상품 조회" << endl;
+
+                    ViewSoldoutProduct* viewSoldoutProduct = new ViewSoldoutProduct;
                 }
                 else if (menu1 == 4 && menu2 == 1)
                 {
-                    outputFile<<"4.1. 상품 정보 검색"<<endl;
-                    
-                    SearchProduct *searchProduct = new SearchProduct;
+                    outputFile << "4.1. 상품 정보 검색" << endl;
+
+                    SearchProduct* searchProduct = new SearchProduct;
                 }
                 else if (menu1 == 4 && menu2 == 2)
                 {
-                    outputFile<<"4.2. 상품 구매"<<endl;
+                    outputFile << "4.2. 상품 구매" << endl;
 
                     PurchaseProduct* purchaseProduct = new PurchaseProduct;
                 }
                 else if (menu1 == 4 && menu2 == 3)
                 {
-                    outputFile<<"4.3. 상품 구매 내역 조회"<<endl;
+                    outputFile << "4.3. 상품 구매 내역 조회" << endl;
 
                     PurchaseHistory* purchaseHistory = new PurchaseHistory;
                 }
                 else if (menu1 == 4 && menu2 == 4)
                 {
-                    outputFile<<"4.4. 상품 구매만족도 평가"<<endl;
+                    outputFile << "4.4. 상품 구매만족도 평가" << endl;
 
                     RatingManagement* ratingManagement = new RatingManagement;
                 }
                 else if (menu1 == 5 && menu2 == 1)
                 {
-                    outputFile<<"5.1. 판매 상품 통계"<<endl;
-                    
-                    ProductSalesStats *productSalesStats = new ProductSalesStats;
+                    outputFile << "5.1. 판매 상품 통계" << endl;
+
+                    ProductSalesStats* productSalesStats = new ProductSalesStats;
                 }
-                else if (menu1 == 6 && menu2 ==1)
+                else if (menu1 == 6 && menu2 == 1)
                 {
-                    outputFile<<"6.1. 종료"<<endl;
-                    return ; //doTask 함수종료
+                    outputFile << "6.1. 종료" << endl;
+                    return; //doTask 함수종료
                 }
-                getline(inputFile,str);
+                getline(inputFile, str);
             }
         }
     }
