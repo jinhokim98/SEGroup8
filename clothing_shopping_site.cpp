@@ -366,6 +366,7 @@ private:
 
 public:
     void newRating(int ratingValue, string productName, string writer);
+    int getRating() { return ratingValue; }
 };
 
 class Product
@@ -378,28 +379,19 @@ protected:
 
 public:
     Product(string input_productName, string input_madeCompanyName, int input_price, int input_productCount);
-    string getSellerID() {  // 판매자ID 반환
-        return sellerID; 
-    }   
-    string getProductName() {
-        return productName;
-    }
-    string getMadeCompanyName() {
-        return madeCompanyName;
-    }
-    int getPrice() {
-        return price;
-    }
+    string getSellerID() { return sellerID; }   // 판매자ID 반환 
+    string getProductName() { return productName; }
+    string getMadeCompanyName() { return madeCompanyName; }
+    int getPrice() { return price; }
     int getRemainCount() { return remainCount; }    // 남은 수량 반환
-
-    int getProductCount() {
-        return productCount;
-    }
+    int getProductCount() { return productCount; }
     int getSellingCount() { return sellingCount; }  // 판매 수량 반환
     vector <Rating*> ListRating();
 
     void getSellingProductDetails();
+    void AddRating(Rating *newRating);
     int getSum();
+    int getAverageRating();
     bool CheckSelectedProduct(string productName);
     void soldOutProduct(Product* soldOutProduct);
     bool orderProduct();
@@ -437,10 +429,10 @@ public:
     void AddNewProduct(string input_productName, string input_madeCompanyName, int input_price, int input_productCount);
     void AddRegistedNewProuduct(Product *newProduct);
     void AddSoldOutProduct(Product* soldoutproduct);
+    void AddAllSalesProduct(Product *newProduct);
     vector <Product*> ListPurchasedProduct();
     vector <Product*> ListSellingProducts(); //판매중인 상품리스트를 가리키는 포인터
-    vector <Product*> ListSoldoutProducts();
-     //판매완료된 상품 리스트를 가리키는 포인터
+    vector <Product*> ListSoldoutProducts(); //판매완료된 상품 리스트를 가리키는 포인터
     vector <Product*> ListAllsalesProducts(); //판매중인 상품과 판매완료된 상품 모두를 가리키는 포인터
 };
 
@@ -461,6 +453,7 @@ Product::Product(string input_productName, string input_madeCompanyName, int inp
     sellingCount = 0;   // 생성되었을때는 판 수량 = 0
 
     curLoginMember->AddRegistedNewProuduct(this);   // 현재 로그인 한 회원이 판매중인 상품을 리스트에 추가한다
+    curLoginMember->AddAllSalesProduct(this);
 
     outputFile<<this->productName<<" "<<this->madeCompanyName<<" "<<this->price<<" "<<this->productCount<<endl<<endl; // 생성한 상품 객체의 이름, 제조회사명, 가격 ,수량을 출력한다.
 }
@@ -470,6 +463,40 @@ void Product::getSellingProductDetails()
     outputFile<<this->productName<<" "<<this->madeCompanyName<<" "<<this->price<<" "<<this->productCount<<endl;
 }
 
+int Product::getSum()
+{
+    int sum = 0;
+    int price = this->getPrice();
+    int selling_count = this->getSellingCount();
+
+    sum = price * selling_count;
+    return sum;
+}
+
+int Product::getAverageRating()
+{
+    int average_rating = 0;
+    int sum = 0;
+    int count = 0;
+
+    vector <Rating*> listRating;
+
+    listRating = this->ListRating();
+
+    for (int i=0;i<listRating.size();i++) 
+    {
+        count++;
+        sum += listRating[i]->getRating();
+    }
+
+    average_rating = sum / count;
+    return average_rating;
+}
+
+void Product::AddRating(Rating *newRating) 
+{
+    (this->ratingListPointer).push_back(newRating);
+}
 
 /*
 Function : Member::Member(string input_id, string input_pw, string input_memberName, string input_idCardNumber)
@@ -538,6 +565,11 @@ void Member::AddSoldOutProduct(Product* soldoutproduct)
     (this->soldoutProductListPointer).push_back(soldoutproduct);
 }
 
+void Member::AddAllSalesProduct(Product *newProduct)
+{
+    allsalesProductListPointer.push_back(newProduct);
+}
+
 vector <Product*> Member::ListSellingProducts()
 {
     return this->sellingProductListPointer; // 리턴 타입은 vector <Product*> 타입이다
@@ -548,6 +580,10 @@ vector <Product*> Member::ListSoldoutProducts()
     return this->soldoutProductListPointer; // 리턴 타입은 vector <Product*> 타입이다
 }
 
+vector <Product*> Member::ListAllsalesProducts()
+{
+    return this->allsalesProductListPointer; // 리턴 타입은 vector <Product*> 타입이다
+}
 
 /*
 Function : bool LoginUI::inputIDPW(Login* login)
@@ -1043,7 +1079,26 @@ void ProductSalesStatsUI::SalesStatsButton(ProductSalesStats *productSalesStats)
 
 void ProductSalesStats::ShowSalesStats()
 {
+    if(loginState)
+    {
+        
+        vector <Product*> listAllSalesProduct;
+        listAllSalesProduct = curLoginMember->ListAllsalesProducts(); //현재 로그인된 회원의 모든 상품 리스트를 가져온다.
 
+        for(int i=0; i<listAllSalesProduct.size(); i++) 
+        {
+            outputFile<<listAllSalesProduct[i]->getProductName()<<" ";
+            outputFile<<listAllSalesProduct[i]->getSum()<<" ";
+            outputFile<<listAllSalesProduct[i]->getAverageRating()<<" ";
+            outputFile<<endl;
+        }
+        outputFile<<endl;
+        
+    }
+    else
+    {
+        outputFile<<"로그인을 진행한 후에 상품판매통계를 진행해주세요"<<endl<<endl;   // 디버그시 확인하기위한 예외처리 최종본에서 지워도 되는코드
+    }
 }
 
 /*
@@ -1229,6 +1284,8 @@ bool Product::orderProduct()
     {
         remainCount--;  // 상품을 구매했기 때문에 재고 하나를 뺀다.
 
+        sellingCount++; //상품을 구매했기 때문에 구매수를 하나 올린다.
+
         if (remainCount == 0)
         {
             this->soldOutProduct(this);
@@ -1303,7 +1360,7 @@ void PurchaseHistory::ProceedPurchaseHistory()
 {
     vector <Product*> purchasedProduct = curLoginMember->ListPurchasedProduct();
 
-    vector < tuple<string, string, string, int, int> > v;
+    vector < tuple<string, string, string, int, int, int> > v;
 
     for (int i = 0; i < purchasedProduct.size(); i++)
     {
@@ -1312,8 +1369,8 @@ void PurchaseHistory::ProceedPurchaseHistory()
         string madeCompanyName = purchasedProduct[i]->getMadeCompanyName();
         int productPrice = purchasedProduct[i]->getPrice();
         int productRemainCount = purchasedProduct[i]->getRemainCount();
-        //int averageRating = purchasedProduct[i]->getAverageRating();
-        v.push_back({sellerID, productName, madeCompanyName, productPrice, productRemainCount});
+        int averageRating = purchasedProduct[i]->getAverageRating();
+        v.push_back({sellerID, productName, madeCompanyName, productPrice, productRemainCount, averageRating});
     }
 
     sort(v.begin(), v.end());
@@ -1326,6 +1383,7 @@ void PurchaseHistory::ProceedPurchaseHistory()
         outputFile<<get<2>(v[i])<<" ";
         outputFile<<get<3>(v[i])<<" ";
         outputFile<<get<4>(v[i])<<" ";
+        outputFile<<get<5>(v[i]); 
         outputFile << endl;
     }
     outputFile << endl;
@@ -1515,7 +1573,7 @@ void Rating::newRating(int ratingValue, string productName, string writer)
     {
         if (productName == purchasedList[i]->getProductName())
         {
-            purchasedList[i]->ListRating().push_back(this);
+            purchasedList[i]->AddRating(this);
             sellerID = purchasedList[i]->getSellerID();
             break;
         }
