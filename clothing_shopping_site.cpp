@@ -1508,6 +1508,19 @@ void SearchProductUI::InputProductName(SearchProduct* searchProduct)
     searchProduct->ShowProductInfo(productName);
 }
 
+/*
+Function : SearchProductUI::ShowSearchProductInfo()
+Description: 검색한 상품에 대한 정보를 보여주는 함수
+Parameters : string sellerID - 판매자ID
+             string productName - 상품이름
+             string madeCompanyName - 제조사
+             int price - 상품가격
+             int remainCount - 상품재고현황
+             double averageRating - 평균구매만족도
+Return Value : void
+Created: 2022/5/31 10:24 pm
+Author: 김진호
+*/
 void SearchProductUI::ShowSearchProductInfo(string sellerID, string productName, string madeCompanyName, int price, int remainCount, double averageRating)
 {
     outputFile << "> ";
