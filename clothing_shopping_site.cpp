@@ -1201,7 +1201,7 @@ void AddProduct::SendProductData(string inputProductName, string inputMadeCompan
 {
     curLoginMember->AddNewProduct(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount);   // 현재 로그인 한 회원이 새 상품을 등록하는 함수를 호출한다
     
-    AddProductUI *addProduct;
+    AddProductUI *addProduct = new AddProductUI;
     addProduct->ShowRegistrationCompleteMessage(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount); // 등록완료하였다고 메세지를 보낸다.
 }
 
