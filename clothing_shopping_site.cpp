@@ -1601,6 +1601,15 @@ void PurchaseProductUI::PushPurchaseButton(PurchaseProduct* purchaseProduct)
     purchaseProduct->ProceedPurchase();
 }
 
+/*
+Function : PurchaseProductUI::ShowPurchasedProductInfo()
+Description: 구매한 상품의 판매자와 상품이름을 출력해주는 함수이다.
+Parameters : string sellerID - 판매자ID
+             string productName - 상품이름
+Return Value : void
+Created: 2022/6/2 7:48 pm
+Author: 김진호
+*/
 void PurchaseProductUI::ShowPurchasedProductInfo(string sellerID, string productName)
 {
     outputFile << "> ";
@@ -1667,6 +1676,14 @@ bool Product::OrderProduct()
         return false;
 }
 
+/*
+Function : Product::SoldoutProduct()
+Description: 판매가 완료되어 재고가 없는 상품을 판매리스트에서 지우고, 판매완료 리스트에 추가한다.
+Parameters : Product* soldoutProduct - 판매가 완료된 상품
+Return Value : void
+Created: 2022/5/31 10:24 pm
+Author: 김진호
+*/
 void Product::SoldoutProduct(Product* soldoutProduct)
 {
     string sellerID = soldoutProduct->GetSellerID();
@@ -1719,6 +1736,19 @@ void PurchaseHistoryUI::PushPurchaseHistoryButton(PurchaseHistory* purchaseHisto
     purchaseHistory->ShowPurchaseHistory();
 }
 
+/*
+Function : PurchaseHistoryUI::ShowPurchaseHistories()
+Description: 구매 내역을 출력해주는 함수
+Parameters : string sellerID - 판매자ID
+             string productName - 상품이름
+             string madeCompanyName - 제조사
+             int productPrice - 상품가격
+             int productRemainCount - 상품재고현황
+             double averageRating - 평균구매만족도
+Return Value : void
+Created: 2022/5/31 10:24 pm
+Author: 김진호
+*/
 void PurchaseHistoryUI::ShowPurchaseHistories(string sellerID, string productName, string madeCompanyName, int productPrice, int productRemainCount, double averageRating)
 {
     outputFile << "> ";
@@ -1892,6 +1922,16 @@ void RatingUI::CreateNewRating(RatingManagement* ratingManagement)
     ratingManagement->SendRating(productName, ratingValue);
 }
 
+/*
+Function : RatingUI::ShowRatingInfo()
+Description: 구매만족도를 출력해주는 함수이다.
+Parameters : string sellerID - 판매자ID
+             string productName - 상품이름
+             int ratingValue - 구매만족도
+Return Value : void
+Created: 2022/5/31 11:20 pm
+Author: 김진호
+*/
 void RatingUI::ShowRatingInfo(string sellerID, string productName, int ratingValue)
 {
     outputFile << "> ";
