@@ -1504,7 +1504,6 @@ void SearchProductUI::InputProductName(SearchProduct* searchProduct)
 
     inputFile >> productName;
 
-    // if로 상품 있는지 없는지 검사코드 추가
     searchProduct->ShowProductInfo(productName);
 }
 
