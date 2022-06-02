@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <algorithm>
 #include <string>
 #include <cmath>
@@ -244,7 +244,7 @@ private:
 
 public:
     void ViewSoldoutProductButton(ViewSoldoutProduct* viewSoldoutProduct);
-    void ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, int averageRating);
+    void ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, double averageRating);
 };
 
 /*
@@ -442,7 +442,7 @@ mail: kys981207@naver.com
 */
 class Product
 {
-protected:
+private:
     string productName; // 상품명
     string madeCompanyName; // 제작회사명
     string sellerID; // 판매자ID
@@ -468,9 +468,9 @@ public:
     int GetSum();
     double GetAverageRating();
     bool CheckSelectedProduct(string productName);
-    void SoldoutProduct(Product* soldoutProduct);
     bool OrderProduct();
     void RequestEnrollRating(int rating);
+    void SoldoutProduct(Product* soldoutProduct);
 };
 
 /*
@@ -509,9 +509,9 @@ public:
     void AddAllSalesProduct(Product* newProduct);   //  판매중인 상품과 판매완료된 상품을 리스트에 추가하는 함수
 
     vector <Product*> ListPurchasedProduct();   // 구매한 상품을 가리키는 포인터 리스트 (purchasedProductListPointer)를 get하는 함수임
-    vector <Product*> ListSellingProducts();    
-    vector <Product*> ListSoldoutProducts();    
-    vector <Product*> ListAllsalesProducts();   
+    vector <Product*> ListSellingProducts();
+    vector <Product*> ListSoldoutProducts();
+    vector <Product*> ListAllsalesProducts();
 };
 
 vector < tuple<string, string, Member*> > memberLoginInfo;  // 벡터의 첫값은 id , 두번째 값은 pw , 세번째 값은 Member개체의 주소를가리키는 포인터 정보를 담음
@@ -521,7 +521,7 @@ bool loginState = false;    //  현재 로그인중이면 true 로그아웃중�
 Product* curSearchedProduct;  // 현재 검색한 상품을 전역으로 설정
 
 /*
-Function : Product::Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount) 
+Function : Product::Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
 Description: 이 함수는 Product 클래스의 객체를 생성하는 생성자 함수입니다.
 Parameters :
 string inputProductName - 입력된 상품명
@@ -532,7 +532,7 @@ Return Value : 없음
 Created: 2022/5/29 5:00 pm
 Author: 김영서
 */
-Product::Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)  
+Product::Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
 {
     sellerID = curLoginMember->GetID();
     productName = inputProductName;
@@ -602,7 +602,7 @@ double Product::GetAverageRating()
 /*
 Function : void Product::AddRating(Rating* newRating)
 Description: 이 함수는 상품의 구매 만족도를 상품 객체의 평점리스트에 추가하는 함수입니다.
-Parameters : 
+Parameters :
 Rating* newRating - 추가할 구매 만족도
 Return Value : void
 Created: 2022/5/30 4:00 pm
@@ -668,7 +668,7 @@ Member::~Member()
 /*
 Function : void Member::AddNewProduct(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
 Description: 이 함수는 입력받은 상품명, 제작회사명, 가격, 수량을 프로덕트 클래스에게 전달하는 함수입니다.
-Parameters : 
+Parameters :
 string inputProductName - 입력받은 상품명
 string inputMadeCompanyName - 입력받은 제작회사명
 int inputPrice - 입력받은 가격
@@ -685,7 +685,7 @@ void Member::AddNewProduct(string inputProductName, string inputMadeCompanyName,
 /*
 Function : void Member::AddRegistedNewProuduct(Product* newProduct)
 Description: 이 함수는 sellingPoductListPointer에 새로 등록한 상품 객체를 추가하는 함수입니다.
-Parameters : 
+Parameters :
 Product* newProduct - 추가할 상품 객체
 Return Value : void
 Created: 2022/5/25 4:00 pm
@@ -699,7 +699,7 @@ void Member::AddRegistedNewProuduct(Product* newProduct)
 /*
 Function : void Member::AddSoldoutProduct(Product* soldoutProduct)
 Description: 이 함수는 soldoutProductListPointer에 판매완료된 상품 객체를 추가하는 함수입니다.
-Parameters : 
+Parameters :
 Product* soldoutProduct - 판매완료된 상품 객체
 Return Value : void
 Created: 2022/5/25 4:00 pm
@@ -713,7 +713,7 @@ void Member::AddSoldoutProduct(Product* soldoutProduct)
 /*
 Function : void Member::AddAllSalesProduct(Product* newProduct)
 Description: 이 함수는 allSalesProductListPointer에 판매중인 상품과 판매완료된 상품 상관없이 판매자가 판매하는 모든 상품 객체를 추가하는 함수입니다.
-Parameters : 
+Parameters :
 Product* newProduct - 추가할 상품 객체
 Return Value : void
 Created: 2022/5/25 4:00 pm
@@ -726,7 +726,7 @@ void Member::AddAllSalesProduct(Product* newProduct)
 
 /*
 Function : vector <Product*> Member::ListSellingProducts()
-Description: 이 함수는 판매중인 상품을 가리키는 포인터 리스트 (sellingProductListPointer)를 반환해주는 함수입니다. 
+Description: 이 함수는 판매중인 상품을 가리키는 포인터 리스트 (sellingProductListPointer)를 반환해주는 함수입니다.
 Parameters : void
 Return Value : vector <Product*>
 Created: 2022/5/25 4:00 pm
@@ -739,7 +739,7 @@ vector <Product*> Member::ListSellingProducts()
 
 /*
 Function : vector <Product*> Member::ListSoldoutProducts()
-Description: 이 함수는 판매완료된 상품을 가리키는 포인터 리스트 (soldoutProductListPointer)를 반환해주는 함수입니다. 
+Description: 이 함수는 판매완료된 상품을 가리키는 포인터 리스트 (soldoutProductListPointer)를 반환해주는 함수입니다.
 Parameters : void
 Return Value : vector <Product*>
 Created: 2022/5/25 4:00 pm
@@ -752,7 +752,7 @@ vector <Product*> Member::ListSoldoutProducts()
 
 /*
 Function : vector <Product*> Member::ListAllsalesProducts()
-Description: 이 함수는 판매중인 상품과 판매완료된 상품 모두를 가리키는 포인터 리스트 (allSalesProductListPointer)를 반환해주는 함수입니다. 
+Description: 이 함수는 판매중인 상품과 판매완료된 상품 모두를 가리키는 포인터 리스트 (allSalesProductListPointer)를 반환해주는 함수입니다.
 Parameters : void
 Return Value : vector <Product*>
 Created: 2022/5/25 4:00 pm
@@ -1126,7 +1126,7 @@ AddProduct::AddProduct()
 /*
 Function : void AddProductUI::AddProductButton(AddProduct* addProduct)
 Description: 이 함수는 판매의류등록 버튼이 눌렸을때 컨트롤 클래스에게 알려주는 함수입니다.
-Parameters : 
+Parameters :
 AddProduct* addProduct - 알려줄 컨트롤 클래스
 Return Value : void
 Created: 2022/5/30 4:00 pm
@@ -1169,7 +1169,7 @@ void AddProductUI::StartInterface()
 /*
 Function : void AddProductUI::InputProductData(AddProduct* addProduct)
 Description: 이 함수는 판매자에게 입력받은 상품정보들을 컨트롤 클래스에게 전달하는 함수입니다.
-Parameters : 
+Parameters :
 AddProduct* addProduct - 값을 전달할 컨트롤 클래스
 Return Value : void
 Created: 2022/5/30 4:00 pm
@@ -1188,7 +1188,7 @@ void AddProductUI::InputProductData(AddProduct* addProduct)
 /*
 Function : void AddProduct::SendProductData(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
 Description: 이 함수는 판매자에게 입력받은 상품정보들을 멤버 클래스에게 전달하는 함수입니다.
-Parameters : 
+Parameters :
 string inputProductName - 입력받은 상품명
 string inputMadeCompanyName - 입력받은 제작회사명
 int inputPrice - 입력받은 가격
@@ -1200,15 +1200,15 @@ Author: 김영서
 void AddProduct::SendProductData(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
 {
     curLoginMember->AddNewProduct(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount);   // 현재 로그인 한 회원이 새 상품을 등록하는 함수를 호출한다
-    
-    AddProductUI *addProduct;
+
+    AddProductUI* addProduct = new AddProductUI;
     addProduct->ShowRegistrationCompleteMessage(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount); // 등록완료하였다고 메세지를 보낸다.
 }
 
 /*
 Function : void AddProductUI::ShowRegistrationCompleteMessage(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
 Description: 이 함수는 판매 의류를 잘 등록하였다는 메시지를 출력하는 함수입니다.
-Parameters : 
+Parameters :
 string inputProductName - 입력받은 상품명
 string inputMadeCompanyName - 입력받은 제작회사명
 int inputPrice - 입력받은 가격
@@ -1244,7 +1244,7 @@ ViewProduct::ViewProduct()
 /*
 Function : void ViewProductUI::ViewSalesProductButton(ViewProduct* viewProduct)
 Description: 이 함수는 판매의류조회 버튼이 눌렸을때 컨트롤 클래스에게 알려주는 함수입니다.
-Parameters : 
+Parameters :
 ViewProduct* viewProduct - 알려줄 컨트롤 클래스
 Return Value : void
 Created: 2022/5/30 4:00 pm
@@ -1272,15 +1272,15 @@ void ViewProduct::ShowSellingProduct()
 
     for (int i = 0; i < listSellingProducts.size(); i++) // 각 상품의 주소의 포인터들을 받아왔으니 반복문을 통해 상세정보를 viewProductUI에게 전달한다.
     {
-        ViewProductUI *viewProductUI = new ViewProductUI;
-        viewProductUI->ShowRegistedProductInfo(listSellingProducts[i]->GetProductName(), listSellingProducts[i]->GetMadeCompanyName(), listSellingProducts[i]->GetPrice(),listSellingProducts[i]->GetProductCount());
+        ViewProductUI* viewProductUI = new ViewProductUI;
+        viewProductUI->ShowRegistedProductInfo(listSellingProducts[i]->GetProductName(), listSellingProducts[i]->GetMadeCompanyName(), listSellingProducts[i]->GetPrice(), listSellingProducts[i]->GetProductCount());
     }
 }
 
 /*
 Function : void ViewProductUI::ShowRegistedProductInfo(string productName, string productMadeCompanyName, int productPrice, int productCount)
 Description: 이 함수는 판매중인 의류상품들의 세부정보를 출력하는 함수입니다.
-Parameters : 
+Parameters :
 string productName - 판매중인 상품 이름
 string productMadeCompanyName - 판매중인 상품 제작회사명
 int productPrice - 판매중인 상품 가격
@@ -1292,7 +1292,7 @@ Author: 김영서
 void ViewProductUI::ShowRegistedProductInfo(string productName, string productMadeCompanyName, int productPrice, int productCount)
 {
     outputFile << "> ";
-    outputFile << productName<< " " << productMadeCompanyName << " " << productPrice << " " << productCount << endl;
+    outputFile << productName << " " << productMadeCompanyName << " " << productPrice << " " << productCount << endl;
 }
 
 /*
@@ -1316,7 +1316,7 @@ ViewSoldoutProduct::ViewSoldoutProduct()
 /*
 Function : void ViewSoldoutProductUI::ViewSoldoutProductButton(ViewSoldoutProduct* viewSoldoutProduct)
 Description: 이 함수는 판매완료상품내역조회 버튼이 눌렸을때 컨트롤 클래스에게 알려주는 함수입니다.
-Parameters : 
+Parameters :
 ViewSoldoutProduct* viewSoldoutProduct - 알려줄 컨트롤 클래스
 Return Value : void
 Created: 2022/5/30 4:00 pm
@@ -1339,7 +1339,7 @@ void ViewSoldoutProduct::ShowSoldoutProduct()
 {
     vector <Product*> listSoldoutProducts;
     vector <tuple <string, string, int, int, double> > v; // 상품명의 오름차순 정렬 위한 벡터이다
- 
+
     listSoldoutProducts = curLoginMember->ListSoldoutProducts(); // 현재 로그인한 회원의 판매완료된 상품 리스트를 받아온다
 
     for (int i = 0; i < listSoldoutProducts.size(); i++) // 각 상품의 주소의 포인터들을 받아왔으니 반복문을 통해 상세정보를 출력한다.
@@ -1349,32 +1349,32 @@ void ViewSoldoutProduct::ShowSoldoutProduct()
         int price = listSoldoutProducts[i]->GetPrice();
         int sellingCount = listSoldoutProducts[i]->GetSellingCount();
         double averageRating = listSoldoutProducts[i]->GetAverageRating();
-        v.push_back({ productName, madeCompanyName, price, sellingCount, averageRating });    
+        v.push_back({ productName, madeCompanyName, price, sellingCount, averageRating });
     }
 
     sort(v.begin(), v.end()); // 상품명의 오름차순으로 정렬한다.
 
     for (int j = 0; j < v.size(); j++)
     {
-        ViewSoldoutProductUI *viewSoldoutProductUI = new ViewSoldoutProductUI;
+        ViewSoldoutProductUI* viewSoldoutProductUI = new ViewSoldoutProductUI;
         viewSoldoutProductUI->ShowSoldoutProductInfo(get<0>(v[j]), get<1>(v[j]), get<2>(v[j]), get<3>(v[j]), get<4>(v[j]));
     }
 }
 
 /*
-Function : void ViewSoldoutProductUI::ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, int averageRating)
+Function : void ViewSoldoutProductUI::ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, double averageRating)
 Description: 이 함수는 판매완료된 상품들의 세부정보를 출력하는 함수입니다.
-Parameters : 
+Parameters :
 string productName - 판매완료된 상품의 이름
 string madeCompanyName - 판매완료된 상품의 제작회사명
 int price - 판매완료된 상품의 가격
 int sellingCount - 판매완료된 상품의 판매된 수량
-int averageRating - 판매완료된 상품의 평균 구매만족도
+double averageRating - 판매완료된 상품의 평균 구매만족도
 Return Value : void
 Created: 2022/5/30 4:00 pm
 Author: 김영서
 */
-void ViewSoldoutProductUI::ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, int averageRating)
+void ViewSoldoutProductUI::ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, double averageRating)
 {
     outputFile << "> ";
     outputFile << productName << " ";
@@ -1405,7 +1405,7 @@ ProductSalesStats::ProductSalesStats()
 /*
 Function : void ProductSalesStatsUI::SalesStatsButton(ProductSalesStats* productSalesStats)
 Description: 이 함수는 상품판매통계 버튼이 눌렸을때 컨트롤 클래스에게 알려주는 함수입니다.
-Parameters : 
+Parameters :
 ProductSalesStats* productSalesStats - 알려줄 컨트롤 클래스
 Return Value : void
 Created: 2022/5/30 4:00 pm
@@ -1433,8 +1433,8 @@ void ProductSalesStats::ShowSalesStats()
 
         for (int i = 0; i < listAllSalesProduct.size(); i++)
         {
-            ProductSalesStatsUI *productSalesStatsUI = new ProductSalesStatsUI;
-            if(listAllSalesProduct[i]->GetSellingCount() != 0)
+            ProductSalesStatsUI* productSalesStatsUI = new ProductSalesStatsUI;
+            if (listAllSalesProduct[i]->GetSellingCount() != 0)
             {
                 productSalesStatsUI->ShowProductSalesStats(listAllSalesProduct[i]->GetProductName(), listAllSalesProduct[i]->GetSum(), listAllSalesProduct[i]->GetAverageRating());
             }
@@ -1445,7 +1445,7 @@ void ProductSalesStats::ShowSalesStats()
 /*
 Function : void ProductSalesStats::ShowSalesStats()
 Description: 이 함수는 현재까지 판매한 모든 상품에 대한 통계의 세부정보들을 출력하는 함수입니다.
-Parameters : 
+Parameters :
 string productName - 상품명
 int sum - 상품 총액
 double averageRating - 평균 구매만족도
@@ -1556,7 +1556,7 @@ void SearchProduct::ShowProductInfo(string productName)
         {
             if (listSellingProducts[j]->CheckSelectedProduct(productName) == true)
             {
-                SearchProductUI *searchProductUI = new SearchProductUI;
+                SearchProductUI* searchProductUI = new SearchProductUI;
 
                 searchProductUI->ShowSearchProductInfo(listSellingProducts[j]->GetSellerID(), listSellingProducts[j]->GetProductName(), listSellingProducts[j]->GetMadeCompanyName(), listSellingProducts[j]->GetPrice(), listSellingProducts[j]->GetRemainCount(), listSellingProducts[j]->GetAverageRating());
 
@@ -1566,13 +1566,13 @@ void SearchProduct::ShowProductInfo(string productName)
             }
         }
     }
-    curSearchedProduct = NULL;
+    curSearchedProduct = NULL; // 검색에 실패한 경우 현재 검색한 상품을 NULL로 바꾼다.
     return;
 }
 
 /*
 Function : Product::CheckSelectedProduct()
-Description: 검색한 상품의 이름이 등록되어있는 상품의 이름과 같은지 비교하는 함수
+Description: 검색한 상품의 이름이 등록되어있는 상품의 이름과 같은지 비교하고, 재고가 있는지 비교하는 함수
 Parameters : string productName
 Return Value : boolean (같으면 true, 다르면 false)
 Created: 2022/5/29 7:00 pm
@@ -1643,7 +1643,7 @@ void PurchaseProduct::ProceedPurchase()
     {
         curLoginMember->AddPurchaseProduct(curSearchedProduct); // 구매한 상품리스트에 추가
 
-        PurchaseProductUI *purchaseProductUI = new PurchaseProductUI;
+        PurchaseProductUI* purchaseProductUI = new PurchaseProductUI;
         purchaseProductUI->ShowPurchasedProductInfo(curSearchedProduct->GetSellerID(), curSearchedProduct->GetProductName());
 
     }
@@ -1663,7 +1663,7 @@ void Member::AddPurchaseProduct(Product* product)
 }
 
 /*
-Function : Product::orderProduct()
+Function : Product::OrderProduct()
 Description: 선택한 상품에 대해 주문을 넣는 함수
 Parameters : 없음
 Return Value : boolean (재고가 있으면 true, 없으면 false)
@@ -1970,14 +1970,14 @@ void RatingManagement::SendRating(string productName, int ratingValue)
         {
             purchasedList[i]->RequestEnrollRating(ratingValue);
 
-            RatingUI *ratingUI = new RatingUI;
+            RatingUI* ratingUI = new RatingUI;
             ratingUI->ShowRatingInfo(purchasedList[i]->GetSellerID(), productName, ratingValue);
         }
     }
 }
 
 /*
-Function : Product::requestEnrollRating()
+Function : Product::RequestEnrollRating()
 Description: 상품 클래스에 평점 등록을 요청하는 함수
 Parameters : int ratingValue
 Return Value : 없음
@@ -1992,7 +1992,7 @@ void Product::RequestEnrollRating(int ratingValue)
 }
 
 /*
-Function : Rating::newRating()
+Function : Rating::NewRating()
 Description: 해당 상품의 구매 만족도를 등록하는 함수
 Parameters : int ratingValue, string productName, string writer
 Return Value : 없음
@@ -2005,8 +2005,6 @@ void Rating::NewRating(int ratingValue, string productName, string writer)
     this->productName = productName;
     this->writer = writer;
 
-    string sellerID;
-
     vector <Product*> purchasedList = curLoginMember->ListPurchasedProduct();
 
     for (int i = 0; i < purchasedList.size(); i++)
@@ -2014,7 +2012,6 @@ void Rating::NewRating(int ratingValue, string productName, string writer)
         if (productName == purchasedList[i]->GetProductName())
         {
             purchasedList[i]->AddRating(this);
-            sellerID = purchasedList[i]->GetSellerID();
             break;
         }
     }
@@ -2034,14 +2031,14 @@ vector <Rating*> Product::ListRating()
 }
 
 /*
-Function : void doTask()
+Function : void DoTask()
 Description: 이 함수는 입력받은 메뉴에 따라 해당 메뉴의 작업을 하는 함수입니다.
 Parameters : void
 Return Value : void
 Created: 2022/5/25 : 3:00 pm
 Author: 김영서, 김진호, 최준수
 */
-void doTask() {
+void DoTask() {
     if (inputFile.is_open())    //파일이 열려있는지 확인
     {
         while (!inputFile.eof())    //파일의 끝까지 읽는것을 반복
@@ -2080,7 +2077,7 @@ void doTask() {
                     {
                         Login* login = new Login;
                     }
-                    
+
                     outputFile << endl;
                 }
                 else if (menu1 == 2 && menu2 == 2)
@@ -2178,7 +2175,7 @@ Created: 2022/5/29 9:00 pm
 Author: 최준수
 */
 int main() {
-    doTask();
+    DoTask();
     inputFile.close();
     outputFile.close();
 }
