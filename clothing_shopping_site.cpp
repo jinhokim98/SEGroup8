@@ -11,14 +11,14 @@
 
 using namespace std;
 
-ifstream inputFile(INPUT_FILE_NAME);   // input.txt ¸¦ ÀĞ±â¸ğµå·Î ¿­À½
-ofstream outputFile(OUTPUT_FILE_NAME); // output.txt ¸¦ ¾²±â¸ğµå·Î ¿­À½
+ifstream inputFile(INPUT_FILE_NAME);   // input.txt ë¥¼ ì½ê¸°ëª¨ë“œë¡œ ì—´ìŒ
+ofstream outputFile(OUTPUT_FILE_NAME); // output.txt ë¥¼ ì“°ê¸°ëª¨ë“œë¡œ ì—´ìŒ
 
 /*
 Class: SignUp
-Description: È¸¿ø°¡ÀÔ ÄÁÆ®·Ñ Å¬·¡½ºÀÌ´Ù.
+Description: íšŒì›ê°€ì… ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì´ë‹¤.
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class SignUp
@@ -33,9 +33,9 @@ public:
 
 /*
 Class: SignUpUI
-Description: È¸¿ø°¡ÀÔ ¹Ù¿î´õ¸® Å¬·¡½ºÀÌ´Ù.
+Description: íšŒì›ê°€ì… ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ì´ë‹¤.
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class SignUpUI
@@ -51,9 +51,9 @@ public:
 
 /*
 Class: DeleteMyAccount
-Description: È¸¿øÅ»Åğ ÄÁÆ®·Ñ Å¬·¡½ºÀÌ´Ù.
+Description: íšŒì›íƒˆí‡´ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì´ë‹¤.
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class DeleteMyAccount
@@ -68,9 +68,9 @@ public:
 
 /*
 Class: DeleteMyAccountUI
-Description: È¸¿øÅ»Åğ ¹Ù¿î´õ¸® Å¬·¡½ºÀÌ´Ù.
+Description: íšŒì›íƒˆí‡´ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ì´ë‹¤.
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class DeleteMyAccountUI
@@ -84,9 +84,9 @@ public:
 
 /*
 Class: Login
-Description: ·Î±×ÀÎ ÄÁÆ®·Ñ Å¬·¡½º ÀÌ´Ù.
+Description: ë¡œê·¸ì¸ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ ì´ë‹¤.
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class Login
@@ -100,9 +100,9 @@ public:
 
 /*
 Class: LoginUI
-Description: ·Î±×ÀÎ ¹Ù¿î´õ¸® Å¬·¡½ºÀÌ´Ù.
+Description: ë¡œê·¸ì¸ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ì´ë‹¤.
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class LoginUI
@@ -116,9 +116,9 @@ public:
 
 /*
 Class: Logout
-Description: ·Î±×¾Æ¿ô ÄÁÆ®·Ñ Å¬·¡½ºÀÌ´Ù.
+Description: ë¡œê·¸ì•„ì›ƒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì´ë‹¤.
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class Logout
@@ -132,9 +132,9 @@ public:
 
 /*
 Class: LogoutUI
-Description: ·Î±×¾Æ¿ô ¹Ù¿î´õ¸® Å¬·¡½ºÀÌ´Ù.
+Description: ë¡œê·¸ì•„ì›ƒ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ì´ë‹¤.
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class LogoutUI
@@ -146,6 +146,13 @@ public:
     void ShowCompleteLogoutMessage();
 };
 
+/*
+Class: AddProduct
+Description: íŒë§¤ì˜ë¥˜ë“±ë¡ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì´ë‹¤.
+Created: 2022/5/30 3:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class AddProduct
 {
 private:
@@ -156,6 +163,13 @@ public:
     void SendProductData(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount);
 };
 
+/*
+Class: AddProductUI
+Description: íŒë§¤ì˜ë¥˜ë“±ë¡ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ì´ë‹¤.
+Created: 2022/5/30 3:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class AddProductUI
 {
 private:
@@ -167,6 +181,13 @@ public:
     void ShowRegistrationCompleteMessage(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount);
 };
 
+/*
+Class: ViewProduct
+Description: íŒë§¤ì˜ë¥˜ì¡°íšŒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì´ë‹¤.
+Created: 2022/5/30 3:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class ViewProduct
 {
 private:
@@ -177,6 +198,13 @@ public:
 
 };
 
+/*
+Class: ViewProductUI
+Description: íŒë§¤ì˜ë¥˜ì¡°íšŒ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ì´ë‹¤.
+Created: 2022/5/30 3:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class ViewProductUI
 {
 private:
@@ -187,6 +215,13 @@ public:
 
 };
 
+/*
+Class: ViewSoldoutProduct
+Description: íŒë§¤ì™„ë£Œìƒí’ˆì¡°íšŒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì´ë‹¤.
+Created: 2022/5/30 3:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class ViewSoldoutProduct
 {
 private:
@@ -196,15 +231,29 @@ public:
     void ShowSoldoutProduct();
 };
 
+/*
+Class: ViewSoldoutProductUI
+Description: íŒë§¤ì™„ë£Œìƒí’ˆì¡°íšŒ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ì´ë‹¤.
+Created: 2022/5/30 3:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class ViewSoldoutProductUI
 {
 private:
 
 public:
     void ViewSoldoutProductButton(ViewSoldoutProduct* viewSoldoutProduct);
-    void ShowSoldoutProducts(string productName, string madeCompanyName, int price, int sellingCount, int averageRating);
+    void ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, int averageRating);
 };
 
+/*
+Class: ProductSalesStats
+Description: ìƒí’ˆíŒë§¤í†µê³„ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì´ë‹¤.
+Created: 2022/5/30 3:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class ProductSalesStats
 {
 private:
@@ -214,6 +263,13 @@ public:
     void ShowSalesStats();
 };
 
+/*
+Class: ProductSalesStatsUI
+Description: ìƒí’ˆíŒë§¤í†µê³„ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤ì´ë‹¤.
+Created: 2022/5/30 3:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class ProductSalesStatsUI
 {
 private:
@@ -225,9 +281,9 @@ public:
 
 /*
 Class: SearchProduct
-Description: »óÇ° Á¤º¸ °Ë»ö ÄÁÆ®·Ñ Å¬·¡½º
+Description: ìƒí’ˆ ì •ë³´ ê²€ìƒ‰ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class SearchProduct
@@ -241,9 +297,9 @@ public:
 
 /*
 Class: SearchProductUI
-Description: »óÇ° Á¤º¸ °Ë»ö ¹Ù¿î´õ¸® Å¬·¡½º
+Description: ìƒí’ˆ ì •ë³´ ê²€ìƒ‰ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class SearchProductUI
@@ -258,9 +314,9 @@ public:
 
 /*
 Class: PurchaseProduct
-Description: »óÇ° ±¸¸Å ÄÁÆ®·Ñ Å¬·¡½º
+Description: ìƒí’ˆ êµ¬ë§¤ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class PurchaseProduct
@@ -274,9 +330,9 @@ public:
 
 /*
 Class: PurchaseProductUI
-Description: »óÇ° ±¸¸Å ¹Ù¿î´õ¸® Å¬·¡½º
+Description: ìƒí’ˆ êµ¬ë§¤ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class PurchaseProductUI
@@ -290,9 +346,9 @@ public:
 
 /*
 Class: PurchaseHistory
-Description: ±¸¸Å ³»¿ª Á¶È¸ ÄÁÆ®·Ñ Å¬·¡½º
+Description: êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class PurchaseHistory
@@ -306,9 +362,9 @@ public:
 
 /*
 Class: PurchaseHistoryUI
-Description: ±¸¸Å ³»¿ª Á¶È¸ ¹Ù¿î´õ¸® Å¬·¡½º
+Description: êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class PurchaseHistoryUI
@@ -322,9 +378,9 @@ public:
 
 /*
 Class: RatingManagement
-Description: ¸¸Á·µµ ÀÔ·Â ÄÁÆ®·Ñ Å¬·¡½º
+Description: ë§Œì¡±ë„ ì…ë ¥ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class RatingManagement
@@ -340,9 +396,9 @@ public:
 
 /*
 Class: RatingUI
-Description: ¸¸Á·µµ ÀÔ·Â ¹Ù¿î´õ¸® Å¬·¡½º
+Description: ë§Œì¡±ë„ ì…ë ¥ ë°”ìš´ë”ë¦¬ í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class RatingUI
@@ -360,40 +416,52 @@ public:
 
 /*
 Class: Rating
-Description: ÆòÁ¡À» ÀúÀåÇÏ´Â entity Å¬·¡½º
+Description: í‰ì ì„ ì €ì¥í•˜ëŠ” entity í´ë˜ìŠ¤
 Created: 2022/5/29 5:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 mail: rlawlsgh1227@gmail.com
 */
 class Rating
 {
 private:
-    int ratingValue;    // ÆòÁ¡
-    string productName; // »óÇ° ÀÌ¸§
-    string writer;      // Æò°¡ÇÑ »ç¶÷
+    int ratingValue;    // í‰ì 
+    string productName; // ìƒí’ˆ ì´ë¦„
+    string writer;      // í‰ê°€í•œ ì‚¬ëŒ
 
 public:
     void NewRating(int ratingValue, string productName, string writer);
     int GetRating() { return ratingValue; }
 };
 
+/*
+Class: Product
+Description: ìƒí’ˆì„ ì €ì¥í•˜ëŠ” entity í´ë˜ìŠ¤
+Created: 2022/5/29 5:00 pm
+Author: ê¹€ì˜ì„œ
+mail: kys981207@naver.com
+*/
 class Product
 {
 protected:
-    string productName, madeCompanyName, sellerID;
-    int price, productCount, remainCount, sellingCount;
+    string productName; // ìƒí’ˆëª…
+    string madeCompanyName; // ì œì‘íšŒì‚¬ëª…
+    string sellerID; // íŒë§¤ìID
+    int price; // ê°€ê²©
+    int productCount; // ìƒí’ˆ ìˆ˜ëŸ‰
+    int remainCount; // ë‚¨ì€ ìˆ˜ëŸ‰
+    int sellingCount; // íŒë§¤ëœ ìˆ˜ëŸ‰
 
-    vector <Rating*> ratingListPointer;  // ÆòÁ¡¸®½ºÆ® Æ÷ÀÎÅÍ
+    vector <Rating*> ratingListPointer;  // í•´ë‹¹ìƒí’ˆì˜ í‰ì ë¦¬ìŠ¤íŠ¸ í¬ì¸í„°
 
 public:
-    Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount);
-    string GetSellerID() { return sellerID; }   // ÆÇ¸ÅÀÚID ¹İÈ¯ 
-    string GetProductName() { return productName; }
-    string GetMadeCompanyName() { return madeCompanyName; }
-    int GetPrice() { return price; }
-    int GetRemainCount() { return remainCount; }    // ³²Àº ¼ö·® ¹İÈ¯
-    int GetProductCount() { return productCount; }
-    int GetSellingCount() { return sellingCount; }  // ÆÇ¸Å ¼ö·® ¹İÈ¯
+    Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount); // ìƒì„±ì
+    string GetProductName() { return productName; } // ìƒí’ˆëª… ë°˜í™˜
+    string GetMadeCompanyName() { return madeCompanyName; } // ì œì‘íšŒì‚¬ëª… ë°˜í™˜
+    string GetSellerID() { return sellerID; }   // íŒë§¤ìID ë°˜í™˜ 
+    int GetPrice() { return price; } // ê°€ê²© ë°˜í™˜
+    int GetProductCount() { return productCount; }  // ìƒí’ˆ ìˆ˜ëŸ‰ ë°˜í™˜
+    int GetRemainCount() { return remainCount; }    // ë‚¨ì€ ìˆ˜ëŸ‰ ë°˜í™˜
+    int GetSellingCount() { return sellingCount; }  // íŒë§¤ëœ ìˆ˜ëŸ‰ ë°˜í™˜
     vector <Rating*> ListRating();
 
     void AddRating(Rating* newRating);
@@ -407,62 +475,85 @@ public:
 
 /*
 Class: Member
-Description: È¸¿ø ¿£Æ¼Æ¼ Å¬·¡½ºÀÌ´Ù.
+Description: íšŒì› ì—”í‹°í‹° í´ë˜ìŠ¤ì´ë‹¤.
 Created: 2022/5/25 5:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 mail: cys4439@naver.com
 */
 class Member
 {
 private:
-    string id, pw, memberName, idCardNumber;
-    vector <Product*> purchasedProductListPointer;  // ±¸¸ÅÇÑ »óÇ°°´Ã¼ÀÇ ÁÖ¼Ò¸¦ Æ÷ÀÎÅÍÇÏ´Â ¸®½ºÆ®ÀÓ
-    vector <Product*> sellingProductListPointer;    // ÆÇ¸ÅÁßÀÎ »óÇ°°´Ã¼ÀÇ ÁÖ¼Ò¸¦ Æ÷ÀÎÅÍÇÏ´Â ¸®½ºÆ®ÀÓ
-    vector <Product*> soldoutProductListPointer;    // ÆÇ¸Å¿Ï·áµÈ »óÇ°°´Ã¼ÀÇ ÁÖ¼Ò¸¦ °¡¸®Å°´Â ¸®½ºÆ®ÀÓ
-    vector <Product*> allSalesProductListPointer;   // ÆÇ¸Å¿Ï·á, ÆÇ¸ÅÁß ¸ğµç »óÇ° °´Ã¼ÀÇ ÁÖ¼Ò¸¦ °¡¸®Å°´Â ¸®½ºÆ®ÀÓ
+    string id; // íšŒì›ì˜ ID
+    string pw; // íšŒì›ì˜ ë¹„ë°€ë²ˆí˜¸
+    string memberName; // íšŒì›ì˜ ì´ë¦„
+    string idCardNumber; // íšŒì›ì˜ ì£¼ë¯¼ë²ˆí˜¸
+    vector <Product*> purchasedProductListPointer;  // êµ¬ë§¤í•œ ìƒí’ˆê°ì²´ì˜ ì£¼ì†Œë¥¼ í¬ì¸í„°í•˜ëŠ” ë¦¬ìŠ¤íŠ¸ì„
+    vector <Product*> sellingProductListPointer;    // íŒë§¤ì¤‘ì¸ ìƒí’ˆê°ì²´ì˜ ì£¼ì†Œë¥¼ í¬ì¸í„°í•˜ëŠ” ë¦¬ìŠ¤íŠ¸ì„
+    vector <Product*> soldoutProductListPointer;    // íŒë§¤ì™„ë£Œëœ ìƒí’ˆê°ì²´ì˜ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚¤ëŠ” ë¦¬ìŠ¤íŠ¸ì„
+    vector <Product*> allSalesProductListPointer;   // íŒë§¤ì™„ë£Œ, íŒë§¤ì¤‘ ëª¨ë“  ìƒí’ˆ ê°ì²´ì˜ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚¤ëŠ” ë¦¬ìŠ¤íŠ¸ì„
 
 public:
-    string GetID() { return id; }  // °³Ã¼ÀÇ id¸¦ getÇÏ´Â ÇÔ¼ö
-    string GetPW() { return pw; }  // °³Ã¼ÀÇ pw¸¦ getÇÏ´Â ÇÔ¼ö
-    string GetMemberName() { return memberName; }  // °³Ã¼ÀÇ ÀÌ¸§À» getÇÏ´Â ÇÔ¼ö
-    string GetIDCardNumber() { return idCardNumber; }  // °³Ã¼ÀÇ ÁÖ¹Î¹øÈ£¸¦ getÇÏ´Â ÇÔ¼ö
-    int CheckIDPW(string inputID, string inputPW); // ÀÔ·Â¹ŞÀº id, pw°¡ ¸ÅÄªµÇ´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+    string GetID() { return id; }  // íšŒì›ì˜ idë¥¼ getí•˜ëŠ” í•¨ìˆ˜
+    string GetPW() { return pw; }  // íšŒì›ì˜ pwë¥¼ getí•˜ëŠ” í•¨ìˆ˜
+    string GetMemberName() { return memberName; }  // íšŒì›ì˜ ì´ë¦„ì„ getí•˜ëŠ” í•¨ìˆ˜
+    string GetIDCardNumber() { return idCardNumber; }  // íšŒì›ì˜ ì£¼ë¯¼ë²ˆí˜¸ë¥¼ getí•˜ëŠ” í•¨ìˆ˜
+    int CheckIDPW(string inputID, string inputPW); // ì…ë ¥ë°›ì€ id, pwê°€ ë§¤ì¹­ë˜ëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 
-    Member(string inputID, string inputPW, string inputMemberName, string inputIDCardNumber); //»ı¼ºÀÚ
-    ~Member(); //ÆÄ±«ÀÚ
+    Member(string inputID, string inputPW, string inputMemberName, string inputIDCardNumber); //ìƒì„±ì
+    ~Member(); //íŒŒê´´ì
 
-    void AddPurchaseProduct(Product* product);  // ±¸¸ÅÇÑ »óÇ°À» ¸®½ºÆ®¿¡ Ãß°¡ÇÏ´Â ÇÔ¼ö
-    void AddNewProduct(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount);    // ÆÇ¸Åµî·ÏÇÑ »óÇ°À» ¸®½ºÆ®¿¡ Ãß°¡ÇÏ´Â ÇÔ¼ö
-    void AddRegistedNewProuduct(Product* newProduct);   // ÆÇ¸ÅÁßÀÎ »óÇ°À» ¸®½ºÆ®¿¡ Ãß°¡ÇÏ´Â ÇÔ¼ö
-    void AddSoldoutProduct(Product* soldoutproduct);    // ÆÇ¸Å¿Ï·áÇÑ »óÇ°À» ¸®½ºÆ®¿¡ Ãß°¡ÇÏ´Â ÇÔ¼ö
-    void AddAllSalesProduct(Product* newProduct);   //  ÆÇ¸ÅÁßÀÎ »óÇ°°ú ÆÇ¸Å¿Ï·áµÈ »óÇ°À» ¸®½ºÆ®¿¡ Ãß°¡ÇÏ´Â ÇÔ¼ö
+    void AddPurchaseProduct(Product* product);  // êµ¬ë§¤í•œ ìƒí’ˆì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
+    void AddNewProduct(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount);    // íŒë§¤ë“±ë¡í•œ ìƒí’ˆì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
+    void AddRegistedNewProuduct(Product* newProduct);   // íŒë§¤ì¤‘ì¸ ìƒí’ˆì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
+    void AddSoldoutProduct(Product* soldoutproduct);    // íŒë§¤ì™„ë£Œí•œ ìƒí’ˆì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
+    void AddAllSalesProduct(Product* newProduct);   //  íŒë§¤ì¤‘ì¸ ìƒí’ˆê³¼ íŒë§¤ì™„ë£Œëœ ìƒí’ˆì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
 
-    vector <Product*> ListPurchasedProduct();   // ±¸¸ÅÇÑ »óÇ°À» °¡¸®Å°´Â Æ÷ÀÎÅÍ ¸®½ºÆ® (purchasedProductListPointer)¸¦ getÇÏ´Â ÇÔ¼öÀÓ
-    vector <Product*> ListSellingProducts();    // ÆÇ¸ÅÁßÀÎ »óÇ°À» °¡¸®Å°´Â Æ÷ÀÎÅÍ ¸®½ºÆ® (sellingProductListPointer)¸¦ getÇÏ´Â ÇÔ¼öÀÓ
-    vector <Product*> ListSoldoutProducts();    // ÆÇ¸Å¿Ï·áµÈ »óÇ°À» °¡¸®Å°´Â Æ÷ÀÎÅÍ ¸®½ºÆ® (soldoutProductListPointer)¸¦ getÇÏ´Â ÇÔ¼öÀÓ
-    vector <Product*> ListAllsalesProducts();   // ÆÇ¸ÅÁßÀÎ »óÇ°°ú ÆÇ¸Å¿Ï·áµÈ »óÇ° ¸ğµÎ¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ ¸®½ºÆ® (allSalesProductListPointer)¸¦ getÇÏ´Â ÇÔ¼öÀÓ
+    vector <Product*> ListPurchasedProduct();   // êµ¬ë§¤í•œ ìƒí’ˆì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„° ë¦¬ìŠ¤íŠ¸ (purchasedProductListPointer)ë¥¼ getí•˜ëŠ” í•¨ìˆ˜ì„
+    vector <Product*> ListSellingProducts();    
+    vector <Product*> ListSoldoutProducts();    
+    vector <Product*> ListAllsalesProducts();   
 };
 
-vector < tuple<string, string, Member*> > memberLoginInfo;  // º¤ÅÍÀÇ Ã¹°ªÀº id , µÎ¹øÂ° °ªÀº pw , ¼¼¹øÂ° °ªÀº Member°³Ã¼ÀÇ ÁÖ¼Ò¸¦°¡¸®Å°´Â Æ÷ÀÎÅÍ Á¤º¸¸¦ ´ãÀ½
-Member* curLoginMember; // ÇöÀç ·Î±×ÀÎÁßÀÎ È¸¿øÀÇ Á¤º¸¸¦ Àü¿ªÀ¸·Î ¼³Á¤
-bool loginState = false;    //  ÇöÀç ·Î±×ÀÎÁßÀÌ¸é true ·Î±×¾Æ¿ôÁßÀÌ¸é false Á¤º¸¸¦ Àü¿ªÀ¸·Î ¼³Á¤
+vector < tuple<string, string, Member*> > memberLoginInfo;  // ë²¡í„°ì˜ ì²«ê°’ì€ id , ë‘ë²ˆì§¸ ê°’ì€ pw , ì„¸ë²ˆì§¸ ê°’ì€ Memberê°œì²´ì˜ ì£¼ì†Œë¥¼ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„° ì •ë³´ë¥¼ ë‹´ìŒ
+Member* curLoginMember; // í˜„ì¬ ë¡œê·¸ì¸ì¤‘ì¸ íšŒì›ì˜ ì •ë³´ë¥¼ ì „ì—­ìœ¼ë¡œ ì„¤ì •
+bool loginState = false;    //  í˜„ì¬ ë¡œê·¸ì¸ì¤‘ì´ë©´ true ë¡œê·¸ì•„ì›ƒì¤‘ì´ë©´ false ì •ë³´ë¥¼ ì „ì—­ìœ¼ë¡œ ì„¤ì •
 
-Product* curSearchedProduct;  // ÇöÀç °Ë»öÇÑ »óÇ°À» Àü¿ªÀ¸·Î ¼³Á¤
+Product* curSearchedProduct;  // í˜„ì¬ ê²€ìƒ‰í•œ ìƒí’ˆì„ ì „ì—­ìœ¼ë¡œ ì„¤ì •
 
-Product::Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)   // °úÁ¦2 ¸ğµ¨¸µÀÇ ÀÌ¸§ÀÌ CreateProduct¿¡ ÇØ´ç CreateProduct ÀÌ¸§À» ¹Ù²ã ±×³É »ı¼ºÀÚ·Î ÇßÀ½
+/*
+Function : Product::Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount) 
+Description: ì´ í•¨ìˆ˜ëŠ” Product í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters :
+string inputProductName - ì…ë ¥ëœ ìƒí’ˆëª…
+string inputMadeCompanyName - ì…ë ¥ëœ ì œì‘íšŒì‚¬ëª…
+string inputPrice - ì…ë ¥ëœ ê°€ê²©
+string inputProductCount - ì…ë ¥ëœ ìƒí’ˆìˆ˜ëŸ‰
+Return Value : ì—†ìŒ
+Created: 2022/5/29 5:00 pm
+Author: ê¹€ì˜ì„œ
+*/
+Product::Product(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)  
 {
     sellerID = curLoginMember->GetID();
     productName = inputProductName;
     madeCompanyName = inputMadeCompanyName;
     price = inputPrice;
     productCount = inputProductCount;
-    remainCount = productCount; // »ı¼ºµÇ¾úÀ»¶§´Â ³²Àº ¼ö·® = ¼ö·®
-    sellingCount = 0;   // »ı¼ºµÇ¾úÀ»¶§´Â ÆÇ ¼ö·® = 0
+    remainCount = productCount; // ìƒì„±ë˜ì—ˆì„ë•ŒëŠ” ë‚¨ì€ ìˆ˜ëŸ‰ = ìˆ˜ëŸ‰
+    sellingCount = 0;   // ìƒì„±ë˜ì—ˆì„ë•ŒëŠ” íŒ ìˆ˜ëŸ‰ = 0
 
-    curLoginMember->AddRegistedNewProuduct(this);   // ÇöÀç ·Î±×ÀÎ ÇÑ È¸¿øÀÌ ÆÇ¸ÅÁßÀÎ »óÇ°À» ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù
-    curLoginMember->AddAllSalesProduct(this);   // ÇöÀç ·Î±×ÀÎ ÇÑ È¸¿øÀÌ ÆÇ¸ÅÁßÀÎ/ÆÇ¸Å¿Ï·áÇÑ »óÇ°À» ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù
+    curLoginMember->AddRegistedNewProuduct(this);   // í˜„ì¬ ë¡œê·¸ì¸ í•œ íšŒì›ì´ íŒë§¤ì¤‘ì¸ ìƒí’ˆì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤
+    curLoginMember->AddAllSalesProduct(this);   // í˜„ì¬ ë¡œê·¸ì¸ í•œ íšŒì›ì´ íŒë§¤ì¤‘ì¸/íŒë§¤ì™„ë£Œí•œ ìƒí’ˆì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤
 }
 
+/*
+Function : int Product::GetSum()
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤í•œ ìƒí’ˆì˜ íŒë§¤ ì´ì•¡ë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : int
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 int Product::GetSum()
 {
     int sum = 0;
@@ -473,6 +564,14 @@ int Product::GetSum()
     return sum;
 }
 
+/*
+Function : double Product::GetAverageRating()
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤í•œ ìƒí’ˆì˜ í‰ê·  êµ¬ë§¤ë§Œì¡±ë„ë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : double
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 double Product::GetAverageRating()
 {
     double averageRating = 0;
@@ -500,6 +599,15 @@ double Product::GetAverageRating()
     }
 }
 
+/*
+Function : void Product::AddRating(Rating* newRating)
+Description: ì´ í•¨ìˆ˜ëŠ” ìƒí’ˆì˜ êµ¬ë§¤ ë§Œì¡±ë„ë¥¼ ìƒí’ˆ ê°ì²´ì˜ í‰ì ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+Rating* newRating - ì¶”ê°€í•  êµ¬ë§¤ ë§Œì¡±ë„
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void Product::AddRating(Rating* newRating)
 {
     (this->ratingListPointer).push_back(newRating);
@@ -507,15 +615,15 @@ void Product::AddRating(Rating* newRating)
 
 /*
 Function : Member::Member(string inputID, string inputPW, string inputMemberName, string inputIDCardNumber)
-Description: ÀÌ ÇÔ¼ö´Â Member Å¬·¡½ºÀÇ °´Ã¼¸¦ »ı¼ºÇÏ´Â »ı¼ºÀÚ ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” Member í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters :
-string inputID - ÀÔ·ÂµÈ id
-string inputPW - ÀÔ·ÂµÈ pw
-string inputMemberName - ÀÔ·ÂµÈ È¸¿øÀÇ ÀÌ¸§
-string inputIDCardNumber - ÀÔ·ÂµÈ ÁÖ¹Î¹øÈ£
-Return Value : ¾øÀ½
+string inputID - ì…ë ¥ëœ id
+string inputPW - ì…ë ¥ëœ pw
+string inputMemberName - ì…ë ¥ëœ íšŒì›ì˜ ì´ë¦„
+string inputIDCardNumber - ì…ë ¥ëœ ì£¼ë¯¼ë²ˆí˜¸
+Return Value : ì—†ìŒ
 Created: 2022/5/25 5:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 Member::Member(string inputID, string inputPW, string inputMemberName, string inputIDCardNumber)
 {
@@ -524,16 +632,16 @@ Member::Member(string inputID, string inputPW, string inputMemberName, string in
     memberName = inputMemberName;
     idCardNumber = inputIDCardNumber;
 
-    memberLoginInfo.push_back({ this->GetID(), this->GetPW(), this }); // ÀÔ·ÂµÈ È¸¿øÀÇ Á¤º¸¸¦ MemberLoginInfo¿¡ Çª½¬ÇÑ´Ù.
+    memberLoginInfo.push_back({ this->GetID(), this->GetPW(), this }); // ì…ë ¥ëœ íšŒì›ì˜ ì •ë³´ë¥¼ MemberLoginInfoì— í‘¸ì‰¬í•œë‹¤.
 }
 
 /*
 Function : Member::~Member()
-Description: ÀÌ ÇÔ¼ö´Â Member Å¬·¡½ºÀÇ °´Ã¼¸¦ ÆÄ±«ÇÏ´Â ÆÄ±«ÀÚ ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” Member í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ íŒŒê´´í•˜ëŠ” íŒŒê´´ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/25 5:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 Member::~Member()
 {
@@ -542,14 +650,14 @@ Member::~Member()
         string id = get<0>(memberLoginInfo[i]);
         string pw = get<1>(memberLoginInfo[i]);
         Member* pointerOfAddress = get<2>(memberLoginInfo[i]);
-        // MemberLoginInfo º¤ÅÍ¿¡ µé¾îÀÖ´Â °¢ °³Ã¼º° id, pw, °´Ã¼ÀÇ ÁÖ¼Ò Æ÷ÀÎÅÍ
+        // MemberLoginInfo ë²¡í„°ì— ë“¤ì–´ìˆëŠ” ê° ê°œì²´ë³„ id, pw, ê°ì²´ì˜ ì£¼ì†Œ í¬ì¸í„°
 
 
-        string idOfCurObject = this->GetID(); // ÇöÀç ¸â¹öÀÇ °´Ã¼ÀÇ id
-        string pwOfCurObject = this->GetPW(); // ÇöÀç ¸â¹öÀÇ °´Ã¼ÀÇ pw
-        Member* pointerOfCurObject = this; // ÇöÀç ¸â¹öÀÇ °´Ã¼ÀÇ ÁÖ¼Ò Æ÷ÀÎÅÍ
+        string idOfCurObject = this->GetID(); // í˜„ì¬ ë©¤ë²„ì˜ ê°ì²´ì˜ id
+        string pwOfCurObject = this->GetPW(); // í˜„ì¬ ë©¤ë²„ì˜ ê°ì²´ì˜ pw
+        Member* pointerOfCurObject = this; // í˜„ì¬ ë©¤ë²„ì˜ ê°ì²´ì˜ ì£¼ì†Œ í¬ì¸í„°
 
-        if (idOfCurObject == id && pwOfCurObject == pw && pointerOfCurObject == pointerOfAddress) // ÇöÀç ¸â¹ö°¡ °¡Áö°íÀÖ´Â Á¤º¸¸¦ MemberLoginInfo·ÎºÎÅÍ Áö¿î´Ù.
+        if (idOfCurObject == id && pwOfCurObject == pw && pointerOfCurObject == pointerOfAddress) // í˜„ì¬ ë©¤ë²„ê°€ ê°€ì§€ê³ ìˆëŠ” ì •ë³´ë¥¼ MemberLoginInfoë¡œë¶€í„° ì§€ìš´ë‹¤.
         {
             memberLoginInfo.erase(memberLoginInfo.begin() + i);
             break;
@@ -557,86 +665,149 @@ Member::~Member()
     }
 }
 
+/*
+Function : void Member::AddNewProduct(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
+Description: ì´ í•¨ìˆ˜ëŠ” ì…ë ¥ë°›ì€ ìƒí’ˆëª…, ì œì‘íšŒì‚¬ëª…, ê°€ê²©, ìˆ˜ëŸ‰ì„ í”„ë¡œë•íŠ¸ í´ë˜ìŠ¤ì—ê²Œ ì „ë‹¬í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+string inputProductName - ì…ë ¥ë°›ì€ ìƒí’ˆëª…
+string inputMadeCompanyName - ì…ë ¥ë°›ì€ ì œì‘íšŒì‚¬ëª…
+int inputPrice - ì…ë ¥ë°›ì€ ê°€ê²©
+int inputProductCount - ì…ë ¥ë°›ì€ ìˆ˜ëŸ‰
+Return Value : void
+Created: 2022/5/25 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void Member::AddNewProduct(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
 {
-    Product* newProduct = new Product(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount); // ¹ŞÀº Á¤º¸·Î »óÇ° °´Ã¼¸¦ »ı¼ºÇÑ´Ù
+    Product* newProduct = new Product(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount); // ë°›ì€ ì •ë³´ë¡œ ìƒí’ˆ ê°ì²´ë¥¼ ìƒì„±í•œë‹¤
 }
 
+/*
+Function : void Member::AddRegistedNewProuduct(Product* newProduct)
+Description: ì´ í•¨ìˆ˜ëŠ” sellingPoductListPointerì— ìƒˆë¡œ ë“±ë¡í•œ ìƒí’ˆ ê°ì²´ë¥¼ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+Product* newProduct - ì¶”ê°€í•  ìƒí’ˆ ê°ì²´
+Return Value : void
+Created: 2022/5/25 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void Member::AddRegistedNewProuduct(Product* newProduct)
 {
-    sellingProductListPointer.push_back(newProduct);
+    sellingProductListPointer.push_back(newProduct); // sellingPoductListPointerì— ìƒˆë¡œ ë“±ë¡í•  ìƒí’ˆ ê°ì²´ë¥¼ ì¶”ê°€í•œë‹¤
 }
 
+/*
+Function : void Member::AddSoldoutProduct(Product* soldoutProduct)
+Description: ì´ í•¨ìˆ˜ëŠ” soldoutProductListPointerì— íŒë§¤ì™„ë£Œëœ ìƒí’ˆ ê°ì²´ë¥¼ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+Product* soldoutProduct - íŒë§¤ì™„ë£Œëœ ìƒí’ˆ ê°ì²´
+Return Value : void
+Created: 2022/5/25 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void Member::AddSoldoutProduct(Product* soldoutProduct)
 {
-    (this->soldoutProductListPointer).push_back(soldoutProduct);
+    (this->soldoutProductListPointer).push_back(soldoutProduct); // soldoutProductListPointerì— íŒë§¤ì™„ë£Œëœ ìƒí’ˆ ê°ì²´ë¥¼ ì¶”ê°€í•œë‹¤
 }
 
+/*
+Function : void Member::AddAllSalesProduct(Product* newProduct)
+Description: ì´ í•¨ìˆ˜ëŠ” allSalesProductListPointerì— íŒë§¤ì¤‘ì¸ ìƒí’ˆê³¼ íŒë§¤ì™„ë£Œëœ ìƒí’ˆ ìƒê´€ì—†ì´ íŒë§¤ìê°€ íŒë§¤í•˜ëŠ” ëª¨ë“  ìƒí’ˆ ê°ì²´ë¥¼ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+Product* newProduct - ì¶”ê°€í•  ìƒí’ˆ ê°ì²´
+Return Value : void
+Created: 2022/5/25 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void Member::AddAllSalesProduct(Product* newProduct)
 {
-    allSalesProductListPointer.push_back(newProduct);
+    allSalesProductListPointer.push_back(newProduct); // allSalesProductListPointerì— ìƒí’ˆ ê°ì²´ë¥¼ ì¶”ê°€í•œë‹¤
 }
 
+/*
+Function : vector <Product*> Member::ListSellingProducts()
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì¤‘ì¸ ìƒí’ˆì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„° ë¦¬ìŠ¤íŠ¸ (sellingProductListPointer)ë¥¼ ë°˜í™˜í•´ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤. 
+Parameters : void
+Return Value : vector <Product*>
+Created: 2022/5/25 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 vector <Product*> Member::ListSellingProducts()
 {
-    return this->sellingProductListPointer; // ¸®ÅÏ Å¸ÀÔÀº vector <Product*> Å¸ÀÔÀÌ´Ù
+    return this->sellingProductListPointer; // ë¦¬í„´ íƒ€ì…ì€ vector <Product*> íƒ€ì…ì´ë‹¤
 }
 
+/*
+Function : vector <Product*> Member::ListSoldoutProducts()
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì™„ë£Œëœ ìƒí’ˆì„ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„° ë¦¬ìŠ¤íŠ¸ (soldoutProductListPointer)ë¥¼ ë°˜í™˜í•´ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤. 
+Parameters : void
+Return Value : vector <Product*>
+Created: 2022/5/25 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 vector <Product*> Member::ListSoldoutProducts()
 {
-    return this->soldoutProductListPointer; // ¸®ÅÏ Å¸ÀÔÀº vector <Product*> Å¸ÀÔÀÌ´Ù
+    return this->soldoutProductListPointer; // ë¦¬í„´ íƒ€ì…ì€ vector <Product*> íƒ€ì…ì´ë‹¤
 }
 
+/*
+Function : vector <Product*> Member::ListAllsalesProducts()
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì¤‘ì¸ ìƒí’ˆê³¼ íŒë§¤ì™„ë£Œëœ ìƒí’ˆ ëª¨ë‘ë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„° ë¦¬ìŠ¤íŠ¸ (allSalesProductListPointer)ë¥¼ ë°˜í™˜í•´ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤. 
+Parameters : void
+Return Value : vector <Product*>
+Created: 2022/5/25 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 vector <Product*> Member::ListAllsalesProducts()
 {
-    return this->allSalesProductListPointer; // ¸®ÅÏ Å¸ÀÔÀº vector <Product*> Å¸ÀÔÀÌ´Ù
+    return this->allSalesProductListPointer; // ë¦¬í„´ íƒ€ì…ì€ vector <Product*> íƒ€ì…ì´ë‹¤
 }
 
 /*
 Function : bool LoginUI::InputIDPW(Login* login)
-Description: ÀÌ ÇÔ¼ö´Â ·Î±×ÀÎ½Ã id¿Í pw¸¦ ÀÔ·ÂÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-Parameters : Login* login - ·Î±×ÀÎ Å¬·¡½ºÀÇ °´Ã¼ÀÇ ÁÖ¼Ò¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ
+Description: ì´ í•¨ìˆ˜ëŠ” ë¡œê·¸ì¸ì‹œ idì™€ pwë¥¼ ì…ë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : Login* login - ë¡œê·¸ì¸ í´ë˜ìŠ¤ì˜ ê°ì²´ì˜ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
 Return Value : bool
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 bool LoginUI::InputIDPW(Login* login)
 {
     string inputID, inputPW;
-    inputFile >> inputID >> inputPW;    // UI¿¡ id, pw ÀÔ·Â
+    inputFile >> inputID >> inputPW;    // UIì— id, pw ì…ë ¥
 
-    return login->IDPWinputed(inputID, inputPW);   //ÄÁÆ®·Ñ Å¬·¡½º¿¡°Ô ÀÔ·ÂÇÑ id, pw Àü´Ş
+    return login->IDPWinputed(inputID, inputPW);   //ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì—ê²Œ ì…ë ¥í•œ id, pw ì „ë‹¬
 }
 
 /*
 Function : void LoginUI::ShowCompleteLoginMessage(string curLoginMemberID, string curLoginMemberPW)
-Description: ÀÌ ÇÔ¼ö´Â ·Î±×ÀÎ ¿Ï·á½Ã ·Î±×ÀÎ ÇÑ È¸¿øÀÇ id¿Í pw¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” ë¡œê·¸ì¸ ì™„ë£Œì‹œ ë¡œê·¸ì¸ í•œ íšŒì›ì˜ idì™€ pwë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters :
-string curLoginMemberID - ·Î±×ÀÎ ÇÑ È¸¿øÀÇ id
-string curLoginMemberPW - ·Î±×ÀÎ ÇÑ È¸¿øÀÇ pw
+string curLoginMemberID - ë¡œê·¸ì¸ í•œ íšŒì›ì˜ id
+string curLoginMemberPW - ë¡œê·¸ì¸ í•œ íšŒì›ì˜ pw
 Return Value : void
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void LoginUI::ShowCompleteLoginMessage(string curLoginMemberID, string curLoginMemberPW)
 {
-    //·Î±×ÀÎÀÌ ¿Ï·áµÇ¾ú´Ù´Â Ã¢À» ¶ç¿ì´Â ÄÚµå (ÀÌ¹ø°úÁ¦¿¡¼­´Â ·Î±×ÀÎÇÑ È¸¿øÀÇ ¾ÆÀÌµğ ºñ¹Ğ¹øÈ£¸¦ ÅØ½ºÆ®·Î Ãâ·Â)
+    //ë¡œê·¸ì¸ì´ ì™„ë£Œë˜ì—ˆë‹¤ëŠ” ì°½ì„ ë„ìš°ëŠ” ì½”ë“œ (ì´ë²ˆê³¼ì œì—ì„œëŠ” ë¡œê·¸ì¸í•œ íšŒì›ì˜ ì•„ì´ë”” ë¹„ë°€ë²ˆí˜¸ë¥¼ í…ìŠ¤íŠ¸ë¡œ ì¶œë ¥)
     outputFile << "> " << curLoginMemberID << " " << curLoginMemberPW << endl;
 }
 
 /*
 Function : Login::Login()
-Description: ÀÌ ÇÔ¼ö´Â Login Å¬·¡½ºÀÇ °´Ã¼¸¦ »ı¼ºÇÏ´Â »ı¼ºÀÚ ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” Login í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 Login::Login()
 {
     LoginUI* loginUI = new LoginUI;
 
-    if (loginUI->InputIDPW(this))   // id pw¸¦ ÀÔ·ÂÇÑ´Ù. ·Î±×ÀÎÀÌ °¡´ÉÇÏ¸é (ÀÔ·ÂÇÑ id¿Í ÀÔ·ÂÇÑ pw°¡ ¸ÅÄªÀÌ ¸Â´Â°æ¿ì) ·Î±×ÀÎ ÇÑ´Ù.
+    if (loginUI->InputIDPW(this))   // id pwë¥¼ ì…ë ¥í•œë‹¤. ë¡œê·¸ì¸ì´ ê°€ëŠ¥í•˜ë©´ (ì…ë ¥í•œ idì™€ ì…ë ¥í•œ pwê°€ ë§¤ì¹­ì´ ë§ëŠ”ê²½ìš°) ë¡œê·¸ì¸ í•œë‹¤.
     {
         loginState = true;
         loginUI->ShowCompleteLoginMessage(curLoginMember->GetID(), curLoginMember->GetPW());
@@ -645,33 +816,33 @@ Login::Login()
 
 /*
 Function : bool Login::IDPWinputed(string inputID, string inputPW)
-Description: ÀÌ ÇÔ¼ö´Â UI·ÎºÎÅÍ ÀÔ·Â¹ŞÀº id, pw¸¦ ÄÁÆ®·Ñ Å¬·¡½º¿¡ Àü´ŞÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” UIë¡œë¶€í„° ì…ë ¥ë°›ì€ id, pwë¥¼ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì— ì „ë‹¬í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters :
-string inputID - ÀÔ·ÂµÈ id
-string inputPW - ÀÔ·ÂµÈ pw
+string inputID - ì…ë ¥ëœ id
+string inputPW - ì…ë ¥ëœ pw
 Return Value : bool
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 bool Login::IDPWinputed(string inputID, string inputPW)
 {
-    if (curLoginMember->CheckIDPW(inputID, inputPW) != -1) // id¿Í pw°¡ ¸ÅÄªµÇ¸é
+    if (curLoginMember->CheckIDPW(inputID, inputPW) != -1) // idì™€ pwê°€ ë§¤ì¹­ë˜ë©´
     {
-        curLoginMember = get<2>(memberLoginInfo[curLoginMember->CheckIDPW(inputID, inputPW)]); // ¸ÅÄªµÈ id,pwÀÇ È¸¿øÀ¸·Î ÇöÀç ·Î±×ÀÎÁßÀÎ È¸¿øÀÇ Á¤º¸¸¦ ¼³Á¤ÇÔ
-        return true;    // ·Î±×ÀÎ °¡´ÉÇÏ¹Ç·Î true ¹İÈ¯
+        curLoginMember = get<2>(memberLoginInfo[curLoginMember->CheckIDPW(inputID, inputPW)]); // ë§¤ì¹­ëœ id,pwì˜ íšŒì›ìœ¼ë¡œ í˜„ì¬ ë¡œê·¸ì¸ì¤‘ì¸ íšŒì›ì˜ ì •ë³´ë¥¼ ì„¤ì •í•¨
+        return true;    // ë¡œê·¸ì¸ ê°€ëŠ¥í•˜ë¯€ë¡œ true ë°˜í™˜
     }
-    return false;   // ·Î±×ÀÎ ºÒ°¡´ÉÇÏ¸é false ¹İÈ¯
+    return false;   // ë¡œê·¸ì¸ ë¶ˆê°€ëŠ¥í•˜ë©´ false ë°˜í™˜
 }
 
 /*
 Function : int Member::CheckIDPW(string inputID, string inputPW)
-Description: ÀÌ ÇÔ¼ö´Â ·Î±×ÀÎÇÒ¶§ ÀÔ·Â¹ŞÀº id¿Í pw°¡ ¼­·Î ¸ÅÄªÀÌ µÇ´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” ë¡œê·¸ì¸í• ë•Œ ì…ë ¥ë°›ì€ idì™€ pwê°€ ì„œë¡œ ë§¤ì¹­ì´ ë˜ëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters :
-string inputID - ÀÔ·ÂµÈ id
-string inputPW - ÀÔ·ÂµÈ pw
+string inputID - ì…ë ¥ëœ id
+string inputPW - ì…ë ¥ëœ pw
 Return Value : int
 Created: 2022/5/25 5:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 int Member::CheckIDPW(string inputID, string inputPW)
 {
@@ -679,25 +850,25 @@ int Member::CheckIDPW(string inputID, string inputPW)
     {
         string id = get<0>(memberLoginInfo[i]);
         string pw = get<1>(memberLoginInfo[i]);
-        if (id == inputID && pw == inputPW) // ÀÔ·ÂÇÑ id¿Í pw°¡ ¸ÅÄª µÇ¸é
+        if (id == inputID && pw == inputPW) // ì…ë ¥í•œ idì™€ pwê°€ ë§¤ì¹­ ë˜ë©´
         {
-            return i; // ÀÎµ¦½º ¹İÈ¯
+            return i; // ì¸ë±ìŠ¤ ë°˜í™˜
         }
     }
-    return -1; // ¸ÅÄªÀÌ µÇ´Â°ÍÀÌ ¾øÀ¸¸é -1¹İÈ¯
+    return -1; // ë§¤ì¹­ì´ ë˜ëŠ”ê²ƒì´ ì—†ìœ¼ë©´ -1ë°˜í™˜
 }
 
 /*
 Function : void LogoutUI::PushLogoutButton(Logout* logout)
-Description: ÀÌ ÇÔ¼ö´Â ·Î±×¾Æ¿ô ¹öÆ°À» ´©¸£¸é ·Î±×¾Æ¿ôÀ» ÁøÇàÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-Parameters : Logout* logout - Logout °´Ã¼ÀÇ ÁÖ¼Ò¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ
+Description: ì´ í•¨ìˆ˜ëŠ” ë¡œê·¸ì•„ì›ƒ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ë¡œê·¸ì•„ì›ƒì„ ì§„í–‰í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : Logout* logout - Logout ê°ì²´ì˜ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
 Return Value : void
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void LogoutUI::PushLogoutButton(Logout* logout)
 {
-    if (loginState)  // ·Î±×ÀÎ »óÅÂ¿¡¼­¸¸ ·Î±×¾Æ¿ô ÇÒ ¼ö ÀÖ´Ù.
+    if (loginState)  // ë¡œê·¸ì¸ ìƒíƒœì—ì„œë§Œ ë¡œê·¸ì•„ì›ƒ í•  ìˆ˜ ìˆë‹¤.
     {
         logout->DoLogout();
     }
@@ -705,25 +876,25 @@ void LogoutUI::PushLogoutButton(Logout* logout)
 
 /*
 Function : void LogoutUI::ShowCompleteLogoutMessage()
-Description: ÀÌ ÇÔ¼ö´Â ·Î±×¾Æ¿ôÀ» ¿Ï·áÇßÀ»¶§ ·Î±×¾Æ¿ôÇÑ È¸¿øÀÇ id¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” ë¡œê·¸ì•„ì›ƒì„ ì™„ë£Œí–ˆì„ë•Œ ë¡œê·¸ì•„ì›ƒí•œ íšŒì›ì˜ idë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
 Return Value : void
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void LogoutUI::ShowCompleteLogoutMessage()
 {
-    //·Î±×¾Æ¿ôÀÌ ¿Ï·áµÇ¾ú´Ù´Â Ã¢À» ¶ç¿ì´Â ÄÚµå (ÀÌ¹ø°úÁ¦¿¡¼­´Â ·Î±×¾Æ¿ôÇÑ È¸¿øÀÇ ¾ÆÀÌµğ¸¦ ÅØ½ºÆ®·Î Ãâ·Â)
+    //ë¡œê·¸ì•„ì›ƒì´ ì™„ë£Œë˜ì—ˆë‹¤ëŠ” ì°½ì„ ë„ìš°ëŠ” ì½”ë“œ (ì´ë²ˆê³¼ì œì—ì„œëŠ” ë¡œê·¸ì•„ì›ƒí•œ íšŒì›ì˜ ì•„ì´ë””ë¥¼ í…ìŠ¤íŠ¸ë¡œ ì¶œë ¥)
     outputFile << "> " << curLoginMember->GetID() << endl;
 }
 
 /*
 Function : Logout::Logout()
-Description: ÀÌ ÇÔ¼ö´Â Logout °´Ã¼¸¦ »ı¼ºÇÏ´Â »ı¼ºÀÚ ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” Logout ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 Logout::Logout()
 {
@@ -732,11 +903,11 @@ Logout::Logout()
 
 /*
 Function : void Logout::DoLogout()
-Description: ÀÌ ÇÔ¼ö´Â ·Î±×¾Æ¿ôÀÛ¾÷À» ½ÇÁ¦·Î ÁøÇàÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” ë¡œê·¸ì•„ì›ƒì‘ì—…ì„ ì‹¤ì œë¡œ ì§„í–‰í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
 Return Value : void
 Created: 2022/5/26 3:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void Logout::DoLogout()
 {
@@ -748,11 +919,11 @@ void Logout::DoLogout()
 
 /*
 Function : void SignUpUI::PushSignUpButton(SignUp* signUp)
-Description: ÀÌ ÇÔ¼ö´Â È¸¿ø°¡ÀÔ ¹öÆ° ´©¸£¸é È¸¿ø°¡ÀÔÀ» ÁøÇàÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-Parameters : SignUp* signUp - SignUp Å¬·¡½º °´Ã¼ÀÇ Æ÷ÀÎÅÍ
+Description: ì´ í•¨ìˆ˜ëŠ” íšŒì›ê°€ì… ë²„íŠ¼ ëˆ„ë¥´ë©´ íšŒì›ê°€ì…ì„ ì§„í–‰í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : SignUp* signUp - SignUp í´ë˜ìŠ¤ ê°ì²´ì˜ í¬ì¸í„°
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void SignUpUI::PushSignUpButton(SignUp* signUp)
 {
@@ -761,60 +932,60 @@ void SignUpUI::PushSignUpButton(SignUp* signUp)
 
 /*
 Function : void SignUpUI::InputEssentialInfo(SignUp* signUp)
-Description: ÀÌ ÇÔ¼ö´Â È¸¿øÀÇ ±âº»Á¤º¸(id, pw, È¸¿øÀÌ¸§, È¸¿øÁÖ¹Î¹øÈ£)¸¦ ÀÔ·ÂÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-Parameters : SignUp* signUp - SignUp Å¬·¡½º °´Ã¼ÀÇ Æ÷ÀÎÅÍ
+Description: ì´ í•¨ìˆ˜ëŠ” íšŒì›ì˜ ê¸°ë³¸ì •ë³´(id, pw, íšŒì›ì´ë¦„, íšŒì›ì£¼ë¯¼ë²ˆí˜¸)ë¥¼ ì…ë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : SignUp* signUp - SignUp í´ë˜ìŠ¤ ê°ì²´ì˜ í¬ì¸í„°
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void SignUpUI::InputEssentialInfo(SignUp* signUp)
 {
     string inputID, inputPW, inputMemberName, inputIDCardNumber;
-    inputFile >> inputMemberName >> inputIDCardNumber >> inputID >> inputPW;  // È¸¿øÀÇ ±âº»Á¤º¸ÀÔ·Â
+    inputFile >> inputMemberName >> inputIDCardNumber >> inputID >> inputPW;  // íšŒì›ì˜ ê¸°ë³¸ì •ë³´ì…ë ¥
 
-    signUp->GetEssentailInfo(inputMemberName, inputIDCardNumber, inputID, inputPW); // È¸¿øÀÇ ±âº» Á¤º¸¸¦ ÄÁÆ®·Ñ Å¬·¡½º·Î ³Ñ±è
+    signUp->GetEssentailInfo(inputMemberName, inputIDCardNumber, inputID, inputPW); // íšŒì›ì˜ ê¸°ë³¸ ì •ë³´ë¥¼ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ë¡œ ë„˜ê¹€
 }
 
 /*
 Function : void SignUpUI::ShowEssentialInfoInputInterface()
-Description: ÀÌ ÇÔ¼ö´Â È¸¿øÀÇ ±âº»Á¤º¸¸¦ ÀÔ·ÂÇÏ´Â ÀÎÅÍÆäÀÌ½º¸¦ È¸¿ø¿¡°Ô º¸¿©ÁÖ´Â ÇÔ¼öÀÔ´Ï´Ù
+Description: ì´ í•¨ìˆ˜ëŠ” íšŒì›ì˜ ê¸°ë³¸ì •ë³´ë¥¼ ì…ë ¥í•˜ëŠ” ì¸í„°í˜ì´ìŠ¤ë¥¼ íšŒì›ì—ê²Œ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤
 Parameters : void
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void SignUpUI::ShowEssentialInfoInputInterface()
 {
     /*
-    È¸¿øÀÇ ±âº»Á¤º¸¸¦ ÀÔ·ÂÇÏ´Â Ã¢À¸·Î ÀÌµ¿ÇÏ´Â ÄÚµå ±¸Çö(ÀÌ¹ø°úÁ¦¿¡¼­´Â ÅØ½ºÆ®¸¸ Ç¥Çö ÇÏ¹Ç·Î ÄÚµå ¾øÀ½)
+    íšŒì›ì˜ ê¸°ë³¸ì •ë³´ë¥¼ ì…ë ¥í•˜ëŠ” ì°½ìœ¼ë¡œ ì´ë™í•˜ëŠ” ì½”ë“œ êµ¬í˜„(ì´ë²ˆê³¼ì œì—ì„œëŠ” í…ìŠ¤íŠ¸ë§Œ í‘œí˜„ í•˜ë¯€ë¡œ ì½”ë“œ ì—†ìŒ)
     */
 }
 
 /*
 Function : void SignUpUI::ShowCompleteSignUpMessage(string memberName, string memberIDCardNumber, string memberID, string memberPW)
-Description: ÀÌ ÇÔ¼ö´Â È¸¿ø°¡ÀÔÀ» ¿Ï·áÇßÇßÀ»¶§ È¸¿øÀÇ ÀÌ¸§, È¸¿øÀÇ ÁÖ¹Î¹øÈ£, È¸¿øÀÇ id, È¸¿øÀÇ pw¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” íšŒì›ê°€ì…ì„ ì™„ë£Œí–ˆí–ˆì„ë•Œ íšŒì›ì˜ ì´ë¦„, íšŒì›ì˜ ì£¼ë¯¼ë²ˆí˜¸, íšŒì›ì˜ id, íšŒì›ì˜ pwë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters :
-string memberName - È¸¿øÀÇ ÀÌ¸§
-string memberIDCardNumber - È¸¿øÀÇ ÁÖ¹Î¹øÈ£
-string memberID - È¸¿øÀÇ id
-string memberPW - È¸¿øÀÇ pw
+string memberName - íšŒì›ì˜ ì´ë¦„
+string memberIDCardNumber - íšŒì›ì˜ ì£¼ë¯¼ë²ˆí˜¸
+string memberID - íšŒì›ì˜ id
+string memberPW - íšŒì›ì˜ pw
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void SignUpUI::ShowCompleteSignUpMessage(string memberName, string memberIDCardNumber, string memberID, string memberPW)
 {
-    // È¸¿ø°¡ÀÔ ¿Ï·áÇß´Ù´Â ¸Ş¼¼Áö °úÁ¦ Çü½Ä¿¡ ¸Â°Ô Ãâ·Â
+    // íšŒì›ê°€ì… ì™„ë£Œí–ˆë‹¤ëŠ” ë©”ì„¸ì§€ ê³¼ì œ í˜•ì‹ì— ë§ê²Œ ì¶œë ¥
     outputFile << "> " << memberName << " " << memberIDCardNumber << " " << memberID << " " << memberPW << endl;
 }
 
 /*
 Function : SignUp::SignUp()
-Description: ÀÌ ÇÔ¼ö´Â SignUp °´Ã¼¸¦ »ı¼ºÇÏ´Â »ı¼ºÀÚ ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” SignUp ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 SignUp::SignUp()
 {
@@ -825,11 +996,11 @@ SignUp::SignUp()
 
 /*
 Function : void SignUp::ProceedSignUp()
-Description: ÀÌ ÇÔ¼ö´Â È¸¿ø°¡ÀÔÀ» °è¼ÓÇØ¼­ ÁøÇàÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” íšŒì›ê°€ì…ì„ ê³„ì†í•´ì„œ ì§„í–‰í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void SignUp::ProceedSignUp()
 {
@@ -839,31 +1010,31 @@ void SignUp::ProceedSignUp()
 
 /*
 Function : void SignUp::GetEssentailInfo(string inputMemberName, string inputIDCardNumber, string inputID, string inputPW)
-Description: ÀÌ ÇÔ¼ö´Â ÀÔ·Â¹ŞÀº È¸¿øÀÇÀÌ¸§, ÁÖ¹Î¹øÈ£, ÀÔ·ÂµÈ id, ÀÔ·ÂµÈ pw Á¤º¸¸¦ getÇÏ¿© È¸¿ø°¡ÀÔ ÀÛ¾÷À» ½ÇÁ¦·Î ÁøÇàÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” ì…ë ¥ë°›ì€ íšŒì›ì˜ì´ë¦„, ì£¼ë¯¼ë²ˆí˜¸, ì…ë ¥ëœ id, ì…ë ¥ëœ pw ì •ë³´ë¥¼ getí•˜ì—¬ íšŒì›ê°€ì… ì‘ì—…ì„ ì‹¤ì œë¡œ ì§„í–‰í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters :
-string inputMemberName - ÀÔ·Â¹ŞÀº È¸¿øÀÇ ÀÌ¸§
-string inputIDCardNumber - ÀÔ·Â¹ŞÀº È¸¿øÀÇ ÁÖ¹Î¹øÈ£
-string inputID - ÀÔ·Â¹ŞÀº È¸¿øÀÇ id
-string inputPW - ÀÔ·Â¹ŞÀº È¸¿øÀÇ pw
+string inputMemberName - ì…ë ¥ë°›ì€ íšŒì›ì˜ ì´ë¦„
+string inputIDCardNumber - ì…ë ¥ë°›ì€ íšŒì›ì˜ ì£¼ë¯¼ë²ˆí˜¸
+string inputID - ì…ë ¥ë°›ì€ íšŒì›ì˜ id
+string inputPW - ì…ë ¥ë°›ì€ íšŒì›ì˜ pw
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void SignUp::GetEssentailInfo(string inputMemberName, string inputIDCardNumber, string inputID, string inputPW)
 {
-    bool signupPossible = true; //È¸¿ø°¡ÀÔ °¡´ÉÇÏ¸é true ¾Æ´Ï¸é false
+    bool signupPossible = true; //íšŒì›ê°€ì… ê°€ëŠ¥í•˜ë©´ true ì•„ë‹ˆë©´ false
 
     for (int i = 0; i < memberLoginInfo.size(); i++)
     {
         string id = get<0>(memberLoginInfo[i]);
 
-        if (id == inputID)    // º¤ÅÍ¿¡ ÀÔ·ÂÇÑ id°¡ Á¸ÀçÇÏ¸é id Áßº¹ÀÌ ¾ÈµÇ¹Ç·Î
+        if (id == inputID)    // ë²¡í„°ì— ì…ë ¥í•œ idê°€ ì¡´ì¬í•˜ë©´ id ì¤‘ë³µì´ ì•ˆë˜ë¯€ë¡œ
         {
-            signupPossible = false; // °¡ÀÔÀÌ ºÒ°¡´ÉÇÏ´Ù.
+            signupPossible = false; // ê°€ì…ì´ ë¶ˆê°€ëŠ¥í•˜ë‹¤.
         }
     }
 
-    if (signupPossible)  // È¸¿ø°¡ÀÔÀÌ °¡´ÉÇÏ¸é (=°ãÄ¡´Â ¾ÆÀÌµğ¾øÀ¸¸é) È¸¿ø°¡ÀÔÇÑ´Ù.
+    if (signupPossible)  // íšŒì›ê°€ì…ì´ ê°€ëŠ¥í•˜ë©´ (=ê²¹ì¹˜ëŠ” ì•„ì´ë””ì—†ìœ¼ë©´) íšŒì›ê°€ì…í•œë‹¤.
     {
         Member* m = new Member(inputID, inputPW, inputMemberName, inputIDCardNumber);
 
@@ -874,11 +1045,11 @@ void SignUp::GetEssentailInfo(string inputMemberName, string inputIDCardNumber, 
 
 /*
 Function : void DeleteMyAccountUI::DeleteAccountButton(DeleteMyAccount* deleteMyAccount)
-Description: ÀÌ ÇÔ¼ö´Â È¸¿øÅ»Åğ ¹öÆ°À» ´©¸£¸é È¸¿øÅ»Åğ¸¦ ÁøÇàÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
-Parameters : DeleteMyAccount* deleteMyAccount - DeleteMyAccount Å¬·¡½ºÀÇ °´Ã¼ÀÇ ÁÖ¼Ò¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ
+Description: ì´ í•¨ìˆ˜ëŠ” íšŒì›íƒˆí‡´ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ íšŒì›íƒˆí‡´ë¥¼ ì§„í–‰í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : DeleteMyAccount* deleteMyAccount - DeleteMyAccount í´ë˜ìŠ¤ì˜ ê°ì²´ì˜ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„°
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void DeleteMyAccountUI::DeleteAccountButton(DeleteMyAccount* deleteMyAccount)
 {
@@ -887,25 +1058,25 @@ void DeleteMyAccountUI::DeleteAccountButton(DeleteMyAccount* deleteMyAccount)
 
 /*
 Function : void DeleteMyAccountUI::ShowCompleteDeleteAccount(string curMemberID)
-Description: ÀÌ ÇÔ¼ö´Â È¸¿øÅ»Åğ¸¦ ¿Ï·á ÇßÀ»¶§ Å»ÅğÇÑ È¸¿øÀÇ id¸¦ Ãâ·ÂÇÏ´Â ÇÕ¼öÀÔ´Ï´Ù.
-Parameters : string curMemberID - Å»ÅğÇÑ È¸¿øÀÇ id
+Description: ì´ í•¨ìˆ˜ëŠ” íšŒì›íƒˆí‡´ë¥¼ ì™„ë£Œ í–ˆì„ë•Œ íƒˆí‡´í•œ íšŒì›ì˜ idë¥¼ ì¶œë ¥í•˜ëŠ” í•©ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : string curMemberID - íƒˆí‡´í•œ íšŒì›ì˜ id
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void DeleteMyAccountUI::ShowCompleteDeleteAccount(string curMemberID)
 {
-    //È¸¿øÅ»Åğ°¡ ¿Ï·áµÇ¾ú´Ù´Â Ã¢À» ¶ç¿ì´Â ÄÚµå (ÀÌ¹ø°úÁ¦¿¡¼­´Â È¸¿øÅ»ÅğÇÑ È¸¿øÀÇ ¾ÆÀÌµğ¸¦ ÅØ½ºÆ®·Î Ãâ·Â)
+    //íšŒì›íƒˆí‡´ê°€ ì™„ë£Œë˜ì—ˆë‹¤ëŠ” ì°½ì„ ë„ìš°ëŠ” ì½”ë“œ (ì´ë²ˆê³¼ì œì—ì„œëŠ” íšŒì›íƒˆí‡´í•œ íšŒì›ì˜ ì•„ì´ë””ë¥¼ í…ìŠ¤íŠ¸ë¡œ ì¶œë ¥)
     outputFile << "> " << curMemberID << endl;
 }
 
 /*
 Function : DeleteMyAccount::DeleteMyAccount()
-Description: ÀÌ ÇÔ¼ö´Â DeleteMyAccount Å¬·¡½ºÀÇ °´Ã¼¸¦ »ı¼ºÇÏ´Â »ı¼ºÀÚ ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” DeleteMyAccount í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 DeleteMyAccount::DeleteMyAccount()
 {
@@ -915,28 +1086,36 @@ DeleteMyAccount::DeleteMyAccount()
 
 /*
 Function : void DeleteMyAccount::DeleteAccount()
-Description: ÀÌ ÇÔ¼ö´Â È¸¿øÅ»Åğ ÀÛ¾÷À» ½ÇÁ¦·Î ÁøÇàÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” íšŒì›íƒˆí‡´ ì‘ì—…ì„ ì‹¤ì œë¡œ ì§„í–‰í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
 Return Value : void
 Created: 2022/5/26 6:00 am
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 void DeleteMyAccount::DeleteAccount()
 {
-    if (loginState)  // ÇöÀç ·Î±×ÀÎ ÁßÀÏ¶§¸¸ È¸¿ø Å»Åğ°¡ °¡´ÉÇÏ´Ù.
+    if (loginState)  // í˜„ì¬ ë¡œê·¸ì¸ ì¤‘ì¼ë•Œë§Œ íšŒì› íƒˆí‡´ê°€ ê°€ëŠ¥í•˜ë‹¤.
     {
         DeleteMyAccountUI* deleteMyAccountUI = new DeleteMyAccountUI;
-        string curMemberID = curLoginMember->GetID();   // Å»ÅğÇÏ´Â È¸¿øÀÇ ¾ÆÀÌµğ Á¤º¸
-        curLoginMember->~Member(); // °´Ã¼ »èÁ¦ÇÑ´Ù.
-        deleteMyAccountUI->ShowCompleteDeleteAccount(curMemberID); //UI¿¡ È¸¿ø Å»Åğ°¡ µÇ¾ú´Ù´Â Ã¢À» ¶ç¿î´Ù
-        curLoginMember = NULL; // ÇöÀç ·Î±×ÀÎÁßÀÎ È¸¿ø ¾øÀ½.
-        loginState = false; // ·Î±×¾Æ¿ô»óÅÂ·Î ¸¸µç´Ù.
+        string curMemberID = curLoginMember->GetID();   // íƒˆí‡´í•˜ëŠ” íšŒì›ì˜ ì•„ì´ë”” ì •ë³´
+        curLoginMember->~Member(); // ê°ì²´ ì‚­ì œí•œë‹¤.
+        deleteMyAccountUI->ShowCompleteDeleteAccount(curMemberID); //UIì— íšŒì› íƒˆí‡´ê°€ ë˜ì—ˆë‹¤ëŠ” ì°½ì„ ë„ìš´ë‹¤
+        curLoginMember = NULL; // í˜„ì¬ ë¡œê·¸ì¸ì¤‘ì¸ íšŒì› ì—†ìŒ.
+        loginState = false; // ë¡œê·¸ì•„ì›ƒìƒíƒœë¡œ ë§Œë“ ë‹¤.
     }
 }
 
+/*
+Function : AddProduct::AddProduct()
+Description: ì´ í•¨ìˆ˜ëŠ” AddProduct ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : ì—†ìŒ
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 AddProduct::AddProduct()
 {
-    if (loginState)  // ·Î±×ÀÎ Áß »óÅÂ ÀÏ ¶§¸¸ ÆÇ¸Å ÀÇ·ù¸¦ µî·Ï ÇÒ ¼öÀÖ´Ù.
+    if (loginState)  // ë¡œê·¸ì¸ ì¤‘ ìƒíƒœ ì¼ ë•Œë§Œ íŒë§¤ ì˜ë¥˜ë¥¼ ë“±ë¡ í•  ìˆ˜ìˆë‹¤.
     {
         AddProductUI* addProductUI = new AddProductUI;
         addProductUI->AddProductButton(this);
@@ -944,114 +1123,226 @@ AddProduct::AddProduct()
     }
 }
 
+/*
+Function : void AddProductUI::AddProductButton(AddProduct* addProduct)
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì˜ë¥˜ë“±ë¡ ë²„íŠ¼ì´ ëˆŒë ¸ì„ë•Œ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì—ê²Œ ì•Œë ¤ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+AddProduct* addProduct - ì•Œë ¤ì¤„ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
+void AddProductUI::AddProductButton(AddProduct* addProduct)
+{
+    addProduct->ShowAddUI();
+}
+
+/*
+Function : void AddProduct::ShowAddUI()
+Description: ì´ í•¨ìˆ˜ëŠ” AddProduct UIë¥¼ ë³´ì—¬ë‹¬ë¼ê³  ìš”ì²­í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void AddProduct::ShowAddUI()
 {
     AddProductUI* addProductUI = new AddProductUI;
     addProductUI->StartInterface();
 }
 
-void AddProduct::SendProductData(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
-{
-    curLoginMember->AddNewProduct(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount);   // ÇöÀç ·Î±×ÀÎ ÇÑ È¸¿øÀÌ »õ »óÇ°À» µî·ÏÇÏ´Â ÇÔ¼ö¸¦ È£ÃâÇÑ´Ù
-    
-    AddProductUI *addProduct;
-    addProduct->ShowRegistrationCompleteMessage(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount);
-}
-
-void AddProductUI::AddProductButton(AddProduct* addProduct)
-{
-    addProduct->ShowAddUI();
-}
-
+/*
+Function : void AddProductUI::StartInterface()
+Description: ì´ í•¨ìˆ˜ëŠ” AddProduct UIë¥¼ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void AddProductUI::StartInterface()
 {
     /*
-    »óÇ°ÀÇ Á¤º¸¸¦ ÀÔ·ÂÇÏ´Â Ã¢À¸·Î ÀÌµ¿ÇÏ´Â ÄÚµå ±¸Çö(ÀÌ¹ø°úÁ¦¿¡¼­´Â ÅØ½ºÆ®¸¸ Ç¥Çö ÇÏ¹Ç·Î ÄÚµå ¾øÀ½)
+    ìƒí’ˆì˜ ì •ë³´ë¥¼ ì…ë ¥í•˜ëŠ” ì°½ìœ¼ë¡œ ì´ë™í•˜ëŠ” ì½”ë“œ êµ¬í˜„(ì´ë²ˆê³¼ì œì—ì„œëŠ” í…ìŠ¤íŠ¸ë§Œ í‘œí˜„ í•˜ë¯€ë¡œ ì½”ë“œ ì—†ìŒ)
     */
 }
 
+/*
+Function : void AddProductUI::InputProductData(AddProduct* addProduct)
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ìì—ê²Œ ì…ë ¥ë°›ì€ ìƒí’ˆì •ë³´ë“¤ì„ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì—ê²Œ ì „ë‹¬í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+AddProduct* addProduct - ê°’ì„ ì „ë‹¬í•  ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void AddProductUI::InputProductData(AddProduct* addProduct)
 {
     string inputProductName, inputMadeCompanyName;
     int inputPrice, inputProductCount;
 
-    inputFile >> inputProductName >> inputMadeCompanyName >> inputPrice >> inputProductCount;   // »óÇ°¸í, Á¦Á¶È¸»ç¸í, °¡°İ, ¼ö·®À» ÆÄÀÏ·Î ºÎÅÍ ÀÔ·Â¹Ş´Â´Ù.
+    inputFile >> inputProductName >> inputMadeCompanyName >> inputPrice >> inputProductCount;   // ìƒí’ˆëª…, ì œì‘íšŒì‚¬ëª…, ê°€ê²©, ìˆ˜ëŸ‰ì„ íŒŒì¼ë¡œ ë¶€í„° ì…ë ¥ë°›ëŠ”ë‹¤.
 
-    addProduct->SendProductData(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount); // ÀÔ·Â¹ŞÀº Á¤º¸¸¦ ÄÁÆ®·Ñ Å¬·¡½º·Î ÀüÇØÁØ´Ù.
+    addProduct->SendProductData(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount); // ì…ë ¥ë°›ì€ ì •ë³´ë¥¼ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ë¡œ ì „í•´ì¤€ë‹¤.
 }
 
+/*
+Function : void AddProduct::SendProductData(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ìì—ê²Œ ì…ë ¥ë°›ì€ ìƒí’ˆì •ë³´ë“¤ì„ ë©¤ë²„ í´ë˜ìŠ¤ì—ê²Œ ì „ë‹¬í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+string inputProductName - ì…ë ¥ë°›ì€ ìƒí’ˆëª…
+string inputMadeCompanyName - ì…ë ¥ë°›ì€ ì œì‘íšŒì‚¬ëª…
+int inputPrice - ì…ë ¥ë°›ì€ ê°€ê²©
+int inputProductCount - ì…ë ¥ë°›ì€ ìˆ˜ëŸ‰
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
+void AddProduct::SendProductData(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
+{
+    curLoginMember->AddNewProduct(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount);   // í˜„ì¬ ë¡œê·¸ì¸ í•œ íšŒì›ì´ ìƒˆ ìƒí’ˆì„ ë“±ë¡í•˜ëŠ” í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•œë‹¤
+    
+    AddProductUI *addProduct;
+    addProduct->ShowRegistrationCompleteMessage(inputProductName, inputMadeCompanyName, inputPrice, inputProductCount); // ë“±ë¡ì™„ë£Œí•˜ì˜€ë‹¤ê³  ë©”ì„¸ì§€ë¥¼ ë³´ë‚¸ë‹¤.
+}
+
+/*
+Function : void AddProductUI::ShowRegistrationCompleteMessage(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ ì˜ë¥˜ë¥¼ ì˜ ë“±ë¡í•˜ì˜€ë‹¤ëŠ” ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+string inputProductName - ì…ë ¥ë°›ì€ ìƒí’ˆëª…
+string inputMadeCompanyName - ì…ë ¥ë°›ì€ ì œì‘íšŒì‚¬ëª…
+int inputPrice - ì…ë ¥ë°›ì€ ê°€ê²©
+int inputProductCount - ì…ë ¥ë°›ì€ ìˆ˜ëŸ‰
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void AddProductUI::ShowRegistrationCompleteMessage(string inputProductName, string inputMadeCompanyName, int inputPrice, int inputProductCount)
 {
     outputFile << "> ";
-    outputFile << inputProductName << " " << inputMadeCompanyName << " " << inputPrice << " " << inputProductCount << endl; // »ı¼ºÇÑ »óÇ° °´Ã¼ÀÇ ÀÌ¸§, Á¦Á¶È¸»ç¸í, °¡°İ ,¼ö·®À» Ãâ·ÂÇÑ´Ù.
+    outputFile << inputProductName << " " << inputMadeCompanyName << " " << inputPrice << " " << inputProductCount << endl; // ìƒì„±í•œ ìƒí’ˆ ê°ì²´ì˜ ì´ë¦„, ì œì¡°íšŒì‚¬ëª…, ê°€ê²©, ìˆ˜ëŸ‰ì„ ì¶œë ¥í•œë‹¤.
 }
 
+/*
+Function : ViewProduct::ViewProduct()
+Description: ì´ í•¨ìˆ˜ëŠ” ViewProduct ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì˜ ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : ì—†ìŒ
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 ViewProduct::ViewProduct()
 {
-    if (loginState)  // ·Î±×ÀÎ »óÅÂ¿¡¼­¸¸ ÆÇ¸ÅÁßÀÎ ÀÇ·ù¸¦ Á¶È¸ °¡´ÉÇÏ´Ù.
+    if (loginState)  // ë¡œê·¸ì¸ ìƒíƒœì—ì„œë§Œ íŒë§¤ì¤‘ì¸ ì˜ë¥˜ë¥¼ ì¡°íšŒ ê°€ëŠ¥í•˜ë‹¤.
     {
-        ViewProductUI* viewProductUI = new ViewProductUI;
+        ViewProductUI* viewProductUI = new ViewProductUI; // ViewProductUI í´ë˜ìŠ¤ë¥¼ ìƒì„±í•œë‹¤
 
         viewProductUI->ViewSalesProductButton(this);
     }
 }
 
+/*
+Function : void ViewProductUI::ViewSalesProductButton(ViewProduct* viewProduct)
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì˜ë¥˜ì¡°íšŒ ë²„íŠ¼ì´ ëˆŒë ¸ì„ë•Œ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì—ê²Œ ì•Œë ¤ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+ViewProduct* viewProduct - ì•Œë ¤ì¤„ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
+void ViewProductUI::ViewSalesProductButton(ViewProduct* viewProduct)
+{
+    viewProduct->ShowSellingProduct();
+}
+
+/*
+Function : void ViewProduct::ShowSellingProduct()
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì¤‘ì¸ ì˜ë¥˜ ìƒí’ˆì„ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void ViewProduct::ShowSellingProduct()
 {
     vector <Product*> listSellingProducts;
-    // listSellingProducts´Â ListSellingProducts() ÇÔ¼ö·ÎºÎÅÍ ÇöÀç ·Î±×ÀÎÇÑ È¸¿øÀÌ ÆÇ¸ÅÁßÀÎ »óÇ°ÀÇ ÁÖ¼ÒµéÀ» Æ÷ÀÎÅÍÇÏ´Â ¸®½ºÆ®¸¦ ¹İÈ¯¹Ş±â À§ÇÑ º¤ÅÍÀÓ
+    // listSellingProductsëŠ” ListSellingProducts() í•¨ìˆ˜ë¡œë¶€í„° í˜„ì¬ ë¡œê·¸ì¸í•œ íšŒì›ì´ íŒë§¤ì¤‘ì¸ ìƒí’ˆì˜ ì£¼ì†Œë“¤ì„ í¬ì¸í„°í•˜ëŠ” ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜ë°›ê¸° ìœ„í•œ ë²¡í„°ì„
 
-    listSellingProducts = curLoginMember->ListSellingProducts(); // °úÁ¦2 ÆÇ¸ÅÀÇ·ù Á¶È¸ 1.1.1¿¡ ÇØ´ç
+    listSellingProducts = curLoginMember->ListSellingProducts(); // í˜„ì¬ ë¡œê·¸ì¸í•œ íšŒì›ì˜ íŒë§¤ì¤‘ì¸ ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°›ì•„ì˜¨ë‹¤
 
-    for (int i = 0; i < listSellingProducts.size(); i++) // °¢ »óÇ°ÀÇ ÁÖ¼ÒÀÇ Æ÷ÀÎÅÍµéÀ» ¹Ş¾Æ¿ÔÀ¸´Ï ¹İº¹¹®À» ÅëÇØ »ó¼¼Á¤º¸¸¦ Ãâ·ÂÇÑ´Ù. °úÁ¦ 2 ÆÇ¸ÅÀÇ·ù Á¶È¸ 1.1.2¿¡ ÇØ´ç
+    for (int i = 0; i < listSellingProducts.size(); i++) // ê° ìƒí’ˆì˜ ì£¼ì†Œì˜ í¬ì¸í„°ë“¤ì„ ë°›ì•„ì™”ìœ¼ë‹ˆ ë°˜ë³µë¬¸ì„ í†µí•´ ìƒì„¸ì •ë³´ë¥¼ viewProductUIì—ê²Œ ì „ë‹¬í•œë‹¤.
     {
         ViewProductUI *viewProductUI = new ViewProductUI;
         viewProductUI->ShowRegistedProductInfo(listSellingProducts[i]->GetProductName(), listSellingProducts[i]->GetMadeCompanyName(), listSellingProducts[i]->GetPrice(),listSellingProducts[i]->GetProductCount());
     }
 }
 
-void ViewProductUI::ViewSalesProductButton(ViewProduct* viewProduct)
-{
-    viewProduct->ShowSellingProduct();
-}
+/*
+Function : void ViewProductUI::ShowRegistedProductInfo(string productName, string productMadeCompanyName, int productPrice, int productCount)
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì¤‘ì¸ ì˜ë¥˜ìƒí’ˆë“¤ì˜ ì„¸ë¶€ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+string productName - íŒë§¤ì¤‘ì¸ ìƒí’ˆ ì´ë¦„
+string productMadeCompanyName - íŒë§¤ì¤‘ì¸ ìƒí’ˆ ì œì‘íšŒì‚¬ëª…
+int productPrice - íŒë§¤ì¤‘ì¸ ìƒí’ˆ ê°€ê²©
+int productCount - íŒë§¤ì¤‘ì¸ ìƒí’ˆ ìˆ˜ëŸ‰
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void ViewProductUI::ShowRegistedProductInfo(string productName, string productMadeCompanyName, int productPrice, int productCount)
 {
     outputFile << "> ";
     outputFile << productName<< " " << productMadeCompanyName << " " << productPrice << " " << productCount << endl;
 }
 
+/*
+Function : ViewSoldoutProduct::ViewSoldoutProduct()
+Description: ì´ í•¨ìˆ˜ëŠ” ViewSoldoutProduct ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì˜ ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : ì—†ìŒ
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 ViewSoldoutProduct::ViewSoldoutProduct()
 {
-    if (loginState)  // ·Î±×ÀÎ »óÅÂ¿¡¼­¸¸ ÆÇ¸Å¿Ï·áµÈ ÀÇ·ù¸¦ Á¶È¸ °¡´ÉÇÏ´Ù.
+    if (loginState)  // ë¡œê·¸ì¸ ìƒíƒœì—ì„œë§Œ íŒë§¤ì™„ë£Œëœ ì˜ë¥˜ë¥¼ ì¡°íšŒ ê°€ëŠ¥í•˜ë‹¤.
     {
-        ViewSoldoutProductUI* viewSoldoutProductUI = new ViewSoldoutProductUI;
+        ViewSoldoutProductUI* viewSoldoutProductUI = new ViewSoldoutProductUI; //ViewSoldoutProductUI í´ë˜ìŠ¤ë¥¼ ìƒì„±í•œë‹¤.
 
         viewSoldoutProductUI->ViewSoldoutProductButton(this);
     }
 }
 
+/*
+Function : void ViewSoldoutProductUI::ViewSoldoutProductButton(ViewSoldoutProduct* viewSoldoutProduct)
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì™„ë£Œìƒí’ˆë‚´ì—­ì¡°íšŒ ë²„íŠ¼ì´ ëˆŒë ¸ì„ë•Œ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì—ê²Œ ì•Œë ¤ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+ViewSoldoutProduct* viewSoldoutProduct - ì•Œë ¤ì¤„ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void ViewSoldoutProductUI::ViewSoldoutProductButton(ViewSoldoutProduct* viewSoldoutProduct)
 {
     viewSoldoutProduct->ShowSoldoutProduct();
 }
-void ViewSoldoutProductUI::ShowSoldoutProducts(string productName, string madeCompanyName, int price, int sellingCount, int averageRating)
-{
-    outputFile << "> ";
-    outputFile << productName << " ";
-    outputFile << madeCompanyName << " ";
-    outputFile << price << " ";
-    outputFile << sellingCount << " ";
-    outputFile << averageRating << endl;
-}
 
+/*
+Function : void ViewSoldoutProduct::ShowSoldoutProduct()
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì™„ë£Œëœ ì˜ë¥˜ ìƒí’ˆì„ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void ViewSoldoutProduct::ShowSoldoutProduct()
 {
     vector <Product*> listSoldoutProducts;
-    vector <tuple <string, string, int, int, double> > v;
+    vector <tuple <string, string, int, int, double> > v; // ìƒí’ˆëª…ì˜ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ ìœ„í•œ ë²¡í„°ì´ë‹¤
  
-    listSoldoutProducts = curLoginMember->ListSoldoutProducts();
+    listSoldoutProducts = curLoginMember->ListSoldoutProducts(); // í˜„ì¬ ë¡œê·¸ì¸í•œ íšŒì›ì˜ íŒë§¤ì™„ë£Œëœ ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°›ì•„ì˜¨ë‹¤
 
-    for (int i = 0; i < listSoldoutProducts.size(); i++) // °¢ »óÇ°ÀÇ ÁÖ¼ÒÀÇ Æ÷ÀÎÅÍµéÀ» ¹Ş¾Æ¿ÔÀ¸´Ï ¹İº¹¹®À» ÅëÇØ »ó¼¼Á¤º¸¸¦ Ãâ·ÂÇÑ´Ù. °úÁ¦ 2 ÆÇ¸ÅÀÇ·ù Á¶È¸ 1.1.2¿¡ ÇØ´ç
+    for (int i = 0; i < listSoldoutProducts.size(); i++) // ê° ìƒí’ˆì˜ ì£¼ì†Œì˜ í¬ì¸í„°ë“¤ì„ ë°›ì•„ì™”ìœ¼ë‹ˆ ë°˜ë³µë¬¸ì„ í†µí•´ ìƒì„¸ì •ë³´ë¥¼ ì¶œë ¥í•œë‹¤.
     {
         string productName = listSoldoutProducts[i]->GetProductName();
         string madeCompanyName = listSoldoutProducts[i]->GetMadeCompanyName();
@@ -1061,46 +1352,84 @@ void ViewSoldoutProduct::ShowSoldoutProduct()
         v.push_back({ productName, madeCompanyName, price, sellingCount, averageRating });    
     }
 
-    sort(v.begin(), v.end());
+    sort(v.begin(), v.end()); // ìƒí’ˆëª…ì˜ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•œë‹¤.
 
     for (int j = 0; j < v.size(); j++)
     {
         ViewSoldoutProductUI *viewSoldoutProductUI = new ViewSoldoutProductUI;
-        viewSoldoutProductUI->ShowSoldoutProducts(get<0>(v[j]), get<1>(v[j]), get<2>(v[j]), get<3>(v[j]), get<4>(v[j]));
+        viewSoldoutProductUI->ShowSoldoutProductInfo(get<0>(v[j]), get<1>(v[j]), get<2>(v[j]), get<3>(v[j]), get<4>(v[j]));
     }
 }
 
+/*
+Function : void ViewSoldoutProductUI::ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, int averageRating)
+Description: ì´ í•¨ìˆ˜ëŠ” íŒë§¤ì™„ë£Œëœ ìƒí’ˆë“¤ì˜ ì„¸ë¶€ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+string productName - íŒë§¤ì™„ë£Œëœ ìƒí’ˆì˜ ì´ë¦„
+string madeCompanyName - íŒë§¤ì™„ë£Œëœ ìƒí’ˆì˜ ì œì‘íšŒì‚¬ëª…
+int price - íŒë§¤ì™„ë£Œëœ ìƒí’ˆì˜ ê°€ê²©
+int sellingCount - íŒë§¤ì™„ë£Œëœ ìƒí’ˆì˜ íŒë§¤ëœ ìˆ˜ëŸ‰
+int averageRating - íŒë§¤ì™„ë£Œëœ ìƒí’ˆì˜ í‰ê·  êµ¬ë§¤ë§Œì¡±ë„
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
+void ViewSoldoutProductUI::ShowSoldoutProductInfo(string productName, string madeCompanyName, int price, int sellingCount, int averageRating)
+{
+    outputFile << "> ";
+    outputFile << productName << " ";
+    outputFile << madeCompanyName << " ";
+    outputFile << price << " ";
+    outputFile << sellingCount << " ";
+    outputFile << averageRating << endl;
+}
 
+/*
+Function : ProductSalesStats::ProductSalesStats()
+Description: ì´ í•¨ìˆ˜ëŠ” ProductSalesStats ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì˜ ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : ì—†ìŒ
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 ProductSalesStats::ProductSalesStats()
 {
-    if (loginState) //·Î±×ÀÎ »óÅÂ È®ÀÎ
+    if (loginState) //ë¡œê·¸ì¸ ìƒíƒœ í™•ì¸
     {
-        ProductSalesStatsUI* productSalesStats = new ProductSalesStatsUI;
+        ProductSalesStatsUI* productSalesStats = new ProductSalesStatsUI; // ProductSalesStatsUI í´ë˜ìŠ¤ë¥¼ ìƒì„±í•œë‹¤.
 
         productSalesStats->SalesStatsButton(this);
     }
 }
 
+/*
+Function : void ProductSalesStatsUI::SalesStatsButton(ProductSalesStats* productSalesStats)
+Description: ì´ í•¨ìˆ˜ëŠ” ìƒí’ˆíŒë§¤í†µê³„ ë²„íŠ¼ì´ ëˆŒë ¸ì„ë•Œ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì—ê²Œ ì•Œë ¤ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+ProductSalesStats* productSalesStats - ì•Œë ¤ì¤„ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void ProductSalesStatsUI::SalesStatsButton(ProductSalesStats* productSalesStats)
 {
     productSalesStats->ShowSalesStats();
 }
 
-void ProductSalesStatsUI::ShowProductSalesStats(string productName, int sum, double averageRating)
-{
-    outputFile << "> ";
-    outputFile << productName << " ";
-    outputFile << sum << " ";
-    outputFile << averageRating << " ";
-    outputFile << endl;
-}
-
+/*
+Function : void ProductSalesStats::ShowSalesStats()
+Description: ì´ í•¨ìˆ˜ëŠ” í˜„ì¬ê¹Œì§€ íŒë§¤í•œ ëª¨ë“  ìƒí’ˆì— ëŒ€í•œ í†µê³„ë¥¼ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : void
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
 void ProductSalesStats::ShowSalesStats()
 {
     if (loginState)
     {
         vector <Product*> listAllSalesProduct;
-        listAllSalesProduct = curLoginMember->ListAllsalesProducts(); //ÇöÀç ·Î±×ÀÎµÈ È¸¿øÀÇ ¸ğµç »óÇ° ¸®½ºÆ®¸¦ °¡Á®¿Â´Ù.
+        listAllSalesProduct = curLoginMember->ListAllsalesProducts(); //í˜„ì¬ ë¡œê·¸ì¸ëœ íšŒì›ì˜ ëª¨ë“  ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 
         for (int i = 0; i < listAllSalesProduct.size(); i++)
         {
@@ -1114,12 +1443,32 @@ void ProductSalesStats::ShowSalesStats()
 }
 
 /*
+Function : void ProductSalesStats::ShowSalesStats()
+Description: ì´ í•¨ìˆ˜ëŠ” í˜„ì¬ê¹Œì§€ íŒë§¤í•œ ëª¨ë“  ìƒí’ˆì— ëŒ€í•œ í†µê³„ì˜ ì„¸ë¶€ì •ë³´ë“¤ì„ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
+Parameters : 
+string productName - ìƒí’ˆëª…
+int sum - ìƒí’ˆ ì´ì•¡
+double averageRating - í‰ê·  êµ¬ë§¤ë§Œì¡±ë„
+Return Value : void
+Created: 2022/5/30 4:00 pm
+Author: ê¹€ì˜ì„œ
+*/
+void ProductSalesStatsUI::ShowProductSalesStats(string productName, int sum, double averageRating)
+{
+    outputFile << "> ";
+    outputFile << productName << " ";
+    outputFile << sum << " ";
+    outputFile << averageRating << " ";
+    outputFile << endl;
+}
+
+/*
 Function : SearchProduct::SearchProduct()
-Description: ÀÌ ÇÔ¼ö´Â SearchProduct Å¬·¡½ºÀÇ °´Ã¼¸¦ »ı¼ºÇÏ´Â »ı¼ºÀÚ ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” SearchProduct í´ë˜ìŠ¤ì˜ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 SearchProduct::SearchProduct()
 {
@@ -1130,11 +1479,11 @@ SearchProduct::SearchProduct()
 
 /*
 Function : SearchProductUI::ShowSearchWindow()
-Description: °Ë»ö Ã¢À» º¸¿©ÁÖ´Â ÇÔ¼ö, °úÁ¦¿¡¼­´Â ÅØ½ºÆ®ÀÌ±â ¶§¹®¿¡ ¾Æ¹« ±â´Éµµ ½ÇÇàÇÏÁö ¾Ê´Â´Ù.
+Description: ê²€ìƒ‰ ì°½ì„ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜, ê³¼ì œì—ì„œëŠ” í…ìŠ¤íŠ¸ì´ê¸° ë•Œë¬¸ì— ì•„ë¬´ ê¸°ëŠ¥ë„ ì‹¤í–‰í•˜ì§€ ì•ŠëŠ”ë‹¤.
 Parameters : void
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void SearchProductUI::ShowSearchWindow()
 {
@@ -1143,19 +1492,19 @@ void SearchProductUI::ShowSearchWindow()
 
 /*
 Function : SearchProductUI::InputProductName()
-Description: »óÇ° ÀÌ¸§À» ÀÔ·Â¹Ş´Â ÇÔ¼ö
+Description: ìƒí’ˆ ì´ë¦„ì„ ì…ë ¥ë°›ëŠ” í•¨ìˆ˜
 Parameters : SearchProduct* searchProduct
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void SearchProductUI::InputProductName(SearchProduct* searchProduct)
 {
-    string productName;             // »óÇ°¸í
+    string productName;             // ìƒí’ˆëª…
 
     inputFile >> productName;
 
-    // if·Î »óÇ° ÀÖ´ÂÁö ¾ø´ÂÁö °Ë»çÄÚµå Ãß°¡
+    // ifë¡œ ìƒí’ˆ ìˆëŠ”ì§€ ì—†ëŠ”ì§€ ê²€ì‚¬ì½”ë“œ ì¶”ê°€
     searchProduct->ShowProductInfo(productName);
 }
 
@@ -1173,11 +1522,11 @@ void SearchProductUI::ShowSearchProductInfo(string sellerID, string productName,
 
 /*
 Function : SearchProduct::ShowProductInfo()
-Description: »óÇ°ÀÇ ÀÌ¸§À» ÀÔ·Â¹Ş¾Æ¼­ »óÇ°À» Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ÇÔ¼ö
+Description: ìƒí’ˆì˜ ì´ë¦„ì„ ì…ë ¥ë°›ì•„ì„œ ìƒí’ˆì„ ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 Parameters : string productName
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void SearchProduct::ShowProductInfo(string productName)
 {
@@ -1185,11 +1534,11 @@ void SearchProduct::ShowProductInfo(string productName)
 
     for (int i = 0; i < memberLoginInfo.size(); i++)
     {
-        listSellingProducts.clear();    // ¸Å ¹İº¹¸¶´Ù listSellingProducts ¸®½ºÆ® ÃÊ±âÈ­
+        listSellingProducts.clear();    // ë§¤ ë°˜ë³µë§ˆë‹¤ listSellingProducts ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
 
-        Member* member = get<2>(memberLoginInfo[i]);    // ¹İº¹¹®À» ÅëÇØ ¸ğµç °¢ È¸¿ø¸¶´Ù  
+        Member* member = get<2>(memberLoginInfo[i]);    // ë°˜ë³µë¬¸ì„ í†µí•´ ëª¨ë“  ê° íšŒì›ë§ˆë‹¤  
 
-        listSellingProducts = member->ListSellingProducts();    // ÆÇ¸ÅÁßÀÎ »óÇ°ÀÇ ÁÖ¼Ò Æ÷ÀÎÅÍ¸¦ ¹Ş¾Æ¿È
+        listSellingProducts = member->ListSellingProducts();    // íŒë§¤ì¤‘ì¸ ìƒí’ˆì˜ ì£¼ì†Œ í¬ì¸í„°ë¥¼ ë°›ì•„ì˜´
 
         for (int j = 0; j < listSellingProducts.size(); j++)
         {
@@ -1199,7 +1548,7 @@ void SearchProduct::ShowProductInfo(string productName)
 
                 searchProductUI->ShowSearchProductInfo(listSellingProducts[j]->GetSellerID(), listSellingProducts[j]->GetProductName(), listSellingProducts[j]->GetMadeCompanyName(), listSellingProducts[j]->GetPrice(), listSellingProducts[j]->GetRemainCount(), listSellingProducts[j]->GetAverageRating());
 
-                curSearchedProduct = listSellingProducts[j];  // ÇöÀç °Ë»öÇÑ »óÇ°¸íÀ» Àü¿ªº¯¼ö¿¡ ÀúÀå
+                curSearchedProduct = listSellingProducts[j];  // í˜„ì¬ ê²€ìƒ‰í•œ ìƒí’ˆëª…ì„ ì „ì—­ë³€ìˆ˜ì— ì €ì¥
 
                 return;
             }
@@ -1211,11 +1560,11 @@ void SearchProduct::ShowProductInfo(string productName)
 
 /*
 Function : Product::CheckSelectedProduct()
-Description: °Ë»öÇÑ »óÇ°ÀÇ ÀÌ¸§ÀÌ µî·ÏµÇ¾îÀÖ´Â »óÇ°ÀÇ ÀÌ¸§°ú °°ÀºÁö ºñ±³ÇÏ´Â ÇÔ¼ö
+Description: ê²€ìƒ‰í•œ ìƒí’ˆì˜ ì´ë¦„ì´ ë“±ë¡ë˜ì–´ìˆëŠ” ìƒí’ˆì˜ ì´ë¦„ê³¼ ê°™ì€ì§€ ë¹„êµí•˜ëŠ” í•¨ìˆ˜
 Parameters : string productName
-Return Value : boolean (°°À¸¸é true, ´Ù¸£¸é false)
+Return Value : boolean (ê°™ìœ¼ë©´ true, ë‹¤ë¥´ë©´ false)
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 bool Product::CheckSelectedProduct(string productName)
 {
@@ -1227,11 +1576,11 @@ bool Product::CheckSelectedProduct(string productName)
 
 /*
 Function : PurchaseProduct::PurchaseProduct()
-Description: »óÇ° ±¸¸Å ÄÁÆ®·Ñ Å¬·¡½º
-Parameters : ¾øÀ½
-Return Value : ¾øÀ½
+Description: ìƒí’ˆ êµ¬ë§¤ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤
+Parameters : ì—†ìŒ
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 PurchaseProduct::PurchaseProduct()
 {
@@ -1241,11 +1590,11 @@ PurchaseProduct::PurchaseProduct()
 
 /*
 Function : PurchaseProductUI::PushPurchaseButton()
-Description: È¸¿øÀÌ ±¸¸Å ¹öÆ°À» ´©¸§
+Description: íšŒì›ì´ êµ¬ë§¤ ë²„íŠ¼ì„ ëˆ„ë¦„
 Parameters : PurchaseProduct* purchaseProduct
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void PurchaseProductUI::PushPurchaseButton(PurchaseProduct* purchaseProduct)
 {
@@ -1261,17 +1610,17 @@ void PurchaseProductUI::ShowPurchasedProductInfo(string sellerID, string product
 
 /*
 Function : PurchaseProduct::ProceedPurchase()
-Description: ÄÁÆ®·Ñ Å¬·¡½º¿¡ ¹öÆ° ´©¸¥ °Í Àü´Ş
-Parameters : ¾øÀ½
-Return Value : ¾øÀ½
+Description: ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ì— ë²„íŠ¼ ëˆ„ë¥¸ ê²ƒ ì „ë‹¬
+Parameters : ì—†ìŒ
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void PurchaseProduct::ProceedPurchase()
 {
-    if (curSearchedProduct->OrderProduct() == true) // ÇØ´ç »óÇ°À» ÁÖ¹®ÇÑ´Ù.
+    if (curSearchedProduct->OrderProduct() == true) // í•´ë‹¹ ìƒí’ˆì„ ì£¼ë¬¸í•œë‹¤.
     {
-        curLoginMember->AddPurchaseProduct(curSearchedProduct); // ±¸¸ÅÇÑ »óÇ°¸®½ºÆ®¿¡ Ãß°¡
+        curLoginMember->AddPurchaseProduct(curSearchedProduct); // êµ¬ë§¤í•œ ìƒí’ˆë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
 
         PurchaseProductUI *purchaseProductUI = new PurchaseProductUI;
         purchaseProductUI->ShowPurchasedProductInfo(curSearchedProduct->GetSellerID(), curSearchedProduct->GetProductName());
@@ -1281,11 +1630,11 @@ void PurchaseProduct::ProceedPurchase()
 
 /*
 Function : Member::AddPurchaseProduct()
-Description: È¸¿øÀÌ ±¸¸ÅÇÑ »óÇ° ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+Description: íšŒì›ì´ êµ¬ë§¤í•œ ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 Parameters : Product* product
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void Member::AddPurchaseProduct(Product* product)
 {
@@ -1294,19 +1643,19 @@ void Member::AddPurchaseProduct(Product* product)
 
 /*
 Function : Product::orderProduct()
-Description: ¼±ÅÃÇÑ »óÇ°¿¡ ´ëÇØ ÁÖ¹®À» ³Ö´Â ÇÔ¼ö
-Parameters : ¾øÀ½
-Return Value : boolean (Àç°í°¡ ÀÖÀ¸¸é true, ¾øÀ¸¸é false)
+Description: ì„ íƒí•œ ìƒí’ˆì— ëŒ€í•´ ì£¼ë¬¸ì„ ë„£ëŠ” í•¨ìˆ˜
+Parameters : ì—†ìŒ
+Return Value : boolean (ì¬ê³ ê°€ ìˆìœ¼ë©´ true, ì—†ìœ¼ë©´ false)
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 bool Product::OrderProduct()
 {
     if (remainCount > 0)
     {
-        remainCount--;  // »óÇ°À» ±¸¸ÅÇß±â ¶§¹®¿¡ Àç°í ÇÏ³ª¸¦ »«´Ù.
+        remainCount--;  // ìƒí’ˆì„ êµ¬ë§¤í–ˆê¸° ë•Œë¬¸ì— ì¬ê³  í•˜ë‚˜ë¥¼ ëº€ë‹¤.
 
-        sellingCount++; //»óÇ°À» ±¸¸ÅÇß±â ¶§¹®¿¡ ±¸¸Å¼ö¸¦ ÇÏ³ª ¿Ã¸°´Ù.
+        sellingCount++; //ìƒí’ˆì„ êµ¬ë§¤í–ˆê¸° ë•Œë¬¸ì— êµ¬ë§¤ìˆ˜ë¥¼ í•˜ë‚˜ ì˜¬ë¦°ë‹¤.
 
         if (remainCount == 0)
         {
@@ -1345,11 +1694,11 @@ void Product::SoldoutProduct(Product* soldoutProduct)
 
 /*
 Function : PurchaseHistory::PurchaseHistory()
-Description: »óÇ° ±¸¸Å ³»¿ª ÄÁÆ®·Ñ Å¬·¡½º¸¦ »ı¼ºÇÏ´Â »ı¼ºÀÚ
-Parameters : ¾øÀ½
-Return Value : ¾øÀ½
+Description: ìƒí’ˆ êµ¬ë§¤ ë‚´ì—­ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì
+Parameters : ì—†ìŒ
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 PurchaseHistory::PurchaseHistory()
 {
@@ -1359,11 +1708,11 @@ PurchaseHistory::PurchaseHistory()
 
 /*
 Function : PurchaseHistoryUI::PushPurchaseHistoryButton()
-Description: È¸¿øÀÌ ±¸¸Å ³»¿ª Á¶È¸ ¹öÆ°À» ´©¸£´Â °ÍÀ» ±¸ÇöÇÑ ÇÔ¼ö
+Description: íšŒì›ì´ êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ ë²„íŠ¼ì„ ëˆ„ë¥´ëŠ” ê²ƒì„ êµ¬í˜„í•œ í•¨ìˆ˜
 Parameters : PurchaseHistory* purchaseHistory
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void PurchaseHistoryUI::PushPurchaseHistoryButton(PurchaseHistory* purchaseHistory)
 {
@@ -1383,11 +1732,11 @@ void PurchaseHistoryUI::ShowPurchaseHistories(string sellerID, string productNam
 }
 /*
 Function : PurchaseHistory::ShowPurchaseHistory()
-Description: ±¸¸Å³»¿ªÀ» Ãâ·ÂÇÏ´Â ÇÔ¼ö
-Parameters : ¾øÀ½
-Return Value : ¾øÀ½
+Description: êµ¬ë§¤ë‚´ì—­ì„ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
+Parameters : ì—†ìŒ
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void PurchaseHistory::ShowPurchaseHistory()
 {
@@ -1417,11 +1766,11 @@ void PurchaseHistory::ShowPurchaseHistory()
 
 /*
 Function : Member::ListPurchasedProduct()
-Description: È¸¿øÀÌ ±¸¸ÅÇÑ »óÇ° ¸®½ºÆ®¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
-Parameters : ¾øÀ½
+Description: íšŒì›ì´ êµ¬ë§¤í•œ ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
+Parameters : ì—†ìŒ
 Return Value : vector <Product*> purchasedProductListPointer
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 vector <Product*> Member::ListPurchasedProduct()
 {
@@ -1430,11 +1779,11 @@ vector <Product*> Member::ListPurchasedProduct()
 
 /*
 Function : RatingManagement::RatingManagement()
-Description: ±¸¸Å ¸¸Á·µµ ÀÔ·Â ÄÁÆ®·Ñ Å¬·¡½º¸¦ »ı¼ºÇÏ´Â »ı¼ºÀÚ
-Parameters : ¾øÀ½
-Return Value : ¾øÀ½
+Description: êµ¬ë§¤ ë§Œì¡±ë„ ì…ë ¥ ì»¨íŠ¸ë¡¤ í´ë˜ìŠ¤ë¥¼ ìƒì„±í•˜ëŠ” ìƒì„±ì
+Parameters : ì—†ìŒ
+Return Value : ì—†ìŒ
 Created: 2022/5/29 7:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 RatingManagement::RatingManagement()
 {
@@ -1449,11 +1798,11 @@ RatingManagement::RatingManagement()
 
 /*
 Function : RatingUI::SelectPurchasedProduct()
-Description: ±¸¸ÅÇÑ »óÇ° Áß¿¡¼­ ÇÏ³ª¸¦ ¼±ÅÃÇÏ´Â °ÍÀ» ±¸ÇöÇÑ ÇÔ¼ö
+Description: êµ¬ë§¤í•œ ìƒí’ˆ ì¤‘ì—ì„œ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ëŠ” ê²ƒì„ êµ¬í˜„í•œ í•¨ìˆ˜
 Parameters : RatingManagement* ratingManagement
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void RatingUI::SelectPurchasedProduct(RatingManagement* ratingManagement)
 {
@@ -1462,11 +1811,11 @@ void RatingUI::SelectPurchasedProduct(RatingManagement* ratingManagement)
 
 /*
 Function : RatingManagement::SendPurchasedProduct()
-Description: »óÇ°À» ¼±ÅÃÇÏ´Â °ÍÀ» Àü´ŞÇÏ´Â ÇÔ¼ö (ÅØ½ºÆ®ÀÌ±â ¶§¹®¿¡ ±â´ÉÀÌ ¾ø´Ù)
+Description: ìƒí’ˆì„ ì„ íƒí•˜ëŠ” ê²ƒì„ ì „ë‹¬í•˜ëŠ” í•¨ìˆ˜ (í…ìŠ¤íŠ¸ì´ê¸° ë•Œë¬¸ì— ê¸°ëŠ¥ì´ ì—†ë‹¤)
 Parameters : Product* selectedProduct
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void RatingManagement::SendPurchasedProduct()
 {
@@ -1475,11 +1824,11 @@ void RatingManagement::SendPurchasedProduct()
 
 /*
 Function : RatingUI::ActivateRatingButton()
-Description: ¼±ÅÃÇÑ »óÇ°ÀÇ ±¸¸Å ¸¸Á·µµ ÀÔ·Â ¹öÆ°À» È°¼ºÈ­ÇÏ´Â ÇÔ¼ö (ÀÌ °úÁ¦¿¡¼­´Â ÅØ½ºÆ®¿©¼­ ¾Æ¹« ±â´ÉÀÌ ¾ø´Ù.)
-Parameters : ¾øÀ½
-Return Value : ¾øÀ½
+Description: ì„ íƒí•œ ìƒí’ˆì˜ êµ¬ë§¤ ë§Œì¡±ë„ ì…ë ¥ ë²„íŠ¼ì„ í™œì„±í™”í•˜ëŠ” í•¨ìˆ˜ (ì´ ê³¼ì œì—ì„œëŠ” í…ìŠ¤íŠ¸ì—¬ì„œ ì•„ë¬´ ê¸°ëŠ¥ì´ ì—†ë‹¤.)
+Parameters : ì—†ìŒ
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void RatingUI::ActivateRatingButton()
 {
@@ -1488,11 +1837,11 @@ void RatingUI::ActivateRatingButton()
 
 /*
 Function : RatingUI::PushRatingButton()
-Description: ±¸¸Å ¸¸Á·µµ ÀÔ·ÂÀ» ´©¸£´Â °ÍÀ» ±¸ÇöÇÑ ÇÔ¼ö
+Description: êµ¬ë§¤ ë§Œì¡±ë„ ì…ë ¥ì„ ëˆ„ë¥´ëŠ” ê²ƒì„ êµ¬í˜„í•œ í•¨ìˆ˜
 Parameters : RatingManagement* ratingManagement
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void RatingUI::PushRatingButton(RatingManagement* ratingManagement)
 {
@@ -1501,11 +1850,11 @@ void RatingUI::PushRatingButton(RatingManagement* ratingManagement)
 
 /*
 Function : RatingManagement::SendRatingButton()
-Description: ¹öÆ°À» ´­·¶´Ù¸¦ Àü´ŞÇÏÁö¸¸ ÅØ½ºÆ®ÀÓÀ¸·Î ¾Æ¹«°Íµµ ½ÇÇàÇÏÁö ¾Ê´Â´Ù.
-Parameters : ¾øÀ½
-Return Value : ¾øÀ½
+Description: ë²„íŠ¼ì„ ëˆŒë €ë‹¤ë¥¼ ì „ë‹¬í•˜ì§€ë§Œ í…ìŠ¤íŠ¸ì„ìœ¼ë¡œ ì•„ë¬´ê²ƒë„ ì‹¤í–‰í•˜ì§€ ì•ŠëŠ”ë‹¤.
+Parameters : ì—†ìŒ
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void RatingManagement::SendRatingButton()
 {
@@ -1514,11 +1863,11 @@ void RatingManagement::SendRatingButton()
 
 /*
 Function : RatingUI::ShowRatingInputWindow()
-Description: ÆòÁ¡ ÀÔ·ÂÃ¢À» ¶ç¿ìÁö¸¸ ÅØ½ºÆ®¶ó ÀÌ¹ø °úÁ¦¿¡¼­´Â ±â´ÉÀÌ ¾ø´Ù.
-Parameters : ¾øÀ½
-Return Value : ¾øÀ½
+Description: í‰ì  ì…ë ¥ì°½ì„ ë„ìš°ì§€ë§Œ í…ìŠ¤íŠ¸ë¼ ì´ë²ˆ ê³¼ì œì—ì„œëŠ” ê¸°ëŠ¥ì´ ì—†ë‹¤.
+Parameters : ì—†ìŒ
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void RatingUI::ShowRatingInputWindow()
 {
@@ -1527,11 +1876,11 @@ void RatingUI::ShowRatingInputWindow()
 
 /*
 Function : RatingUI::CreateNewRating()
-Description: ±¸¸Å ¸¸Á·µµ ÀÔ·Â Ã¢¿¡¼­ ±¸¸Å ¸¸Á·µµ¸¦ Ãß°¡ÇÏ´Â ÇÔ¼ö
+Description: êµ¬ë§¤ ë§Œì¡±ë„ ì…ë ¥ ì°½ì—ì„œ êµ¬ë§¤ ë§Œì¡±ë„ë¥¼ ì¶”ê°€í•˜ëŠ” í•¨ìˆ˜
 Parameters : RatingManagement* ratingManagement
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void RatingUI::CreateNewRating(RatingManagement* ratingManagement)
 {
@@ -1553,11 +1902,11 @@ void RatingUI::ShowRatingInfo(string sellerID, string productName, int ratingVal
 
 /*
 Function : RatingManagement::SendRating()
-Description: ÀÔ·ÂÇÑ ±¸¸Å ¸¸Á·µµ¸¦ Àü´ŞÇÏ´Â ÇÔ¼ö
+Description: ì…ë ¥í•œ êµ¬ë§¤ ë§Œì¡±ë„ë¥¼ ì „ë‹¬í•˜ëŠ” í•¨ìˆ˜
 Parameters : int ratingValue
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void RatingManagement::SendRating(string productName, int ratingValue)
 {
@@ -1577,11 +1926,11 @@ void RatingManagement::SendRating(string productName, int ratingValue)
 
 /*
 Function : Product::requestEnrollRating()
-Description: »óÇ° Å¬·¡½º¿¡ ÆòÁ¡ µî·ÏÀ» ¿äÃ»ÇÏ´Â ÇÔ¼ö
+Description: ìƒí’ˆ í´ë˜ìŠ¤ì— í‰ì  ë“±ë¡ì„ ìš”ì²­í•˜ëŠ” í•¨ìˆ˜
 Parameters : int ratingValue
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void Product::RequestEnrollRating(int ratingValue)
 {
@@ -1592,11 +1941,11 @@ void Product::RequestEnrollRating(int ratingValue)
 
 /*
 Function : Rating::newRating()
-Description: ÇØ´ç »óÇ°ÀÇ ±¸¸Å ¸¸Á·µµ¸¦ µî·ÏÇÏ´Â ÇÔ¼ö
+Description: í•´ë‹¹ ìƒí’ˆì˜ êµ¬ë§¤ ë§Œì¡±ë„ë¥¼ ë“±ë¡í•˜ëŠ” í•¨ìˆ˜
 Parameters : int ratingValue, string productName, string writer
-Return Value : ¾øÀ½
+Return Value : ì—†ìŒ
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 void Rating::NewRating(int ratingValue, string productName, string writer)
 {
@@ -1621,11 +1970,11 @@ void Rating::NewRating(int ratingValue, string productName, string writer)
 
 /*
 Function : Product::ListRating()
-Description: ÇØ´ç »óÇ°ÀÇ ±¸¸Å ¸¸Á·µµ ¸®½ºÆ®¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
-Parameters : ¾øÀ½
+Description: í•´ë‹¹ ìƒí’ˆì˜ êµ¬ë§¤ ë§Œì¡±ë„ ë¦¬ìŠ¤íŠ¸ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
+Parameters : ì—†ìŒ
 Return Value : vector <Rating*> ratingListPointer
 Created: 2022/5/29 9:00 pm
-Author: ±èÁøÈ£
+Author: ê¹€ì§„í˜¸
 */
 vector <Rating*> Product::ListRating()
 {
@@ -1634,27 +1983,27 @@ vector <Rating*> Product::ListRating()
 
 /*
 Function : void doTask()
-Description: ÀÌ ÇÔ¼ö´Â ÀÔ·Â¹ŞÀº ¸Ş´º¿¡ µû¶ó ÇØ´ç ¸Ş´ºÀÇ ÀÛ¾÷À» ÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
+Description: ì´ í•¨ìˆ˜ëŠ” ì…ë ¥ë°›ì€ ë©”ë‰´ì— ë”°ë¼ í•´ë‹¹ ë©”ë‰´ì˜ ì‘ì—…ì„ í•˜ëŠ” í•¨ìˆ˜ì…ë‹ˆë‹¤.
 Parameters : void
 Return Value : void
 Created: 2022/5/25 : 3:00 pm
-Author: ±è¿µ¼­, ±èÁøÈ£, ÃÖÁØ¼ö
+Author: ê¹€ì˜ì„œ, ê¹€ì§„í˜¸, ìµœì¤€ìˆ˜
 */
 void doTask() {
-    if (inputFile.is_open())    //ÆÄÀÏÀÌ ¿­·ÁÀÖ´ÂÁö È®ÀÎ
+    if (inputFile.is_open())    //íŒŒì¼ì´ ì—´ë ¤ìˆëŠ”ì§€ í™•ì¸
     {
-        while (!inputFile.eof())    //ÆÄÀÏÀÇ ³¡±îÁö ÀĞ´Â°ÍÀ» ¹İº¹
+        while (!inputFile.eof())    //íŒŒì¼ì˜ ëê¹Œì§€ ì½ëŠ”ê²ƒì„ ë°˜ë³µ
         {
             string str;
 
             while (1)
             {
                 int menu1, menu2;
-                inputFile >> menu1 >> menu2;    // ÆÄÀÏ·ÎºÎÅÍ ¸Ş´º2°³ ¸¦ ÀÔ·Â¹ŞÀ½
+                inputFile >> menu1 >> menu2;    // íŒŒì¼ë¡œë¶€í„° ë©”ë‰´2ê°œ ë¥¼ ì…ë ¥ë°›ìŒ
 
                 if (menu1 == 1 && menu2 == 1)
                 {
-                    outputFile << "1.1. È¸¿ø°¡ÀÔ" << endl;
+                    outputFile << "1.1. íšŒì›ê°€ì…" << endl;
 
                     if (!loginState)
                     {
@@ -1665,7 +2014,7 @@ void doTask() {
                 }
                 else if (menu1 == 1 && menu2 == 2)
                 {
-                    outputFile << "1.2. È¸¿øÅ»Åğ" << endl;
+                    outputFile << "1.2. íšŒì›íƒˆí‡´" << endl;
 
                     DeleteMyAccount* deleteMyAccount = new DeleteMyAccount;
 
@@ -1673,9 +2022,9 @@ void doTask() {
                 }
                 else if (menu1 == 2 && menu2 == 1)
                 {
-                    outputFile << "2.1. ·Î±×ÀÎ" << endl;
+                    outputFile << "2.1. ë¡œê·¸ì¸" << endl;
 
-                    if (!loginState)  // ·Î±×ÀÎ »óÅÂ¿¡¼­´Â ·Î±×ÀÎÀ» ÇÒ ¼ö ¾ø´Ù.
+                    if (!loginState)  // ë¡œê·¸ì¸ ìƒíƒœì—ì„œëŠ” ë¡œê·¸ì¸ì„ í•  ìˆ˜ ì—†ë‹¤.
                     {
                         Login* login = new Login;
                     }
@@ -1684,7 +2033,7 @@ void doTask() {
                 }
                 else if (menu1 == 2 && menu2 == 2)
                 {
-                    outputFile << "2.2. ·Î±×¾Æ¿ô" << endl;
+                    outputFile << "2.2. ë¡œê·¸ì•„ì›ƒ" << endl;
 
                     Logout* logout = new Logout;
 
@@ -1692,7 +2041,7 @@ void doTask() {
                 }
                 else if (menu1 == 3 && menu2 == 1)
                 {
-                    outputFile << "3.1. ÆÇ¸Å ÀÇ·ù µî·Ï" << endl;
+                    outputFile << "3.1. íŒë§¤ ì˜ë¥˜ ë“±ë¡" << endl;
 
                     AddProduct* addProduct = new AddProduct;
 
@@ -1700,7 +2049,7 @@ void doTask() {
                 }
                 else if (menu1 == 3 && menu2 == 2)
                 {
-                    outputFile << "3.2. µî·Ï »óÇ° Á¶È¸" << endl;
+                    outputFile << "3.2. ë“±ë¡ ìƒí’ˆ ì¡°íšŒ" << endl;
 
                     ViewProduct* viewProduct = new ViewProduct;
 
@@ -1708,7 +2057,7 @@ void doTask() {
                 }
                 else if (menu1 == 3 && menu2 == 3)
                 {
-                    outputFile << "3.3. ÆÇ¸Å ¿Ï·á »óÇ° Á¶È¸" << endl;
+                    outputFile << "3.3. íŒë§¤ ì™„ë£Œ ìƒí’ˆ ì¡°íšŒ" << endl;
 
                     ViewSoldoutProduct* viewSoldoutProduct = new ViewSoldoutProduct;
 
@@ -1716,7 +2065,7 @@ void doTask() {
                 }
                 else if (menu1 == 4 && menu2 == 1)
                 {
-                    outputFile << "4.1. »óÇ° Á¤º¸ °Ë»ö" << endl;
+                    outputFile << "4.1. ìƒí’ˆ ì •ë³´ ê²€ìƒ‰" << endl;
 
                     SearchProduct* searchProduct = new SearchProduct;
 
@@ -1724,7 +2073,7 @@ void doTask() {
                 }
                 else if (menu1 == 4 && menu2 == 2)
                 {
-                    outputFile << "4.2. »óÇ° ±¸¸Å" << endl;
+                    outputFile << "4.2. ìƒí’ˆ êµ¬ë§¤" << endl;
 
                     PurchaseProduct* purchaseProduct = new PurchaseProduct;
 
@@ -1732,7 +2081,7 @@ void doTask() {
                 }
                 else if (menu1 == 4 && menu2 == 3)
                 {
-                    outputFile << "4.3. »óÇ° ±¸¸Å ³»¿ª Á¶È¸" << endl;
+                    outputFile << "4.3. ìƒí’ˆ êµ¬ë§¤ ë‚´ì—­ ì¡°íšŒ" << endl;
 
                     PurchaseHistory* purchaseHistory = new PurchaseHistory;
 
@@ -1740,7 +2089,7 @@ void doTask() {
                 }
                 else if (menu1 == 4 && menu2 == 4)
                 {
-                    outputFile << "4.4. »óÇ° ±¸¸Å¸¸Á·µµ Æò°¡" << endl;
+                    outputFile << "4.4. ìƒí’ˆ êµ¬ë§¤ë§Œì¡±ë„ í‰ê°€" << endl;
 
                     RatingManagement* ratingManagement = new RatingManagement;
 
@@ -1748,7 +2097,7 @@ void doTask() {
                 }
                 else if (menu1 == 5 && menu2 == 1)
                 {
-                    outputFile << "5.1. ÆÇ¸Å »óÇ° Åë°è" << endl;
+                    outputFile << "5.1. íŒë§¤ ìƒí’ˆ í†µê³„" << endl;
 
                     ProductSalesStats* productSalesStats = new ProductSalesStats;
 
@@ -1756,8 +2105,8 @@ void doTask() {
                 }
                 else if (menu1 == 6 && menu2 == 1)
                 {
-                    outputFile << "6.1. Á¾·á" << endl;
-                    return; //doTask ÇÔ¼öÁ¾·á
+                    outputFile << "6.1. ì¢…ë£Œ" << endl;
+                    return; //doTask í•¨ìˆ˜ì¢…ë£Œ
                 }
                 else
                 {
@@ -1770,11 +2119,11 @@ void doTask() {
 
 /*
 Function : main()
-Description: ÀÇ·ù ÆÇ¸Å »çÀÌÆ® ±¸Çö, inputFile·Î Á¤º¸¸¦ ÀÔ·Â¹Ş¾Æ outputFile·Î Á¤º¸ Ãâ·Â
-Parameters : ¾øÀ½
-Return Value : Á¤»óÁ¾·á
+Description: ì˜ë¥˜ íŒë§¤ ì‚¬ì´íŠ¸ êµ¬í˜„, inputFileë¡œ ì •ë³´ë¥¼ ì…ë ¥ë°›ì•„ outputFileë¡œ ì •ë³´ ì¶œë ¥
+Parameters : ì—†ìŒ
+Return Value : ì •ìƒì¢…ë£Œ
 Created: 2022/5/29 9:00 pm
-Author: ÃÖÁØ¼ö
+Author: ìµœì¤€ìˆ˜
 */
 int main() {
     doTask();
