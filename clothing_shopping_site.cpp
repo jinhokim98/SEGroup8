@@ -220,7 +220,7 @@ private:
 
 public:
     void SalesStatsButton(ProductSalesStats* productSalesStats);
-    void ShowSalesStats(string productName, int sum, double averageRating);
+    void ShowProductSalesStats(string productName, int sum, double averageRating);
 };
 
 /*
@@ -1086,7 +1086,7 @@ void ProductSalesStatsUI::SalesStatsButton(ProductSalesStats* productSalesStats)
     productSalesStats->ShowSalesStats();
 }
 
-void ProductSalesStatsUI::ShowSalesStats(string productName, int sum, double averageRating)
+void ProductSalesStatsUI::ShowProductSalesStats(string productName, int sum, double averageRating)
 {
     outputFile << "> ";
     outputFile << productName << " ";
@@ -1105,7 +1105,10 @@ void ProductSalesStats::ShowSalesStats()
         for (int i = 0; i < listAllSalesProduct.size(); i++)
         {
             ProductSalesStatsUI *productSalesStatsUI = new ProductSalesStatsUI;
-            productSalesStatsUI->ShowSalesStats(listAllSalesProduct[i]->GetProductName(), listAllSalesProduct[i]->GetSum(), listAllSalesProduct[i]->GetAverageRating());
+            if(listAllSalesProduct[i]->GetSellingCount() != 0)
+            {
+                productSalesStatsUI->ShowProductSalesStats(listAllSalesProduct[i]->GetProductName(), listAllSalesProduct[i]->GetSum(), listAllSalesProduct[i]->GetAverageRating());
+            }
         }
     }
 }
